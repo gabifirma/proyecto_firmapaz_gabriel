@@ -84,7 +84,7 @@
       <div class="card">
         <img src="assets/img/juego7.jpg" class="img-fluid card-img-top" alt="...">
         <div class="capa">
-          <h4><strong>FIFA 24</strong></h4><br><br>
+          <h3><strong>FIFA 24</strong></h3><br><br>
           <p><strong>Desarrollador:</strong> EA Vancouver</p>
           <p><strong>Publicado por:</strong> Electronic Arts</p>
         </div>

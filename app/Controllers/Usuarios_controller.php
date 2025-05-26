@@ -1,7 +1,7 @@
 <?php
 namespace App\Controllers;
 
-use App\Models\Consulta_model;
+use App\Models\Consultas_model;
 use App\Models\Personas_model;
 
 class Usuarios_controller extends BaseController
@@ -50,7 +50,7 @@ class Usuarios_controller extends BaseController
                 'consulta_mensaje' => $request->getPost('consulta'),
             ];
 
-            $consulta = new Consulta_model();
+            $consulta = new Consultas_model();
             $consulta->insert($data);
 
             return redirect() -> route('contacto')->with('mensaje_consulta', 'Su consulta se envió exitosamente!');
@@ -68,32 +68,30 @@ class Usuarios_controller extends BaseController
 
         $validation->setRules(
             [
-                'correo' => 'required|valid_email|is_unique[personas.persona_mail]',
-                'password' => 'required|min_length[8]|matches[personas.persona_password]',
+                'correo' => 'required|valid_email',
+                'pass' => 'required|min_length[8]',
             ],
             [   //Errores
                 'correo' => [
                     'required' => 'El correo electrónico es obligatorio',
-                    'valid_mail' => 'La dirección de correo no está registrada',
-                    'is_unique' => 'Existe otro cliente con esa cuenta',
+                    'valid_email' => 'La dirección de correo no está registrada',
                 ],
-                'password' => [
+                'pass' => [
                     'required' => 'La contraseña es obligatoria',
                     'min_length' => 'La contraseña es incorrecta, debe tener mínimo 8 carácteres',
-                    'matches' => 'La contraseña es incorrecta',
                 ],
             ]
         );
 
-        if ( $validation->withRequest($request)->run() ) {
+        if ( !$validation->withRequest($request)->run() ) {
             $data['titulo'] = 'Login';
             $data['validation'] = $validation->getErrors();
-
-            return view('practico/header_view').view('contenido/nav_visitante').view('contenido/login').view('practico/footer_view');
+            
+            return view('practico/header_view').view('contenido/nav_visitante').view('contenido/login', ['validation' => $validation]).view('practico/footer_view');
         }
 
-        $mail = $_POST('correo');
-        $pass = $_POST('pass');
+        $mail = $request->getPost('correo');
+        $pass = $request->getPost('pass');
 
         $user_Model = new Personas_model();
 
@@ -111,11 +109,11 @@ class Usuarios_controller extends BaseController
             switch($user['perfil_id']){
                 case '1': return redirect()->route('user_admin');
                 break;
-                case '2': return redirect()->route('/');
+                case '2': return redirect()->route('user_cliente');
                 break;
             }
         }else{
-            return redirect()->route('login_cliente')->with('mensaje', 'Usuario y/o contraseña incorrecto');
+            return redirect()->route('login')->with('mensaje_login', 'Usuario y/o contraseña incorrecto');
         }
     }
 
@@ -123,14 +121,19 @@ class Usuarios_controller extends BaseController
     
         $session = session();
         $session->destroy();
-        return redirect()->route('login_cliente');
+        return redirect()->route('login');
     
     }
 
     public function admin(){
-
         $data['titulo'] = 'Index';
         return view('practico/header_view').view('contenido/nav_admin').view('Backend/contenido_admin').view('practico/footer_view');
+    }
+
+    public function cliente(){
+
+        $data['titulo'] = 'Index';
+        return view('practico/header_view').view('contenido/nav_cliente').view('Backend/contenido_cliente').view('practico/footer_view');
     
     }
 }

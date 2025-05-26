@@ -14,9 +14,12 @@ $routes->get('galeria', 'Home::galeria');
 
 $routes->get('login', 'Home::login');
 $routes->post('buscar_usuario', 'Usuarios_controller::buscar_usuario');
+$routes->get('user_admin', 'Usuarios_controller::admin');
+$routes->get('user_cliente', 'Usuarios_controller::cliente');
 
-$routes->get('login_cliente', 'Usuarios_controller::login');
-$routes->post('verificar_usuario', 'Usuarios_controller::buscar_usuario');
+$routes->get('mostrar_consultas', 'Consultas_controller::mostrar_consultas');
+$routes->post('eliminar_consulta/(:num)', 'Consultas_controller::eliminar_consulta/$1');
+
 
 $routes->get('contacto', 'Home::contacto');
 $routes->post('consulta', 'Usuarios_controller::añadir_consulta');
@@ -26,4 +29,3 @@ $routes->post('registro_cliente', 'Clientes_controller::añadir_cliente');
 
 $routes->get('logout', 'Usuarios_controller::cerrar_sesion');
 
-$routes->get('user_admin', 'Usuarios_controller::admin');

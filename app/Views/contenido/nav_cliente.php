@@ -28,9 +28,19 @@
             </li>            
           </ul>
 
-            <a class="btn btn-outline-success me-2" href="<?php echo base_url(''); ?>" role="button">Ver carrito</a>
-            <a class="btn btn-outline-success me-2" href="<?php echo base_url(''); ?>" role="button">Login</a>
-
+          <div class="btn-group dropstart">
+            <button type="button" class="btn btn-outline-success dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+              <?= session()->get('nombre'); ?>
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="<?php echo base_url(''); ?>" role="button">Ver carrito</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="<?php echo base_url(''); ?>" role="button">Perfil</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="<?php echo base_url('logout'); ?>" role="button">Cerrar Sesión</a></li>
+            </ul>
+          </div>
+          
         </div>
       </div>
     </nav>

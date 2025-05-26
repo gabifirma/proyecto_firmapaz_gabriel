@@ -12,23 +12,35 @@
         <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link" href="<?php echo base_url('/'); ?>">Principal</a>
+              <a class="nav-link" href="<?php echo base_url('mostrar_consultas'); ?>">Ver consultas</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="<?php echo base_url('comercializacion'); ?>">Comercializacion</a>
+              <a class="nav-link" href="<?php echo base_url('comercializacion'); ?>">Listar ventas</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="<?php echo base_url('quienes_somos'); ?>">Quienes somos</a>
+              <a class="nav-link" href="<?php echo base_url('quienes_somos'); ?>">Listar juegos</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="<?php echo base_url('terminos'); ?>">Términos</a>
+              <a class="nav-link" href="<?php echo base_url('terminos'); ?>">Listar usuarios</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="<?php echo base_url('contacto'); ?>">Contacto</a>
-            </li>            
+              <a class="nav-link" href="<?php echo base_url('contacto'); ?>">Agregar juegos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="<?php echo base_url('contacto'); ?>">Gestionar juegos</a>
+            </li>      
           </ul>
 
-            <a class="btn btn-outline-success me-2" href="<?php echo base_url(''); ?>" role="button">admin</a>
+          <div class="btn-group dropstart">
+            <button type="button" class="btn btn-outline-success dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+              <?= session()->get('nombre'); ?>
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="<?php echo base_url(''); ?>" role="button">Perfil</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="<?php echo base_url('logout'); ?>" role="button">Cerrar Sesión</a></li>
+            </ul>
+          </div>
 
         </div>
       </div>
