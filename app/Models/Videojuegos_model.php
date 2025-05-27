@@ -4,17 +4,17 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class Personas_Model extends Model
+class Videojuegos_Model extends Model
 {
-    protected $table      = 'personas';
-    protected $primaryKey = 'id_persona';
+    protected $table      = 'videojuegos';
+    protected $primaryKey = 'id_videojuego';
 
     protected $useAutoIncrement = true;
 
     protected $returnType     = 'array';
     protected $useSoftDeletes = false;
 
-    protected $allowedFields = ['persona_apellido', 'persona_nombre', 'persona_pais', 'persona_mail', 'persona_password', 'perfil_id', 'persona_estado'];
+    protected $allowedFields = ['titulo_videojuego', 'descripcion_videojuego', 'desarrollador_videojuego', 'distribuidor_videojuego','precio_videojuego', 'imagen_videojuego','categoria_id'];
 
     protected bool $allowEmptyInserts = false;
     protected bool $updateOnlyChanged = true;

@@ -18,10 +18,10 @@
               <a class="nav-link" href="<?php echo base_url('comercializacion'); ?>">Listar ventas</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="<?php echo base_url('quienes_somos'); ?>">Listar juegos</a>
+              <a class="nav-link" href="<?php echo base_url('listar_videojuegos'); ?>">Listar juegos</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="<?php echo base_url('terminos'); ?>">Listar usuarios</a>
+              <a class="nav-link" href="<?php echo base_url('listar_usuarios'); ?>">Listar usuarios</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="<?php echo base_url('contacto'); ?>">Agregar juegos</a>

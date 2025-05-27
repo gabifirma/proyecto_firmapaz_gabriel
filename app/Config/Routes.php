@@ -17,8 +17,13 @@ $routes->post('buscar_usuario', 'Usuarios_controller::buscar_usuario');
 $routes->get('user_admin', 'Usuarios_controller::admin');
 $routes->get('user_cliente', 'Usuarios_controller::cliente');
 
-$routes->get('mostrar_consultas', 'Consultas_controller::mostrar_consultas');
-$routes->post('eliminar_consulta/(:num)', 'Consultas_controller::eliminar_consulta/$1');
+$routes->get('mostrar_consultas', 'Admin_controller::mostrar_consultas');
+$routes->post('eliminar_consulta/(:num)', 'Admin_controller::eliminar_consulta/$1');
+
+$routes->get('listar_usuarios', 'Admin_controller::listar_usuarios');
+$routes->post('eliminar_usuario/(:num)', 'Admin_controller::eliminar_usuario/$1');
+
+$routes->get('listar_videojuegos', 'Admin_controller::listar_videojuegos');
 
 
 $routes->get('contacto', 'Home::contacto');
