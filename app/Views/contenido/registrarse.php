@@ -2,13 +2,18 @@
 
     <form action="<?php echo base_url('registro_cliente') ?>" method="post" autocomplete="off" class="formulario-registrarse row g-3 mt-5 needs-validation container-fluid" novalidate>
         
-        <h2> <center><br>Registrarse</center></h2>
-        
-        <?php if (isset($validation)) : ?>
+        <h2><center><br>Registrarse</center></h2>
+
+        <?php if (!empty($validation)) : ?>
             <div class="alert alert-danger" role="alert">
-                <?= $validation->listErrors(); ?>
+                <ul>
+                    <?php foreach ($validation as $error) : ?>
+                        <li><?= esc($error) ?></li>
+                    <?php endforeach; ?>
+                </ul>
             </div>
         <?php endif; ?>
+
 
         <?php if (session('mensaje_consulta')) : ?>
             <div class="alert alert-success" role="alert">
