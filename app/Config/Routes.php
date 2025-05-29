@@ -33,6 +33,9 @@ $routes->post('consulta', 'Usuarios_controller::añadir_consulta');
 $routes->get('registrarse', 'Home::registrarse');
 $routes->post('registro_cliente', 'Clientes_controller::registrar_usuario');
 
+$routes->get('agregar_juego', 'Videojuegos_controller::form_agregar_juego');
+$routes->post('insertar_juego', 'Videojuegos_controller::registrar_juego');
+
 
 $routes->get('logout', 'Usuarios_controller::cerrar_sesion');
 

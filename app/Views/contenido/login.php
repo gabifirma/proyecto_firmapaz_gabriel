@@ -25,7 +25,7 @@
                 <label for="floatingInput">Correo Electrónico</label>
             </div>
             <div class="form-floating">
-                <?php echo form_input(['name' => 'pass', 'id' => 'pass', 'type' => 'text', 'class' => 'form-control', 'placeholder' => 'Password', 'value' => set_value('pass')]); ?>
+                <?php echo form_input(['name' => 'pass', 'id' => 'pass', 'type' => 'password', 'class' => 'form-control', 'placeholder' => 'Password', 'value' => set_value('pass')]); ?>
                 <label for="floatingPassword">Password</label>
             </div>
             

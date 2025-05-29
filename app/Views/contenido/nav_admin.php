@@ -2,7 +2,7 @@
     <nav class="navbar navbar-expand-lg">
       <div class="container-fluid">
          <!-- Ícono y Nombre -->
-         <a class="navbar-brand" href="<?php echo base_url('/'); ?>">
+         <a class="navbar-brand" href="#">
             <img src="assets/img/icono.png" alt="FCBox" width="40" height="40">
             <span class="brand-text">FCBox</span>
         </a>
@@ -24,10 +24,10 @@
               <a class="nav-link" href="<?php echo base_url('listar_usuarios'); ?>">Listar usuarios</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="<?php echo base_url('agregar_juegos'); ?>">Agregar juegos</a>
+              <a class="nav-link" href="<?php echo base_url('agregar_juego'); ?>">Agregar juegos</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="<?php echo base_url('gestionar_juegos'); ?>">Gestionar juegos</a>
+              <a class="nav-link" href="<?php echo base_url('gestionar_juego'); ?>">Gestionar juegos</a>
             </li>      
           </ul>
 
