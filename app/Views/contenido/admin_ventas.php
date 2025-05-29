@@ -9,16 +9,16 @@
             <table class="table table-striped table-bordered align-middle">
                 <thead class="table-light">
                     <tr>
-                        <th>Título</th>
-                        <th>Desarrolador</th>
-                        <th>Distribuidor</th>
-                        <th>Precio</th>
+                        <th>Cliente</th>
+                        <th>Fecha de Venta</th>
+                        <th>Juego</th>
+                        <th>Precio ($)</th>
                         <th>Categoría</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <?php if (!empty($juegos)): ?>
-                        <?php foreach ($juegos as $c): ?>
+                    <?php if (!empty($ventas)): ?>
+                        <?php foreach ($ventas as $c): ?>
                             <tr>
                                 <td><?= esc($c['titulo_videojuego']) ?></td>
                                 <td><?= esc($c['desarrollador_videojuego']) ?></td>
@@ -35,7 +35,7 @@
                         <?php endforeach; ?>
                     <?php else: ?>
                         <tr>
-                            <td colspan="5" class="text-center">No hay juegos subidos.</td>
+                            <td colspan="5" class="text-center">No hay ventas registradas.</td>
                         </tr>
                     <?php endif; ?>
                 </tbody>

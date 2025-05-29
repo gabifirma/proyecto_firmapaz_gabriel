@@ -15,7 +15,7 @@
               <a class="nav-link" href="<?php echo base_url('mostrar_consultas'); ?>">Ver consultas</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="<?php echo base_url('comercializacion'); ?>">Listar ventas</a>
+              <a class="nav-link" href="<?php echo base_url('listar_ventas'); ?>">Listar ventas</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="<?php echo base_url('listar_videojuegos'); ?>">Listar juegos</a>
@@ -24,10 +24,10 @@
               <a class="nav-link" href="<?php echo base_url('listar_usuarios'); ?>">Listar usuarios</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="<?php echo base_url('contacto'); ?>">Agregar juegos</a>
+              <a class="nav-link" href="<?php echo base_url('agregar_juegos'); ?>">Agregar juegos</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="<?php echo base_url('contacto'); ?>">Gestionar juegos</a>
+              <a class="nav-link" href="<?php echo base_url('gestionar_juegos'); ?>">Gestionar juegos</a>
             </li>      
           </ul>
 

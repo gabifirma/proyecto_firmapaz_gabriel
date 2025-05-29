@@ -3,6 +3,8 @@
 use App\Models\Consultas_Model;
 use App\Models\Personas_Model;
 use App\Models\Videojuegos_Model;
+use App\Models\Ventas_Model;
+
 
 class Admin_controller extends BaseController
 {
@@ -43,5 +45,12 @@ class Admin_controller extends BaseController
         $model = new Personas_Model();
         $model->delete($id);
         return redirect()->route('listar_usuarios');
+    }
+
+    public function listar_ventas(){
+        $model = new Ventas_Model();
+        $ventas = $model->findAll();
+
+        return view('practico/header_view').view('contenido/nav_admin').view('contenido/admin_ventas', ['ventas' => $ventas]).view('practico/footer_view');
     }
 }

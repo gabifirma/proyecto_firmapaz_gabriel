@@ -40,7 +40,7 @@
                         <?php endforeach; ?>
                     <?php else: ?>
                         <tr>
-                            <td colspan="5" class="text-center">No hay consultas disponibles.</td>
+                            <td colspan="5" class="text-center">No hay usuarios adheridos.</td>
                         </tr>
                     <?php endif; ?>
                 </tbody>

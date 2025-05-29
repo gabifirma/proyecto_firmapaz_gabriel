@@ -25,6 +25,7 @@ $routes->post('eliminar_usuario/(:num)', 'Admin_controller::eliminar_usuario/$1'
 
 $routes->get('listar_videojuegos', 'Admin_controller::listar_videojuegos');
 
+$routes->get('listar_ventas', 'Admin_controller::listar_ventas');
 
 $routes->get('contacto', 'Home::contacto');
 $routes->post('consulta', 'Usuarios_controller::añadir_consulta');
