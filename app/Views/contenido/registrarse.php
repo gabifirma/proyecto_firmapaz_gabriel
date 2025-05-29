@@ -23,38 +23,42 @@
 
         <div class="col-md-5">
             <label for="nombre" class="form-check-label">Nombre</label>
-            <input type="text" class="form-control" id="validationCustom01" value="" required>
+            <?php echo form_input(['name' => 'nombre', 'id' => 'nombre1', 'type' => 'text', 'class' => 'form-control', 'placeholder' => 'Ingrese nombre', 'value' => set_value('nombre')]); ?>
         </div>
 
         <div class="col-md-5">
             <label for="apelido" class="form-check-label">Apellido</label>
-            <input type="text" class="form-control" id="validationCustom02" value="" required>
+            <?php echo form_input(['name' => 'apellido', 'id' => 'apellido1', 'type' => 'text', 'class' => 'form-control', 'placeholder' => 'Ingrese apellido', 'value' => set_value('apellido')]); ?>
         </div>
         
         <div class="col-md-6">
             <label for="email" class="form-check-label">Email</label>
-            <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>            
+            <?php echo form_input(['name' => 'correo', 'id' => 'correo1', 'type' => 'text', 'class' => 'form-control', 'placeholder' => 'Ingrese correo electronico', 'value' => set_value('correo')]); ?>
         </div>
         
         <div class="col-md-5">
             <label for="pais" class="form-check-label">País</label>
-            <input type="text" class="form-control" id="validationDefault01" value="" required>
+            <?php echo form_input(['name' => 'pais', 'id' => 'pais1', 'type' => 'text', 'class' => 'form-control', 'placeholder' => 'Ingrese pais', 'value' => set_value('pais')]); ?>
         </div>
         
         <div class="col-md-5"> 
             <label for="contraseña" class="form-check-label">Contraseña</label>
-            <input type="text" class="form-control" id="validationCustom03" required>
+            <?php echo form_input(['name' => 'contraseña', 'id' => 'contraseña1', 'type' => 'password', 'class' => 'form-control', 'placeholder' => 'Ingrese contraseña', 'value' => set_value('contraseña')]); ?>
         </div>
         
         <div class="col-md-5">
             <label for="reContraseña" class="form-check-label">Repetir contraseña</label>
-            <input type="text" class="form-control" id="validationCustom03" required>
+            <?php echo form_input(['name' => 'reContraseña', 'id' => 'reContraseña1', 'type' => 'password', 'class' => 'form-control', 'placeholder' => 'Repetir contraseña', 'value' => set_value('reContraseña')]); ?>
             <div class="invalid-feedback">
         </div>
         
-        <div class="col-2">
-            <button class="btn btn-primary" type="submit">Finalizar</button>
-        </div>
+ 
+            <div class="col-2">
+                <?php echo form_submit('registro_cliente', 'Finalizar', "class='btn btn-primary' type='submit'"); ?>
+            </div>
+
+
+        
     </form>
     <br>
     <div style="margin-bottom: 10px; margin-top: 10px; margin-left: 45%">
