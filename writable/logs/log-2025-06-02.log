@@ -1,0 +1,338 @@
+DEBUG - 2025-06-02 20:56:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-02 20:56:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-02 20:56:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-02 20:56:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-02 20:56:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-06-02 20:56:32 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "Backend/contenido_admin.php"
+[Method: GET, Route: user_admin]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('Backend/contenido_admin.php')
+ 2 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('Backend/contenido_admin', [], true)
+ 3 APPPATH\Controllers\Usuarios_controller.php(130): view('Backend/contenido_admin')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Usuarios_controller->admin()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuarios_controller))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-06-02 20:59:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-06-02 21:01:45 --> CodeIgniter\Router\Exceptions\RouterException: The namespace delimiter is a backslash (\), not a slash (/). Route handler: "\App\Controllers\Backend/Admin_controller::mostrar_consultas"
+[Method: GET, Route: mostrar_consultas]
+in SYSTEMPATH\Router\Router.php on line 494.
+ 1 SYSTEMPATH\Router\Router.php(494): CodeIgniter\Router\Exceptions\RouterException::forInvalidControllerName('\\App\\Controllers\\Backend/Admin_controller::mostrar_consultas')
+ 2 SYSTEMPATH\Router\Router.php(213): CodeIgniter\Router\Router->checkRoutes('mostrar_consultas')
+ 3 SYSTEMPATH\CodeIgniter.php(832): CodeIgniter\Router\Router->handle('mostrar_consultas')
+ 4 SYSTEMPATH\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-06-02 21:03:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-02 21:03:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-02 21:03:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-02 21:03:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-02 21:03:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-02 21:03:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-02 21:03:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-02 21:03:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-06-02 21:03:46 --> ErrorException: Undefined variable $categorias
+[Method: GET, Route: agregar_juego]
+in APPPATH\Views\Backend\agregar_juego.php on line 46.
+ 1 APPPATH\Views\Backend\agregar_juego.php(46): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $categorias', 'C:\\xampp\\htdocs\\proyecto_firmapaz_gabriel\\app\\Views\\Backend\\agregar_juego.php', 46)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\proyecto_firmapaz_gabriel\\app\\Views\\Backend\\agregar_juego.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('Backend/agregar_juego', [], true)
+ 5 APPPATH\Controllers\Videojuegos_controller.php(13): view('Backend/agregar_juego')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Videojuegos_controller->form_agregar_juego()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Videojuegos_controller))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-06-02 21:03:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-06-02 21:03:58 --> ErrorException: Undefined variable $categorias
+[Method: GET, Route: agregar_juego]
+in APPPATH\Views\Backend\agregar_juego.php on line 46.
+ 1 APPPATH\Views\Backend\agregar_juego.php(46): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $categorias', 'C:\\xampp\\htdocs\\proyecto_firmapaz_gabriel\\app\\Views\\Backend\\agregar_juego.php', 46)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\proyecto_firmapaz_gabriel\\app\\Views\\Backend\\agregar_juego.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('Backend/agregar_juego', [], true)
+ 5 APPPATH\Controllers\Videojuegos_controller.php(13): view('Backend/agregar_juego')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Videojuegos_controller->form_agregar_juego()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Videojuegos_controller))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-06-02 21:04:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-06-02 21:04:57 --> ErrorException: Undefined variable $categoria
+[Method: GET, Route: agregar_juego]
+in APPPATH\Views\Backend\agregar_juego.php on line 46.
+ 1 APPPATH\Views\Backend\agregar_juego.php(46): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $categoria', 'C:\\xampp\\htdocs\\proyecto_firmapaz_gabriel\\app\\Views\\Backend\\agregar_juego.php', 46)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\proyecto_firmapaz_gabriel\\app\\Views\\Backend\\agregar_juego.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('Backend/agregar_juego', [], true)
+ 5 APPPATH\Controllers\Videojuegos_controller.php(13): view('Backend/agregar_juego')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Videojuegos_controller->form_agregar_juego()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Videojuegos_controller))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-06-02 21:45:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-06-02 21:45:07 --> ErrorException: Undefined variable $categorias
+[Method: GET, Route: agregar_juego]
+in APPPATH\Views\Backend\agregar_juego.php on line 46.
+ 1 APPPATH\Views\Backend\agregar_juego.php(46): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $categorias', 'C:\\xampp\\htdocs\\proyecto_firmapaz_gabriel\\app\\Views\\Backend\\agregar_juego.php', 46)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\proyecto_firmapaz_gabriel\\app\\Views\\Backend\\agregar_juego.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('Backend/agregar_juego', [], true)
+ 5 APPPATH\Controllers\Videojuegos_controller.php(13): view('Backend/agregar_juego')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Videojuegos_controller->form_agregar_juego()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Videojuegos_controller))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-06-02 21:47:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-02 21:47:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-06-02 21:47:17 --> ErrorException: Undefined variable $categoria
+[Method: GET, Route: agregar_juego]
+in APPPATH\Views\Backend\agregar_juego.php on line 46.
+ 1 APPPATH\Views\Backend\agregar_juego.php(46): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $categoria', 'C:\\xampp\\htdocs\\proyecto_firmapaz_gabriel\\app\\Views\\Backend\\agregar_juego.php', 46)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\proyecto_firmapaz_gabriel\\app\\Views\\Backend\\agregar_juego.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('Backend/agregar_juego', [], true)
+ 5 APPPATH\Controllers\Videojuegos_controller.php(13): view('Backend/agregar_juego')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Videojuegos_controller->form_agregar_juego()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Videojuegos_controller))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-06-02 22:01:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-06-02 22:01:56 --> mysqli_sql_exception: Table 'bd_firmapaz-conti.categoria_videojuego' doesn't exist in C:\xampp\htdocs\proyecto_firmapaz_gabriel\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\proyecto_firmapaz_gabriel\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT 1\nFROM `...', 0)
+#1 C:\xampp\htdocs\proyecto_firmapaz_gabriel\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 1\nFROM `...')
+#2 C:\xampp\htdocs\proyecto_firmapaz_gabriel\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 1\nFROM `...')
+#3 C:\xampp\htdocs\proyecto_firmapaz_gabriel\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\proyecto_firmapaz_gabriel\system\Validation\Rules.php(132): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\proyecto_firmapaz_gabriel\system\Validation\StrictRules\Rules.php(148): CodeIgniter\Validation\Rules->is_not_unique('0', 'categoria_video...', Array)
+#6 C:\xampp\htdocs\proyecto_firmapaz_gabriel\system\Validation\Validation.php(337): CodeIgniter\Validation\StrictRules\Rules->is_not_unique('0', 'categoria_video...', Array, NULL, 'categoria')
+#7 C:\xampp\htdocs\proyecto_firmapaz_gabriel\system\Validation\Validation.php(202): CodeIgniter\Validation\Validation->processRules('categoria', 'categoria', '0', Array, Array, 'categoria')
+#8 C:\xampp\htdocs\proyecto_firmapaz_gabriel\app\Controllers\Videojuegos_controller.php(58): CodeIgniter\Validation\Validation->run()
+#9 C:\xampp\htdocs\proyecto_firmapaz_gabriel\system\CodeIgniter.php(933): App\Controllers\Videojuegos_controller->registrar_juego()
+#10 C:\xampp\htdocs\proyecto_firmapaz_gabriel\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Videojuegos_controller))
+#11 C:\xampp\htdocs\proyecto_firmapaz_gabriel\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\proyecto_firmapaz_gabriel\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#13 C:\xampp\htdocs\proyecto_firmapaz_gabriel\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 C:\xampp\htdocs\proyecto_firmapaz_gabriel\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 {main}
+CRITICAL - 2025-06-02 22:01:56 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'bd_firmapaz-conti.categoria_videojuego' doesn't exist
+[Method: POST, Route: insertar_juego]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `categoria_videojuego`
+WHERE `categoria_id` = :categoria_id:
+ LIMIT 1', [...], false)
+ 2 SYSTEMPATH\Validation\Rules.php(132): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\Validation\StrictRules\Rules.php(148): CodeIgniter\Validation\Rules->is_not_unique('0', 'categoria_videojuego.categoria_id', [...])
+ 4 SYSTEMPATH\Validation\Validation.php(337): CodeIgniter\Validation\StrictRules\Rules->is_not_unique('0', 'categoria_videojuego.categoria_id', [...], null, 'categoria')
+ 5 SYSTEMPATH\Validation\Validation.php(202): CodeIgniter\Validation\Validation->processRules('categoria', 'categoria', '0', [...], [...], 'categoria')
+ 6 APPPATH\Controllers\Videojuegos_controller.php(58): CodeIgniter\Validation\Validation->run()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Videojuegos_controller->registrar_juego()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Videojuegos_controller))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-02 22:01:56 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'bd_firmapaz-conti.categoria_videojuego' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 1
+FROM `categoria_videojuego`
+WHERE `categoria_id` = \'0\'
+ LIMIT 1')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 1
+FROM `categoria_videojuego`
+WHERE `categoria_id` = \'0\'
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `categoria_videojuego`
+WHERE `categoria_id` = :categoria_id:
+ LIMIT 1', [...], false)
+ 4 SYSTEMPATH\Validation\Rules.php(132): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\Validation\StrictRules\Rules.php(148): CodeIgniter\Validation\Rules->is_not_unique('0', 'categoria_videojuego.categoria_id', [...])
+ 6 SYSTEMPATH\Validation\Validation.php(337): CodeIgniter\Validation\StrictRules\Rules->is_not_unique('0', 'categoria_videojuego.categoria_id', [...], null, 'categoria')
+ 7 SYSTEMPATH\Validation\Validation.php(202): CodeIgniter\Validation\Validation->processRules('categoria', 'categoria', '0', [...], [...], 'categoria')
+ 8 APPPATH\Controllers\Videojuegos_controller.php(58): CodeIgniter\Validation\Validation->run()
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Videojuegos_controller->registrar_juego()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Videojuegos_controller))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-02 22:01:56 --> [Caused by] mysqli_sql_exception: Table 'bd_firmapaz-conti.categoria_videojuego' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT 1
+FROM `categoria_videojuego`
+WHERE `categoria_id` = \'0\'
+ LIMIT 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 1
+FROM `categoria_videojuego`
+WHERE `categoria_id` = \'0\'
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 1
+FROM `categoria_videojuego`
+WHERE `categoria_id` = \'0\'
+ LIMIT 1')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `categoria_videojuego`
+WHERE `categoria_id` = :categoria_id:
+ LIMIT 1', [...], false)
+ 5 SYSTEMPATH\Validation\Rules.php(132): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\Validation\StrictRules\Rules.php(148): CodeIgniter\Validation\Rules->is_not_unique('0', 'categoria_videojuego.categoria_id', [...])
+ 7 SYSTEMPATH\Validation\Validation.php(337): CodeIgniter\Validation\StrictRules\Rules->is_not_unique('0', 'categoria_videojuego.categoria_id', [...], null, 'categoria')
+ 8 SYSTEMPATH\Validation\Validation.php(202): CodeIgniter\Validation\Validation->processRules('categoria', 'categoria', '0', [...], [...], 'categoria')
+ 9 APPPATH\Controllers\Videojuegos_controller.php(58): CodeIgniter\Validation\Validation->run()
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Videojuegos_controller->registrar_juego()
+11 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Videojuegos_controller))
+12 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-02 22:03:10 --> CodeIgniter\Exceptions\InvalidArgumentException: The field must be in the format "table.field" or "dbGroup.table.field".
+[Method: POST, Route: insertar_juego]
+in SYSTEMPATH\Validation\Rules.php on line 205.
+ 1 SYSTEMPATH\Validation\Rules.php(122): CodeIgniter\Validation\Rules->prepareUniqueQuery('0', 'categoria_id', [...])
+ 2 SYSTEMPATH\Validation\StrictRules\Rules.php(148): CodeIgniter\Validation\Rules->is_not_unique('0', 'categoria_id', [...])
+ 3 SYSTEMPATH\Validation\Validation.php(337): CodeIgniter\Validation\StrictRules\Rules->is_not_unique('0', 'categoria_id', [...], null, 'categoria')
+ 4 SYSTEMPATH\Validation\Validation.php(202): CodeIgniter\Validation\Validation->processRules('categoria', 'categoria', '0', [...], [...], 'categoria')
+ 5 APPPATH\Controllers\Videojuegos_controller.php(58): CodeIgniter\Validation\Validation->run()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Videojuegos_controller->registrar_juego()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Videojuegos_controller))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-02 22:06:15 --> CodeIgniter\Exceptions\InvalidArgumentException: The field must be in the format "table.field" or "dbGroup.table.field".
+[Method: POST, Route: insertar_juego]
+in SYSTEMPATH\Validation\Rules.php on line 205.
+ 1 SYSTEMPATH\Validation\Rules.php(122): CodeIgniter\Validation\Rules->prepareUniqueQuery('0', 'categoria_id', [...])
+ 2 SYSTEMPATH\Validation\StrictRules\Rules.php(148): CodeIgniter\Validation\Rules->is_not_unique('0', 'categoria_id', [...])
+ 3 SYSTEMPATH\Validation\Validation.php(337): CodeIgniter\Validation\StrictRules\Rules->is_not_unique('0', 'categoria_id', [...], null, 'categoria')
+ 4 SYSTEMPATH\Validation\Validation.php(202): CodeIgniter\Validation\Validation->processRules('categoria', 'categoria', '0', [...], [...], 'categoria')
+ 5 APPPATH\Controllers\Videojuegos_controller.php(58): CodeIgniter\Validation\Validation->run()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Videojuegos_controller->registrar_juego()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Videojuegos_controller))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-06-02 22:12:27 --> mysqli_sql_exception: Unknown column 'categoria_id' in 'where clause' in C:\xampp\htdocs\proyecto_firmapaz_gabriel\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\proyecto_firmapaz_gabriel\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT 1\nFROM `...', 0)
+#1 C:\xampp\htdocs\proyecto_firmapaz_gabriel\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 1\nFROM `...')
+#2 C:\xampp\htdocs\proyecto_firmapaz_gabriel\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 1\nFROM `...')
+#3 C:\xampp\htdocs\proyecto_firmapaz_gabriel\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\proyecto_firmapaz_gabriel\system\Validation\Rules.php(132): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\proyecto_firmapaz_gabriel\system\Validation\StrictRules\Rules.php(148): CodeIgniter\Validation\Rules->is_not_unique('0', 'categorias.cate...', Array)
+#6 C:\xampp\htdocs\proyecto_firmapaz_gabriel\system\Validation\Validation.php(337): CodeIgniter\Validation\StrictRules\Rules->is_not_unique('0', 'categorias.cate...', Array, NULL, 'categoria')
+#7 C:\xampp\htdocs\proyecto_firmapaz_gabriel\system\Validation\Validation.php(202): CodeIgniter\Validation\Validation->processRules('categoria', 'categoria', '0', Array, Array, 'categoria')
+#8 C:\xampp\htdocs\proyecto_firmapaz_gabriel\app\Controllers\Videojuegos_controller.php(58): CodeIgniter\Validation\Validation->run()
+#9 C:\xampp\htdocs\proyecto_firmapaz_gabriel\system\CodeIgniter.php(933): App\Controllers\Videojuegos_controller->registrar_juego()
+#10 C:\xampp\htdocs\proyecto_firmapaz_gabriel\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Videojuegos_controller))
+#11 C:\xampp\htdocs\proyecto_firmapaz_gabriel\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\proyecto_firmapaz_gabriel\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#13 C:\xampp\htdocs\proyecto_firmapaz_gabriel\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 C:\xampp\htdocs\proyecto_firmapaz_gabriel\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 {main}
+CRITICAL - 2025-06-02 22:12:27 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'categoria_id' in 'where clause'
+[Method: POST, Route: insertar_juego]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `categorias`
+WHERE `categoria_id` = :categoria_id:
+ LIMIT 1', [...], false)
+ 2 SYSTEMPATH\Validation\Rules.php(132): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\Validation\StrictRules\Rules.php(148): CodeIgniter\Validation\Rules->is_not_unique('0', 'categorias.categoria_id', [...])
+ 4 SYSTEMPATH\Validation\Validation.php(337): CodeIgniter\Validation\StrictRules\Rules->is_not_unique('0', 'categorias.categoria_id', [...], null, 'categoria')
+ 5 SYSTEMPATH\Validation\Validation.php(202): CodeIgniter\Validation\Validation->processRules('categoria', 'categoria', '0', [...], [...], 'categoria')
+ 6 APPPATH\Controllers\Videojuegos_controller.php(58): CodeIgniter\Validation\Validation->run()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Videojuegos_controller->registrar_juego()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Videojuegos_controller))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-02 22:12:27 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'categoria_id' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 1
+FROM `categorias`
+WHERE `categoria_id` = \'0\'
+ LIMIT 1')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 1
+FROM `categorias`
+WHERE `categoria_id` = \'0\'
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `categorias`
+WHERE `categoria_id` = :categoria_id:
+ LIMIT 1', [...], false)
+ 4 SYSTEMPATH\Validation\Rules.php(132): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\Validation\StrictRules\Rules.php(148): CodeIgniter\Validation\Rules->is_not_unique('0', 'categorias.categoria_id', [...])
+ 6 SYSTEMPATH\Validation\Validation.php(337): CodeIgniter\Validation\StrictRules\Rules->is_not_unique('0', 'categorias.categoria_id', [...], null, 'categoria')
+ 7 SYSTEMPATH\Validation\Validation.php(202): CodeIgniter\Validation\Validation->processRules('categoria', 'categoria', '0', [...], [...], 'categoria')
+ 8 APPPATH\Controllers\Videojuegos_controller.php(58): CodeIgniter\Validation\Validation->run()
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Videojuegos_controller->registrar_juego()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Videojuegos_controller))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-02 22:12:27 --> [Caused by] mysqli_sql_exception: Unknown column 'categoria_id' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT 1
+FROM `categorias`
+WHERE `categoria_id` = \'0\'
+ LIMIT 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 1
+FROM `categorias`
+WHERE `categoria_id` = \'0\'
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 1
+FROM `categorias`
+WHERE `categoria_id` = \'0\'
+ LIMIT 1')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `categorias`
+WHERE `categoria_id` = :categoria_id:
+ LIMIT 1', [...], false)
+ 5 SYSTEMPATH\Validation\Rules.php(132): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\Validation\StrictRules\Rules.php(148): CodeIgniter\Validation\Rules->is_not_unique('0', 'categorias.categoria_id', [...])
+ 7 SYSTEMPATH\Validation\Validation.php(337): CodeIgniter\Validation\StrictRules\Rules->is_not_unique('0', 'categorias.categoria_id', [...], null, 'categoria')
+ 8 SYSTEMPATH\Validation\Validation.php(202): CodeIgniter\Validation\Validation->processRules('categoria', 'categoria', '0', [...], [...], 'categoria')
+ 9 APPPATH\Controllers\Videojuegos_controller.php(58): CodeIgniter\Validation\Validation->run()
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Videojuegos_controller->registrar_juego()
+11 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Videojuegos_controller))
+12 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-06-02 22:13:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-06-02 22:13:53 --> ErrorException: Undefined variable $categoria
+[Method: POST, Route: insertar_juego]
+in APPPATH\Views\Backend\agregar_juego.php on line 46.
+ 1 APPPATH\Views\Backend\agregar_juego.php(46): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $categoria', 'C:\\xampp\\htdocs\\proyecto_firmapaz_gabriel\\app\\Views\\Backend\\agregar_juego.php', 46)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\proyecto_firmapaz_gabriel\\app\\Views\\Backend\\agregar_juego.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('Backend/agregar_juego', [...], true)
+ 5 APPPATH\Controllers\Videojuegos_controller.php(84): view('Backend/agregar_juego', [...], [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Videojuegos_controller->registrar_juego()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Videojuegos_controller))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-06-02 22:15:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-02 22:16:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

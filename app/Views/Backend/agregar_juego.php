@@ -43,7 +43,7 @@
                     <label for="categoria">Categoria del juego</label>
                     <?php 
                         $lista['0'] = 'Seleccione la categoria';
-                        foreach($categorias as $row){
+                        foreach($categoria as $row){
                             $categoria_id = $row['categoria_id'];
                             $categoria_desc = $row['categoria_desc'];
                             $lista[$categoria_id] = $categoria_desc;

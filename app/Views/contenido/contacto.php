@@ -60,7 +60,6 @@
         <?php echo form_input(['name' => 'consulta', 'id' => 'consulta', 'type' => 'text', 'class' => 'form-control', 'placeholder' => 'Ingrese consulta', 'value' => set_value('consulta')]); ?>
       </div>
       
-      </div>
       <div class="col-12 mt-4">
         <?php echo form_submit('Consulta', 'Enviar formulario', "class='btn btn-primary' type='submit'"); ?>
       </div>

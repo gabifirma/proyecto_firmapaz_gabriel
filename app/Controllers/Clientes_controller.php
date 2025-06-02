@@ -33,9 +33,11 @@ class Clientes_controller extends BaseController
             $persona = new Personas_model();
             $persona->insert($data);
 
-            return redirect()->to('/registrarse')->with('mensaje_consulta', '¡Registro exitoso!');
+            return redirect()->to('registrarse')->with('mensaje', '¡Registro exitoso!');
         } else {
-            return view('contenido/registrarse', ['validation' => $validation->getErrors()]);
+            $data['titulo'] = 'Registro';
+            $data['validation'] = $validation->getErrors();
+            return view('practico/header_view').view('contenido/nav_visitante').view('contenido/registrarse', ['validation' => $validation]).view('practico/footer_view');
         }
     }
 }
