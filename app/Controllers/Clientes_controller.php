@@ -18,6 +18,33 @@ class Clientes_controller extends BaseController
                 'pais' => 'required|max_length[100]',
                 'contraseña' => 'required|max_length[20]|min_length[8]',
                 'reContraseña' => 'required|matches[contraseña]',
+            ],
+
+            [   //Errores
+                'nombre' => [
+                    'required' => 'El nombre es requerido',
+                ],
+                'apellido' => [
+                    'required' => 'El apellido es requerido',
+                ],
+                'correo' => [
+                    'required' => 'El correo electrónico es obligatorio',
+                    'valid_email' => 'La dirección de correo debe ser válida'
+                ],
+                'pais' => [
+                    'required' => 'El pais es obligatorio',                   
+                    'max_length' => 'El pais debe tener como máximo 100 carácteres',
+                ],
+                'contraseña' => [
+                    'required' => 'La contraseña es requerida',
+                    'min_length' => 'La contraseña debe tener como mínimo 10 carácteres',
+                    'max_length' => 'La contraseña debe tener como máximo 200 carácteres',
+                ],
+                'reContraseña' => [
+                    'required' => 'Repetir contraseña es requerida',
+                    'min_length' => 'Repetir contraseña debe tener como mínimo 10 carácteres',
+                    'max_length' => 'Repetir contraseña debe tener como máximo 200 carácteres',
+                ],
             ]
         );
 

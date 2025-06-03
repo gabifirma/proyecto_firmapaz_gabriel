@@ -1,4 +1,4 @@
-<section class="container-fluid" id="contacto">
+<section class="formulario-registrarse row g-3 mt-5 needs-validation container-fluid" id="contacto">
     
         <h2><center><br>Registrarse</center></h2>
 
