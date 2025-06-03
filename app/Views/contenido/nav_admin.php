@@ -31,15 +31,17 @@
             </li>      
           </ul>
 
-          <div class="btn-group dropstart">
-            <button type="button" class="btn btn-outline-success dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-              <?= session()->get('nombre'); ?>
-            </button>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="<?php echo base_url(''); ?>" role="button">Perfil</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="<?php echo base_url('logout'); ?>" role="button">Cerrar Sesión</a></li>
-            </ul>
+          <div class="d-flex justify-content-end">
+            <div >
+              <button type="button" class="btn btn-outline-success dropdown-toggle "  data-bs-toggle="dropdown" aria-expanded="false">
+                <?= session()->get('nombre'); ?>
+              </button>
+              <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end w-100">
+                <li><a class="dropdown-item" href="<?php echo base_url(''); ?>" role="button">Perfil</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="<?php echo base_url('logout'); ?>" role="button">Cerrar Sesión</a></li>
+              </ul>
+            </div>
           </div>
 
         </div>
