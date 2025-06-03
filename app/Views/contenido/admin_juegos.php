@@ -10,7 +10,7 @@
                 <thead class="table-light">
                     <tr>
                         <th>Título</th>
-                        <th>Desarrolador</th>
+                        <th>Desarrollador</th>
                         <th>Distribuidor</th>
                         <th>Precio</th>
                         <th>Categoría</th>

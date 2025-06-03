@@ -53,7 +53,7 @@
                 </div>
                 <div class="form-group mt-3">
                     <label for="imagen">Imagen del juego</label>
-                    <?php echo form_input(['name' => 'imagen', 'id' => 'imagen', 'type' => 'file', 'value' => set_value('imagen')]); ?>
+                    <?php echo form_upload(['name' => 'imagen', 'id' => 'imagen', 'class' => 'form-control']); ?>
                 </div>
                 
                 <div class="form-group mt-3">

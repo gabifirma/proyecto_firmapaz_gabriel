@@ -20,18 +20,18 @@ class Videojuegos_controller extends BaseController{
         $validation->setRules(
             [
                 'titulo' => 'required|max_length[150]',
-                'decripcion' => 'required|max_length[450]',
+                'descripcion' => 'required|max_length[650]',
                 'desarrollador' => 'required|max_length[100]',
                 'distribuidor' => 'required|max_length[100]',
                 'precio' => 'required|max_length[30]',
                 'categoria' => 'required|is_not_unique[categorias.id_categoria]',
-                'imagen' => 'required|uploaded[imagen]|max_size[imagen, 4096]|is_image[imagen]',
+                'imagen' => 'uploaded[imagen]',
             ],
             [   //Errores
                 'titulo' => [
                     'required' => 'El título es obligatorio',
                 ],
-                'decripcion' => [
+                'descripcion' => [
                     'required' => 'La decripción es obligatoria',
                 ],
                 'desarrollador' => [
@@ -48,9 +48,7 @@ class Videojuegos_controller extends BaseController{
                     'is_not_unique' => 'Debe seleccionar la categoría',
                 ],
                 'imagen' => [
-                    'required' => 'La imagen es obligatoria',
                     'uploaded' => 'Debe seleccionar una imagen',
-                    'is_image' => 'Debe ser una imagen válida',
                 ],
             ]
         );
@@ -58,11 +56,11 @@ class Videojuegos_controller extends BaseController{
         if ( $validation->withRequest($request)->run() ) {
             $img = $this->request->getFile('imagen');
             $nom_aleatorio = $img->getRandomName();
-            $img->move(ROOTPATH.'public/assets/uploads', $nom_aleatorio);
+            $img->move(ROOTPATH.'assets/uploads', $nom_aleatorio);
 
             $data = [
                 'titulo_videojuego' => $request->getPost('titulo'),
-                'descripcion_videojuego' => $request->getPost('decripcion'),
+                'descripcion_videojuego' => $request->getPost('descripcion'),
                 'desarrollador_videojuego' => $request->getPost('desarrollador'),
                 'distribuidor_videojuego' => $request->getPost('distribuidor'),
                 'precio_videojuego' => $request->getPost('precio'),
@@ -85,4 +83,14 @@ class Videojuegos_controller extends BaseController{
         }
     }
 
+    public function gestionar_juegos(){
+        $juego_Model = new Videojuegos_model();
+        $categoria = new Categorias_model();
+
+        $data['juego'] = $juego_Model->join('videojuegos', 'videojuegos.id_categoria = videojuegos.id_categoria')->findAll();
+
+        $data['titulo'] = 'listar juego';
+
+        return view('practico/header_view').view('contenido/nav_admin').view('Backend/admin_juegos').view('practico/footer_view');
+    }
 }
