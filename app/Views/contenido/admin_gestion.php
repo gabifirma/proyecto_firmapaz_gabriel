@@ -14,6 +14,9 @@
                         <th>Distribuidor</th>
                         <th>Precio</th>
                         <th>Categoría</th>
+                        <th>Estado</th>
+                        <th>Editar</th>
+                        <th>Desactivar/Activar</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -25,6 +28,19 @@
                                 <td><?= esc($c['distribuidor_videojuego']) ?></td>                                
                                 <td>$<?= esc($c['precio_videojuego']) ?></td>
                                 <td><?= esc($c['categoria_id']) ?></td>
+                                <td><?= esc($c['estado_videojuego']) ?></td>
+                                <td> 
+                                    <form method="post" action=" base_url('editar_videojuego/' .$c['id_videojuego'])?>" onsubmit="return confirm('¿Estás seguro de editar el juego?');">
+                                        <?php csrf_field()?>
+                                        <button type="submit" class="btn btn-sm btn-success">Editar</button>
+                                    </form>
+                                </td>                        
+                                <td> 
+                                    <form method="post" action=" base_url('eliminar_videojuego/' .$c['id_videojuego'])?>" onsubmit="return confirm('¿Estás seguro de desactivar el juego?');">
+                                        <?php csrf_field()?>
+                                        <button type="submit" class="btn btn-sm btn-danger">Desactivar</button>
+                                    </form>
+                                </td>
                             </tr>
                         <?php endforeach; ?>
                     <?php else: ?>

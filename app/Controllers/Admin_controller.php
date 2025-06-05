@@ -53,4 +53,11 @@ class Admin_controller extends BaseController
 
         return view('practico/header_view').view('contenido/nav_admin').view('contenido/admin_ventas', ['ventas' => $ventas]).view('practico/footer_view');
     }
+
+    public function gestionar_juegos(){
+        $model = new Videojuegos_Model();
+        $juegos = $model->findAll();
+
+        return view('practico/header_view').view('contenido/nav_admin').view('contenido/admin_gestion', ['juegos' => $juegos]).view('practico/footer_view');
+    }
 }

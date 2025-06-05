@@ -83,14 +83,87 @@ class Videojuegos_controller extends BaseController{
         }
     }
 
-    public function gestionar_juegos(){
-        $juego_Model = new Videojuegos_model();
+    public function form_editar_juego(){
         $categoria = new Categorias_model();
+        $data['categoria'] = $categoria->findAll();
+        $data['titulo'] = 'editar videojuego';
+        return view('practico/header_view').view('contenido/nav_admin').view('Backend/editar_juego', $data).view('practico/footer_view');
+    }
 
-        $data['juego'] = $juego_Model->join('videojuegos', 'videojuegos.id_categoria = videojuegos.id_categoria')->findAll();
+    public function actualizar_videojuego(){
+        $validation = \Config\Services::validation();
+        $request = \Config\Services::request();
 
-        $data['titulo'] = 'listar juego';
+        $validation->setRules(
+            [
+                'titulo' => 'required|max_length[150]',
+                'descripcion' => 'max_length[650]',
+                'desarrollador' => 'max_length[100]',
+                'distribuidor' => 'max_length[100]',
+                'precio' => 'max_length[30]',
+                'categoria' => 'is_not_unique[categorias.id_categoria]',
+            ],
+            [   //Errores
+                'titulo' => [
+                    'max_length' => 'Se alcanzó el límite de carácteres',
+                    'required' => 'Es obligatorio el nombre',
+                ],
+                'descripcion' => [
+                    'max_length' => 'Se alcanzó el límite de carácteres',
+                ],
+                'desarrollador' => [
+                    'max_length' => 'Se alcanzó el límite de carácteres',
+                ],
+                'distribuidor' => [
+                    'max_length' => 'Se alcanzó el límite de carácteres',                   
+                ],
+                'precio' => [
+                    'max_length' => 'Se alcanzó el límite de carácteres',
+                ],
+                'categoria' => [
+                    'is_not_unique' => 'Debe seleccionar la categoría',
+                ],
+            ]
+        );
 
-        return view('practico/header_view').view('contenido/nav_admin').view('Backend/admin_juegos').view('practico/footer_view');
+        if ( $validation->withRequest($request)->run() ) {
+            $img = $this->request->getFile('imagen');
+            if ($img && $img->isValid() && !$img->hasMoved()) {
+                // Se subió una imagen 
+                $nom_aleatorio = $file->getRandomName();
+                $img->move(ROOTPATH.'assets/uploads', $nom_aleatorio);
+                $data= ['imagen_videojuego' => $nom_aleatorio];
+            }
+            if(!empty($this->$request->getPost('titulo'))){
+                $data= ['titulo_videojuego' => $request->getPost('titulo')];
+            }
+            if(!empty($this->$request->getPost('descripcion'))){
+                $data= ['descripcion_videojuego' => $request->getPost('descripcion')];
+            }
+            if(!empty($this->$request->getPost('desarrollador'))){
+                $data= ['desarrollador_videojuego' => $request->getPost('desarrollador')];
+            }
+            if(!empty($this->$request->getPost('distribuidor'))){
+                $data= ['distribuidor_videojuego' => $request->getPost('distribuidor')];
+            }
+            if(!empty($this->$request->getPost('precio'))){
+                $data= ['precio_videojuego' => $request->getPost('precio')];
+            }
+
+            $data = [         
+                'categoria_id' => $request->getPost('categoria'),       
+                'estado_videojuego' => 1,
+            ];
+
+            $juego = new Videojuegos_model();
+            $juego->insert($data);
+
+            return redirect() -> route('gestionar_juego')->with('mensaje', 'Se editó el juego exitosamente!');
+        }else{
+            $data['validation'] = $validation->getErrors();
+            $data['titulo'] = "Editar juego";
+
+            return view('practico/header_view').view('contenido/nav_admin').view('Backend/editar_juego', $data).view('practico/footer_view');
+        }
     }
 }
