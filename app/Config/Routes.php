@@ -38,7 +38,8 @@ $routes->post('insertar_juego', 'Videojuegos_controller::registrar_juego');
 
 $routes->get('gestionar_juego', 'Admin_controller::gestionar_juegos');
 
-$routes->post('editar_videojuego/(:num)', 'Videojuegos_controller::editar_videojuego/$1');
+$routes->get('editar_videojuego/(:num)', 'Videojuegos_controller::form_editar_videojuego/$1');
+$routes->post('actualizar_videojuego/(:num)', 'Videojuegos_controller::actualizar_videojuego/$1');
 
 $routes->post('eliminar_videojuego/(:num)', 'Videojuegos_controller::eliminar_videojuego/$1');
 
