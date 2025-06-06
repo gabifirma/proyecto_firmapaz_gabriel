@@ -97,6 +97,23 @@ class Videojuegos_controller extends BaseController{
         return view('practico/header_view').view('contenido/nav_admin').view('Backend/editar_juego', $data).view('practico/footer_view');
     }
 
+    public function cambiar_estado_videojuego($id){
+        $model = new Videojuegos_model();
+        $videojuego = $model->find($id);
+
+        if (!$videojuego) {
+            return redirect()->route('gestionar_juego')->with('mensaje', 'Videojuego no encontrado');
+        }
+
+        // Alternar estado (1 -> 0, 0 -> 1)
+        $nuevo_estado = ($videojuego['estado_videojuego'] == 1) ? 0 : 1;
+
+        $model->update($id, ['estado_videojuego' => $nuevo_estado]);
+
+        return redirect()->route('gestionar_juego')->with('mensaje', 'Estado del videojuego actualizado correctamente');
+    }
+
+
 
     public function actualizar_videojuego($id){
         $validation = \Config\Services::validation();
