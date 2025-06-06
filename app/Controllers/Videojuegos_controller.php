@@ -104,17 +104,16 @@ class Videojuegos_controller extends BaseController{
 
         $validation->setRules(
             [
-                'titulo' => 'required|max_length[150]',
+                'titulo' => 'max_length[150]',
                 'descripcion' => 'max_length[650]',
                 'desarrollador' => 'max_length[100]',
                 'distribuidor' => 'max_length[100]',
                 'precio' => 'max_length[30]',
-                'categoria' => 'is_not_unique[categorias.id_categoria]',
+                'categoria' => 'required|is_not_unique[categorias.id_categoria]',
             ],
             [   //Errores
                 'titulo' => [
                     'max_length' => 'Se alcanzó el límite de carácteres',
-                    'required' => 'Es obligatorio el nombre',
                 ],
                 'descripcion' => [
                     'max_length' => 'Se alcanzó el límite de carácteres',
@@ -129,6 +128,7 @@ class Videojuegos_controller extends BaseController{
                     'max_length' => 'Se alcanzó el límite de carácteres',
                 ],
                 'categoria' => [
+                    'required' => 'Es obligatoria la categoría',
                     'is_not_unique' => 'Debe seleccionar la categoría',
                 ],
             ]
@@ -160,6 +160,11 @@ class Videojuegos_controller extends BaseController{
 
             return redirect() -> route('gestionar_juego')->with('mensaje', 'Se editó el juego exitosamente!');
         }else{
+            $categoria = new Categorias_model();
+            $juego = new Videojuegos_model();
+
+            $data['videojuego'] = $juego->find($id);
+            $data['categoria'] = $categoria->findAll();
             $data['validation'] = $validation->getErrors();
             $data['titulo'] = "Editar juego";
 

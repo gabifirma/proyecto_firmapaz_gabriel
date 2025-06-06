@@ -14,7 +14,7 @@ class Clientes_controller extends BaseController
             [
                 'nombre' => 'required|max_length[150]',
                 'apellido' => 'required|max_length[150]',
-                'correo' => 'required|valid_email|is_unique[personas.correo]',
+                'correo' => 'required|valid_email|is_unique[personas.persona_mail]',
                 'pais' => 'required|max_length[100]',
                 'contraseña' => 'required|max_length[20]|min_length[8]',
                 'reContraseña' => 'required|matches[contraseña]',
@@ -50,11 +50,13 @@ class Clientes_controller extends BaseController
 
         if ($validation->withRequest($request)->run()) {
             $data = [
-                'nombre' => htmlspecialchars($request->getPost('nombre')),
-                'apellido' => htmlspecialchars($request->getPost('apellido')),
-                'correo' => htmlspecialchars($request->getPost('correo')),
-                'pais' => htmlspecialchars($request->getPost('pais')),
-                'contraseña' => password_hash($request->getPost('contraseña'), PASSWORD_DEFAULT),
+                'persona_nombre' => htmlspecialchars($request->getPost('nombre')),
+                'persona_apellido' => htmlspecialchars($request->getPost('apellido')),
+                'persona_mail' => htmlspecialchars($request->getPost('correo')),
+                'persona_pais' => htmlspecialchars($request->getPost('pais')),
+                'persona_password' => password_hash($request->getPost('contraseña'), PASSWORD_DEFAULT),
+                'perfil_id' => 2,
+                'persona_estado' => 1,
             ];
 
             $persona = new Personas_model();
