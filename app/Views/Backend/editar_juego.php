@@ -18,9 +18,7 @@
                 </div>
             <?php endif; ?>
 
-            <?php echo form_open_multipart('actualizar_videojuego')?>
-
-                <input type="hidden" name="id_videojuego" value="<?= esc($videojuego['id_videojuego']) ?>">
+            <?php echo form_open_multipart('actualizar_videojuego/'.$videojuego['id_videojuego'])?>
 
                 <div class="form-group mt-3">
                     <label for="titulo">Título del juego</label>
