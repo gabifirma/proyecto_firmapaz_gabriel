@@ -24,27 +24,27 @@
 
                 <div class="form-group mt-3">
                     <label for="titulo">Título del juego</label>
-                    <?php echo form_input(['name' => 'titulo', 'id' => 'titulo', 'type' => 'text', 'class' => 'form-control', 'placeholder' => 'Ingrese título del juego', 'value' => set_value('titulo')]); ?>
+                    <?php echo form_input(['name' => 'titulo', 'id' => 'titulo', 'type' => 'text', 'class' => 'form-control', 'placeholder' => 'Ingrese título del juego', 'value' => $videojuego["titulo_videojuego"] ]);?>
                 </div>
 
                 <div class="form-group mt-3">
                     <label for="descripcion">Descripción del juego</label>
-                    <?php echo form_input(['name' => 'descripcion', 'id' => 'descripcion', 'type' => 'text', 'class' => 'form-control', 'placeholder' => 'Ingrese la descripción del juego', 'value' => set_value('descripcion')]); ?>
+                    <?php echo form_input(['name' => 'descripcion', 'id' => 'descripcion', 'type' => 'text', 'class' => 'form-control', 'placeholder' => 'Ingrese la descripción del juego', 'value' => $videojuego["descripcion_videojuego"] ]); ?>
                 </div>
 
                 <div class="form-group mt-3">
                     <label for="desarrollador">Desarrollador del juego</label>
-                    <?php echo form_input(['name' => 'desarrollador', 'id' => 'desarrollador', 'type' => 'text', 'class' => 'form-control', 'placeholder' => 'Ingrese el desarrollador del juego', 'value' => set_value('desarrollador')]); ?>
+                    <?php echo form_input(['name' => 'desarrollador', 'id' => 'desarrollador', 'type' => 'text', 'class' => 'form-control', 'placeholder' => 'Ingrese el desarrollador del juego', 'value' => $videojuego["desarrollador_videojuego"] ]); ?>
                 </div>
 
                 <div class="form-group mt-3">
                     <label for="distribuidor">Distribuidor del juego</label>
-                    <?php echo form_input(['name' => 'distribuidor', 'id' => 'distribuidor', 'type' => 'text', 'class' => 'form-control', 'placeholder' => 'Ingrese el distribuidor del juego', 'value' => set_value('distribuidor')]); ?>
+                    <?php echo form_input(['name' => 'distribuidor', 'id' => 'distribuidor', 'type' => 'text', 'class' => 'form-control', 'placeholder' => 'Ingrese el distribuidor del juego', 'value' => $videojuego["distribuidor_videojuego"] ]); ?>
                 </div>
 
                 <div class="form-group mt-3">
                     <label for="precio">Precio del juego ($)</label>
-                    <?php echo form_input(['name' => 'precio', 'id' => 'precio', 'type' => 'text', 'class' => 'form-control', 'placeholder' => 'Ingrese el precio del juego', 'value' => set_value('precio')]); ?>
+                    <?php echo form_input(['name' => 'precio', 'id' => 'precio', 'type' => 'text', 'class' => 'form-control', 'placeholder' => 'Ingrese el precio del juego', 'value' => $videojuego["precio_videojuego"] ]); ?>
                 </div>
 
                 <div class="form-group mt-3">
