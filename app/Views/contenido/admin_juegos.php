@@ -24,7 +24,7 @@
                                 <td><?= esc($c['desarrollador_videojuego']) ?></td>
                                 <td><?= esc($c['distribuidor_videojuego']) ?></td>                                
                                 <td>$<?= esc($c['precio_videojuego']) ?></td>
-                                <td><?= esc($c['categoria_id']) ?></td>
+                                <td><?= esc($c['categoria_descripcion'] ?? 'Sin categoría') ?></td>
                             </tr>
                         <?php endforeach; ?>
                     <?php else: ?>

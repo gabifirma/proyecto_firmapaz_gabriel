@@ -1,3 +1,4 @@
+    
     <div class="container mt-5">
         <h1 class="mb-4">Lista de Juegos</h1>
 
@@ -32,7 +33,7 @@
                                 <td><?= esc($c['desarrollador_videojuego']) ?></td>
                                 <td><?= esc($c['distribuidor_videojuego']) ?></td>                                
                                 <td>$<?= esc($c['precio_videojuego']) ?></td>
-                                <td><?= esc($c['categoria_id']) ?></td>
+                                <td><?= esc($c['categoria_descripcion'] ?? 'Sin categoría') ?></td> 
                                 <td> 
                                     <form method="get" action=" <?= base_url('editar_videojuego/' .$c['id_videojuego'])?>">
                                         <?php csrf_field()?>
@@ -40,11 +41,17 @@
                                     </form>
                                 </td>                        
                                 <td> 
-                                    <form method="post" action="<?= base_url('eliminar_videojuego/' .$c['id_videojuego'])?>" onsubmit="return confirm('¿Estás seguro de desactivar el juego?');">
-                                        <?php csrf_field()?>
-                                        <button type="submit" class="btn btn-sm btn-danger">Desactivar</button>
+                                    <form method="post" action="<?= base_url('cambiar_estado_videojuego/' .$c['id_videojuego'])?>" 
+                                        onsubmit="return confirm('¿Estás seguro de cambiar el estado del juego?');">
+                                        <?= csrf_field() ?>
+                                        <?php if ($c['estado_videojuego'] == 1): ?>
+                                            <button type="submit" class="btn btn-sm btn-danger">Desactivar</button>
+                                        <?php else: ?>
+                                            <button type="submit" class="btn btn-sm btn-success">Activar</button>
+                                        <?php endif; ?>
                                     </form>
                                 </td>
+
                             </tr>
                         <?php endforeach; ?>
                     <?php else: ?>
@@ -56,3 +63,13 @@
             </table>
         </div>
     </div>
+
+
+
+
+
+
+
+
+
+

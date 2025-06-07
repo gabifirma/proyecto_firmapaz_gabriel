@@ -5,6 +5,9 @@ use App\Models\Personas_Model;
 use App\Models\Videojuegos_Model;
 use App\Models\Ventas_Model;
 
+use App\Models\Categorias_Model; 
+
+
 
 class Admin_controller extends BaseController
 {
@@ -33,13 +36,32 @@ class Admin_controller extends BaseController
         $model->delete($id);
         return redirect()->route('listar_usuarios');
     }
-
+/*
     public function listar_videojuegos(){
         $model = new Videojuegos_Model();
         $juegos = $model->findAll();
 
         return view('practico/header_view').view('contenido/nav_admin').view('contenido/admin_juegos', ['juegos' => $juegos]).view('practico/footer_view');
     }
+*/
+    public function listar_videojuegos(){
+    $model = new Videojuegos_Model();
+    $categoriasModel = new Categorias_Model(); // Agregar el modelo de categorías
+
+    $juegos = $model->findAll();
+
+    // Obtener nombres de categorías
+    foreach ($juegos as &$juego) {
+        $categoria = $categoriasModel->find($juego['categoria_id']);
+        $juego['categoria_descripcion'] = $categoria ? $categoria['categoria_descripcion'] : 'Sin categoría';
+    }
+
+    return view('practico/header_view')
+        .view('contenido/nav_admin')
+        .view('contenido/admin_juegos', ['juegos' => $juegos])
+        .view('practico/footer_view');
+    }
+
 
     public function eliminar_videojuego($id){
         $model = new Personas_Model();
@@ -53,11 +75,39 @@ class Admin_controller extends BaseController
 
         return view('practico/header_view').view('contenido/nav_admin').view('contenido/admin_ventas', ['ventas' => $ventas]).view('practico/footer_view');
     }
-
+/*
     public function gestionar_juegos(){
         $model = new Videojuegos_Model();
         $juegos = $model->findAll();
 
         return view('practico/header_view').view('contenido/nav_admin').view('contenido/admin_gestion', ['juegos' => $juegos]).view('practico/footer_view');
     }
+*/
+
+    public function gestionar_juegos(){
+    $model = new Videojuegos_Model();
+    $categoriasModel = new Categorias_Model(); // Usar el modelo de categorías
+
+    $juegos = $model->findAll();
+
+    // Obtener nombres de categorías
+    foreach ($juegos as &$juego) {
+        $categoria = $categoriasModel->find($juego['categoria_id']);
+
+        // Verificar si la categoría existe y tiene el campo correcto
+        if ($categoria && array_key_exists('categoria_descripcion', $categoria)) {
+            $juego['categoria_descripcion'] = $categoria['categoria_descripcion'];
+        } else {
+            $juego['categoria_descripcion'] = 'Sin categoría';
+        }
+    }
+
+    return view('practico/header_view')
+        .view('contenido/nav_admin')
+        .view('contenido/admin_gestion', ['juegos' => $juegos])
+        .view('practico/footer_view');
+    }
+
+
+
 }
