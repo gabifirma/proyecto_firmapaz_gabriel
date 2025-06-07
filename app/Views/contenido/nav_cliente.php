@@ -34,7 +34,7 @@
                 <?= session()->get('nombre'); ?>
               </button>
               <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end w-100">
-                <li><a class="dropdown-item" href="<?php echo base_url(''); ?>" role="button">Ver carrito</a></li>
+                <li><a class="dropdown-item" href="<?php echo base_url('ver_carrito'); ?>" role="button">Ver carrito</a></li>
                 <li><hr class="dropdown-divider"></li>
                 <li><a class="dropdown-item" href="<?php echo base_url(''); ?>" role="button">Perfil</a></li>
                 <li><hr class="dropdown-divider"></li>

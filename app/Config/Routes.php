@@ -42,6 +42,7 @@ $routes->get('editar_videojuego/(:num)', 'Videojuegos_controller::form_editar_vi
 $routes->post('actualizar_videojuego/(:num)', 'Videojuegos_controller::actualizar_videojuego/$1');
 
 $routes->post('eliminar_videojuego/(:num)', 'Videojuegos_controller::eliminar_videojuego/$1');
+$routes->post('cambiar_estado_videojuego/(:num)', 'Videojuegos_controller::cambiar_estado_videojuego/$1');
 
 $routes->get('logout', 'Usuarios_controller::cerrar_sesion');
 
@@ -51,10 +52,4 @@ $routes->post('add_cart', 'Carrito_controller::agregar_carrito');
 $routes->get('eliminar_item/(:any)', 'Carrito_controller::borrar/$1');
 $routes->get('vaciar_carrito/(:any)', 'Carrito_controller::borrar/$1');
 
-
-
-
-
-
-$routes->post('cambiar_estado_videojuego/(:num)', 'Videojuegos_controller::cambiar_estado_videojuego/$1');
 

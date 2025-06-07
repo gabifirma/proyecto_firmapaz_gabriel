@@ -1,5 +1,5 @@
     <div class="container mt-5">
-        <h1 class="mb-4">Lista de Juegos</h1>
+        <h1 class="mb-4">Lista de Ventas</h1>
 
         <?php if (session()->getFlashdata('success')): ?>
             <div class="alert alert-success"><?= session()->getFlashdata('success') ?></div>
@@ -24,13 +24,7 @@
                                 <td><?= esc($c['desarrollador_videojuego']) ?></td>
                                 <td><?= esc($c['distribuidor_videojuego']) ?></td>                                
                                 <td>$<?= esc($c['precio_videojuego']) ?></td>
-                                <td><?= esc($c['categoria_id']) ?></td>                           
-                                <!-- <td> 
-                                    <form method="post" action="  /*base_url('eliminar_usuario/' .$c['id_persona']) */?>" onsubmit="return confirm('¿Estás seguro de eliminar esta consulta?');">
-                                        <?php/* csrf_field() */?>
-                                        <button type="submit" class="btn btn-sm btn-danger">Eliminar</button>
-                                    </form>
-                                </td>-->
+                                <td><?= esc($c['categoria_id']) ?></td>
                             </tr>
                         <?php endforeach; ?>
                     <?php else: ?>
