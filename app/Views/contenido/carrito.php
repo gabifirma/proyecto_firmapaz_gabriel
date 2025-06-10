@@ -2,7 +2,7 @@
 
 <div class="container mt-5">
     <h1 class="mb-4">Carrito de compras</h1>
-    <a href="productos" class="btn btn-success" role="button">Continuar comprando</a>
+    <a href="<?php echo base_url('galeria') ?>" class="btn btn-success" role="button">Continuar comprando</a>
 
     <?php if ($cart->contents() == NULL): ?>
         <h2 class="text-center alert alert-danger">Carrito vacío</h2>

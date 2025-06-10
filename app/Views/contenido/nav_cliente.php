@@ -2,7 +2,7 @@
     <nav class="navbar navbar-expand-lg">
       <div class="container-fluid">
          <!-- Ícono y Nombre -->
-         <a class="navbar-brand" href="<?php echo base_url('/'); ?>">
+         <a class="navbar-brand" href="#">
             <img src="assets/img/icono.png" alt="FCBox" width="40" height="40">
             <span class="brand-text">FCBox</span>
         </a>
@@ -12,19 +12,16 @@
         <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link" href="<?php echo base_url('/'); ?>">Principal</a>
+              <a class="nav-link" href="<?php echo base_url('comercializacion_cliente'); ?>">Comercializacion</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="<?php echo base_url('comercializacion'); ?>">Comercializacion</a>
+              <a class="nav-link" href="<?php echo base_url('quienes_somos_cliente'); ?>">Quienes somos</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="<?php echo base_url('quienes_somos'); ?>">Quienes somos</a>
+              <a class="nav-link" href="<?php echo base_url('terminos_cliente'); ?>">Términos</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="<?php echo base_url('terminos'); ?>">Términos</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="<?php echo base_url('contacto'); ?>">Contacto</a>
+              <a class="nav-link" href="<?php echo base_url('contacto_cliente'); ?>">Contacto</a>
             </li>            
           </ul>
 

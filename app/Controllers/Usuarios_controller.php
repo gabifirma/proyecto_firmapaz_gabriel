@@ -16,7 +16,7 @@ class Usuarios_controller extends BaseController
                 'apellido' => 'required|max_length[150]',
                 'correo' => 'required|valid_email',
                 'motivo' => 'required|max_length[100]',
-                'consulta' => 'required|max_length[250]|min_length[100]',
+                'consulta' => 'required|max_length[200]|min_length[10]',
             ],
             [   //Errores
                 'nombre' => [
@@ -47,17 +47,34 @@ class Usuarios_controller extends BaseController
                 'apellido_mensaje' => $request->getPost('apellido'),
                 'correo_mensaje' => $request->getPost('correo'),
                 'motivo_mensaje' => $request->getPost('motivo'),
-                'consulta_mensaje' => $request->getPost('consulta'),
+                'mensaje_mensaje' => $request->getPost('consulta'),
             ];
 
             $consulta = new Consultas_model();
             $consulta->insert($data);
 
-            return redirect() -> route('contacto')->with('mensaje_consulta', 'Su consulta se envió exitosamente!');
+            if (session('login')) {
+                return redirect()->route('contacto_cliente')->with('mensaje_consulta', 'Su consulta se envió exitosamente!');
+            } else {
+                return redirect()->route('contacto')->with('mensaje_consulta', 'Su consulta se envió exitosamente!');
+            }
+
         }else{
             $data['titulo'] = 'Contacto';
             $data['validation'] = $validation->getErrors();
-            return view('practico/header_view').view('contenido/nav_visitante').view('contenido/contacto', ['validation' => $validation]).view('practico/footer_view');
+
+            if(session('login')){
+                return view('practico/header_view')
+                .view('contenido/nav_cliente')
+                .view('contenido/contacto', ['validation' => $validation])
+                .view('practico/footer_view');
+            }else{
+                return view('practico/header_view')
+                .view('contenido/nav_visitante')
+                .view('contenido/contacto', ['validation' => $validation])
+                .view('practico/footer_view');
+            }
+            
         }
     }
 
