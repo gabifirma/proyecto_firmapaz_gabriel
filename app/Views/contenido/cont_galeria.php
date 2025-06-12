@@ -1,4 +1,13 @@
   <section class="mt-4 container">
+
+    <?php if(session('login')){
+      echo form_open('add_cart');
+        echo form_hidden('id', $row['id_videojuego']);
+        echo form_hidden('titulo', $row['titulo_videojuego']);
+        echo form_hidden('precio', $row['precio_videojuego']);
+        echo form_submit('comprar', 'Agrgar al carrito', "class='btn btn-success'");
+        echo form_close();
+    } ?>
     
     <div class="row row-cols-1 row-cols-md-3 g-4">
       <div class="col">

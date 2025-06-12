@@ -1,5 +1,5 @@
     <div class="container mt-5">
-        <h1 class="mb-4">Lista de Clientes</h1>
+        <h1 class="mb-4">Lista de Usuarios</h1>
 
         <?php if (session()->getFlashdata('success')): ?>
             <div class="alert alert-success"><?= session()->getFlashdata('success') ?></div>

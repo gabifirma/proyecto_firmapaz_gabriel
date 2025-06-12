@@ -69,4 +69,20 @@ class Clientes_controller extends BaseController
             return view('practico/header_view').view('contenido/nav_visitante').view('contenido/registrarse', ['validation' => $validation]).view('practico/footer_view');
         }
     }
+
+    public function comercializacion_cliente(){
+        return view('practico/header_view').view('contenido/nav_cliente').view('contenido/cont_comercializacion').view('practico/footer_view');
+    }
+
+    public function contacto_cliente(){
+        return view('practico/header_view').view('contenido/nav_cliente').view('contenido/contacto').view('practico/footer_view');
+    }
+
+    public function quienes_somos_cliente(){
+        return view('practico/header_view').view('contenido/nav_cliente').view('contenido/quienes_somos').view('practico/footer_view');
+    }
+
+    public function terminos_cliente(){
+        return view('practico/header_view').view('contenido/nav_cliente').view('contenido/terminos_y_condiciones').view('practico/footer_view');
+    }
 }
