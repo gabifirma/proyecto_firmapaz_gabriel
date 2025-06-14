@@ -35,6 +35,7 @@
                             <td><?php echo anchor('eliminar_item/' .$item['rowid'], 'Eliminar');?></td>
                         </tr>
                     <?php endforeach; ?>
+                    <?php session()->set('total', $total); ?>
                     <tr>
                         <td>Total Compra: $<?php echo $total; ?></td>
                         <td><a href="<?php echo base_url('vaciar_carrito/all'); ?>" class="btn btn-success" role="button">Vaciar carrito</a></td>

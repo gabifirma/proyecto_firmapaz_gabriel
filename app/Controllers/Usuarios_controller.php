@@ -116,14 +116,14 @@ class Usuarios_controller extends BaseController
 
         if($user && password_verify($pass, $user['persona_password'])){
             $data = [
-                'id' => $user['id_persona'],
+                'id' => $user['id'],
                 'nombre' => $user['persona_nombre'],
                 'apellido' => $user['persona_apellido'],
-                'perfil' => $user['perfil_id'],
+                'perfil' => $user['id_perfil'],
                 'login' => TRUE,
             ];
             $session->set($data);
-            switch($user['perfil_id']){
+            switch($user['id_perfil']){
                 case '1': return redirect()->route('user_admin');
                 break;
                 case '2': return redirect()->route('user_cliente');

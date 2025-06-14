@@ -60,6 +60,7 @@ class Carrito_controller extends BaseController{
         $data = array(
             'persona_id' => session('id'),
             'fecha_venta' => date('Y-m-d'),
+            'total_venta' => session('total'),
         );
 
         $venta_id = $venta->insert($data);

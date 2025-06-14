@@ -11,20 +11,23 @@
                     <tr>
                         <th>Cliente</th>
                         <th>Fecha de Venta</th>
-                        <th>Juego</th>
-                        <th>Precio ($)</th>
-                        <th>Categoría</th>
+                        <th>Total ($)</th>
+                        <th>Acción</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php if (!empty($ventas)): ?>
                         <?php foreach ($ventas as $c): ?>
                             <tr>
-                                <td><?= esc($c['titulo_videojuego']) ?></td>
-                                <td><?= esc($c['desarrollador_videojuego']) ?></td>
-                                <td><?= esc($c['distribuidor_videojuego']) ?></td>                                
-                                <td>$<?= esc($c['precio_videojuego']) ?></td>
-                                <td><?= esc($c['categoria_id']) ?></td>
+                                <td><?= esc($c['id_persona']) ?></td>
+                                <td><?= esc($c['fecha_venta']) ?></td>
+                                <td>$<?= esc($c['total_venta']) ?></td>                                
+                                <td>
+                                    <form method="get" action="<?= base_url('' .$c['id_venta']) ?>">
+                                        <?= csrf_field() ?>
+                                        <button type="submit" class="btn btn-sm btn-danger">Detalle de Venta</button>
+                                    </form>
+                                </td>
                             </tr>
                         <?php endforeach; ?>
                     <?php else: ?>

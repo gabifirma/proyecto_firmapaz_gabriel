@@ -14,7 +14,7 @@ class Videojuegos_Model extends Model
     protected $returnType     = 'array';
     protected $useSoftDeletes = false;
 
-    protected $allowedFields = ['titulo_videojuego', 'descripcion_videojuego', 'desarrollador_videojuego', 'distribuidor_videojuego','precio_videojuego', 'imagen_videojuego', 'categoria_id','estado_videojuego', 'videojuego_stock'];
+    protected $allowedFields = ['titulo_videojuego', 'descripcion_videojuego', 'desarrollador_videojuego', 'distribuidor_videojuego','precio_videojuego', 'imagen_videojuego', 'id_categoria','estado_videojuego', 'videojuego_stock'];
 
     protected bool $allowEmptyInserts = false;
     protected bool $updateOnlyChanged = true;

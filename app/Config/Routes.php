@@ -36,6 +36,7 @@ $routes->get('listar_usuarios', 'Admin_controller::listar_usuarios');
 $routes->post('eliminar_usuario/(:num)', 'Admin_controller::eliminar_usuario/$1');
 $routes->get('listar_videojuegos', 'Admin_controller::listar_videojuegos');
 $routes->get('listar_ventas', 'Admin_controller::listar_ventas');
+$routes->get('detalle_venta', 'Admin_controller::detalle_venta');
 
 
 $routes->get('registrarse', 'Home::registrarse');
@@ -56,5 +57,6 @@ $routes->get('ver_carrito', 'Carrito_controller::ver_carrito');
 $routes->post('add_cart', 'Carrito_controller::agregar_carrito');
 $routes->get('eliminar_item/(:any)', 'Carrito_controller::borrar/$1');
 $routes->get('vaciar_carrito/(:any)', 'Carrito_controller::vaciar_carrito');
+$routes->get('ventas', 'Carrito_controller::guardar_venta');
 
 

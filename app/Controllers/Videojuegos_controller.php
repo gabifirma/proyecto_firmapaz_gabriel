@@ -24,7 +24,7 @@ class Videojuegos_controller extends BaseController{
                 'desarrollador' => 'required|max_length[100]',
                 'distribuidor' => 'required|max_length[100]',
                 'precio' => 'required|max_length[30]',
-                'categoria' => 'required|is_not_unique[categorias.id_categoria]',
+                'categoria' => 'required|is_not_unique[categorias.id]',
                 'imagen' => 'uploaded[imagen]',
             ],
             [   //Errores
@@ -57,7 +57,7 @@ class Videojuegos_controller extends BaseController{
             $img = $this->request->getFile('imagen');
             $nom_aleatorio = $img->getRandomName();
             $img->move(ROOTPATH.'assets/uploads', $nom_aleatorio);
-
+ 
             $data = [
                 'titulo_videojuego' => $request->getPost('titulo'),
                 'descripcion_videojuego' => $request->getPost('descripcion'),
@@ -65,7 +65,7 @@ class Videojuegos_controller extends BaseController{
                 'distribuidor_videojuego' => $request->getPost('distribuidor'),
                 'precio_videojuego' => $request->getPost('precio'),
                 'imagen_videojuego' => $nom_aleatorio,
-                'categoria_id' => $request->getPost('categoria'),
+                'id_categoria' => $request->getPost('categoria'),
                 'estado_videojuego' => 1,
             ];
 
@@ -126,7 +126,7 @@ class Videojuegos_controller extends BaseController{
                 'desarrollador' => 'max_length[100]',
                 'distribuidor' => 'max_length[100]',
                 'precio' => 'max_length[30]',
-                'categoria' => 'required|is_not_unique[categorias.id_categoria]',
+                'categoria' => 'required|is_not_unique[categorias.id]',
             ],
             [   //Errores
                 'titulo' => [
@@ -169,7 +169,7 @@ class Videojuegos_controller extends BaseController{
             $data['desarrollador_videojuego'] = $request->getPost('desarrollador') ?: $videojuego['desarrollador_videojuego'];
             $data['distribuidor_videojuego'] = $request->getPost('distribuidor') ?: $videojuego['distribuidor_videojuego'];
             $data['precio_videojuego'] = $request->getPost('precio') !== '' ? $request->getPost('precio') : $videojuego['precio_videojuego'];
-            $data['categoria_id'] = $request->getPost('categoria') ?: $videojuego['categoria_id'];
+            $data['id_categoria'] = $request->getPost('categoria') ?: $videojuego['id_categoria'];
             $data['estado_videojuego'] = 1;
 
             

@@ -25,13 +25,13 @@
                                 <td><?= esc($c['persona_apellido']) ?></td>
                                 <td><?= esc($c['persona_mail']) ?></td>                                
                                 <td><?= esc($c['persona_pais']) ?></td>
-                                <?php if ($c['perfil_id'] == 1): ?>
+                                <?php if ($c['id_perfil'] == 1): ?>
                                     <td><?php echo 'Administrador' ?></td>
                                 <?php else: ?>
                                     <td><?php echo 'Cliente' ?></td>
                                 <?php endif; ?>                              
                                 <td>
-                                    <form method="post" action="<?= base_url('eliminar_usuario/' .$c['id_persona']) ?>" onsubmit="return confirm('¿Estás seguro de eliminar esta consulta?');">
+                                    <form method="post" action="<?= base_url('eliminar_usuario/' .$c['id']) ?>" onsubmit="return confirm('¿Estás seguro de eliminar esta consulta?');">
                                         <?= csrf_field() ?>
                                         <button type="submit" class="btn btn-sm btn-danger">Eliminar</button>
                                     </form>

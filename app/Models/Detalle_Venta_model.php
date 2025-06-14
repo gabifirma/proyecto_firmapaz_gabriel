@@ -7,7 +7,7 @@ use CodeIgniter\Model;
 class Detalle_Venta_Model extends Model
 {
     protected $table      = 'detalle_venta';
-    protected $primaryKey = 'id_detalle_venta';
+    protected $primaryKey = 'id';
 
     protected $useAutoIncrement = true;
 

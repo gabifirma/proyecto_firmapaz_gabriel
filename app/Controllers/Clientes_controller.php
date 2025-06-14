@@ -5,8 +5,7 @@ use App\Models\Personas_model;
 
 class Clientes_controller extends BaseController
 {
-    public function registrar_usuario()
-    {
+    public function registrar_usuario(){
         $validation = \Config\Services::validation();
         $request = \Config\Services::request();
 
@@ -55,7 +54,7 @@ class Clientes_controller extends BaseController
                 'persona_mail' => htmlspecialchars($request->getPost('correo')),
                 'persona_pais' => htmlspecialchars($request->getPost('pais')),
                 'persona_password' => password_hash($request->getPost('contraseña'), PASSWORD_DEFAULT),
-                'perfil_id' => 2,
+                'id_perfil' => 2,
                 'persona_estado' => 1,
             ];
 

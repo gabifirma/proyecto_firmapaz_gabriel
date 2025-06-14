@@ -44,7 +44,7 @@
                     <?php 
                         $lista['0'] = 'Seleccione la categoria';
                         foreach($categoria as $row){
-                            $categoria_id = $row['id_categoria'];
+                            $categoria_id = $row['id'];
                             $categoria_desc = $row['categoria_descripcion'];
                             $lista[$categoria_id] = $categoria_desc;
                         }
