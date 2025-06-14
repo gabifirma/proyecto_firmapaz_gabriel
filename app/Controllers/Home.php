@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\Consulta_model;
+use App\Models\Videojuegos_Model;
 
 class Home extends BaseController
 {
@@ -22,7 +23,10 @@ class Home extends BaseController
         return view('practico/header_view').view('contenido/nav_visitante').view('contenido/terminos_y_condiciones').view('practico/footer_view');
     }
     public function galeria(){
-        return view('practico/header_view').view('contenido/nav_visitante').view('contenido/cont_galeria').view('practico/footer_view');
+        $modelo = new Videojuegos_Model();
+        $data['videojuegos'] = $modelo->findAll(); // Trae todos los registros
+
+        return view('practico/header_view').view('contenido/nav_visitante').view('contenido/cont_galeria', $data).view('practico/footer_view');
     }
     public function login(){
         return view('practico/header_view').view('contenido/nav_visitante').view('contenido/login').view('practico/footer_view');

@@ -15,6 +15,9 @@
               <a class="nav-link" href="<?php echo base_url('comercializacion_cliente'); ?>">Comercializacion</a>
             </li>
             <li class="nav-item">
+              <a class="nav-link" href="<?php echo base_url('catalogo_cliente'); ?>">Catálogo</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" href="<?php echo base_url('quienes_somos_cliente'); ?>">Quienes somos</a>
             </li>
             <li class="nav-item">

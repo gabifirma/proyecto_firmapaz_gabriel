@@ -188,4 +188,11 @@ class Videojuegos_controller extends BaseController{
             return view('practico/header_view').view('contenido/nav_admin').view('Backend/editar_juego', $data).view('practico/footer_view');
         }
     }
+
+    public function catalogo_cliente(){
+        $modelo = new Videojuegos_Model();
+        $data['videojuegos'] = $modelo->findAll(); // Trae todos los registros
+
+        return view('practico/header_view').view('contenido/nav_cliente').view('contenido/cont_galeria', $data).view('practico/footer_view');
+    }
 }
