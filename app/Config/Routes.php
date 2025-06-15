@@ -36,7 +36,7 @@ $routes->get('listar_usuarios', 'Admin_controller::listar_usuarios');
 $routes->post('eliminar_usuario/(:num)', 'Admin_controller::eliminar_usuario/$1');
 $routes->get('listar_videojuegos', 'Admin_controller::listar_videojuegos');
 $routes->get('listar_ventas', 'Admin_controller::listar_ventas');
-$routes->get('detalle_venta', 'Admin_controller::detalle_venta');
+$routes->get('detalle_venta/(:num)', 'Admin_controller::detalle_venta/$1');
 
 
 $routes->get('registrarse', 'Home::registrarse');

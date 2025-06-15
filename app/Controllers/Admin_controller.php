@@ -72,13 +72,16 @@ class Admin_controller extends BaseController
         .view('practico/footer_view');
     }
 
-    public function detalle_venta(){
+    public function detalle_venta($id){
         $model = new Detalle_Venta_Model();
-        $dventas = $model->findAll();
+
+        if($model['id_venta'] == $id){
+            $dventas = $model->findAll();
+        }
 
         return view('practico/header_view')
         .view('contenido/nav_admin')
-        .view('contenido/admin_ventas', ['ventas' => $ventas])
+        .view('contenido/admin_detalle_venta', ['dventas' => $dventas])
         .view('practico/footer_view');
     }
 

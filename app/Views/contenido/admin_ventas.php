@@ -23,9 +23,9 @@
                                 <td><?= esc($c['fecha_venta']) ?></td>
                                 <td>$<?= esc($c['total_venta']) ?></td>                                
                                 <td>
-                                    <form method="get" action="<?= base_url('' .$c['id_venta']) ?>">
+                                    <form method="get" action="<?= base_url('detalle_venta/' .$c['id_venta']) ?>">
                                         <?= csrf_field() ?>
-                                        <button type="submit" class="btn btn-sm btn-danger">Detalle de Venta</button>
+                                        <button type="submit" class="btn btn-sm btn-danger">Detalles de Venta</button>
                                     </form>
                                 </td>
                             </tr>
