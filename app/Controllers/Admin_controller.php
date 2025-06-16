@@ -48,7 +48,7 @@ class Admin_controller extends BaseController
             $categoria = $categoriasModel->find($juego['id_categoria']); 
             $juego['categoria_descripcion'] = $categoria ? $categoria['categoria_descripcion'] : 'Sin categoría';
         }
-
+ 
         return view('practico/header_view')
             .view('contenido/nav_admin')
             .view('contenido/admin_juegos', ['juegos' => $juegos])
@@ -63,8 +63,16 @@ class Admin_controller extends BaseController
     }
 
     public function listar_ventas(){
-        $model = new Ventas_Model();
-        $ventas = $model->findAll();
+        $ventasModel = new Ventas_Model();
+        $correoModel = new Personas_Model();
+
+        $ventas = $ventasModel->findAll();
+
+        // Obtener nombres de juegos
+        foreach ($ventas as &$venta) {
+            $correo = $correoModel->find($venta['id_persona']); 
+            $venta['persona_mail'] = $correo ? $correo['persona_mail'] : 'Sin email';
+        }
 
         return view('practico/header_view')
         .view('contenido/nav_admin')
@@ -73,16 +81,21 @@ class Admin_controller extends BaseController
     }
 
     public function detalle_venta($id){
-        $model = new Detalle_Venta_Model();
+        $detalleModel = new Detalle_Venta_Model();
+        $juegosModel = new Videojuegos_Model();
 
-        if($model['id_venta'] == $id){
-            $dventas = $model->findAll();
+        $detalles = $detalleModel->where('id_venta', $id)->findAll();
+
+        // Obtener nombres de juegos
+        foreach ($detalles as &$juego) {
+            $titulo = $juegosModel->find($juego['id_videojuego']); 
+            $juego['titulo_videojuego'] = $titulo ? $titulo['titulo_videojuego'] : 'Sin título';
         }
 
         return view('practico/header_view')
-        .view('contenido/nav_admin')
-        .view('contenido/admin_detalle_venta', ['dventas' => $dventas])
-        .view('practico/footer_view');
+            .view('contenido/nav_admin')
+            .view('contenido/admin_detalle_venta', ['detalles' => $detalles])
+            .view('practico/footer_view');    
     }
 
     public function gestionar_juegos(){

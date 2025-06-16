@@ -245,15 +245,15 @@ footer p {
 .card .capa h3 {
     color: white;
     transition: all 500ms ease-out;
-    margin-top: 30px;
-    margin-bottom: 120px;
+    margin-top: 10px;
+    margin-bottom: 20px;
 }
 
 .card .capa p {
     color: white;
     transition: all 500ms ease-out;
-    margin-top: 30px;
-    margin-bottom: 120px;
+    margin-top: 10px;
+    margin-bottom: 20px;
 }
 
 .card-title {
@@ -832,7 +832,9 @@ tr:hover {
 /*Menu admin movil*/
 @media (max-width: 576px) {
     .dropdown-menu {
-        width: 90vw; /* Asegura que no sobrepase los márgenes */
-        left: 5vw; /* Ajusta la posición dentro de la pantalla */
+        width: 90vw;
+        /* Asegura que no sobrepase los márgenes */
+        left: 5vw;
+        /* Ajusta la posición dentro de la pantalla */
         right: auto;
     }

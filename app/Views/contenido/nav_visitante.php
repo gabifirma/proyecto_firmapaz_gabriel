@@ -3,7 +3,7 @@
       <div class="container-fluid">
          <!-- Ícono y Nombre -->
          <a class="navbar-brand" href="<?php echo base_url('/'); ?>">
-            <img src="assets/img/icono.png" alt="FCBox" width="40" height="40">
+            <img src="<?php echo base_url('assets/img/icono.png'); ?>" alt="FCBox" width="40" height="40">
             <span class="brand-text">FCBox</span>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">

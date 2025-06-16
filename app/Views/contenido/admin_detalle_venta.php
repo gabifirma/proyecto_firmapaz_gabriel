@@ -18,14 +18,14 @@
                             foreach ($detalles as $c): ?>
                             <tr>
                                 <td><?php echo $i++; ?></td>
-                                <td><?= esc($c['id_videojuego']) ?></td>
+                                <td><?= esc($c['titulo_videojuego']) ?></td>
                                 <td><?= esc($c['detalle_cantidad']) ?></td>
-                                <td><?= esc($c['detalle_precio']) ?></td>
+                                <td>$<?= esc($c['detalle_precio']) ?></td>
                             </tr>
                         <?php endforeach; ?>
                     <?php else: ?>
                         <tr>
-                            <td colspan="5" class="text-center">No hay consultas disponibles.</td>
+                            <td colspan="5" class="text-center">No hay detalles disponibles.</td>
                         </tr>
                     <?php endif; ?>
                 </tbody>

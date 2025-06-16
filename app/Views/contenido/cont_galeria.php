@@ -4,17 +4,15 @@
         <?php foreach ($videojuegos as $juego): ?>
           <div class="col">
               <div class="card">
-                <?php
-                  $imagenBase64 = base64_encode($juego['imagen_videojuego']);
-                  $mimeType = 'image/jpeg';
-                ?>
-                <img src="data:<?= $mimeType ?>;base64,<?= $imagenBase64 ?>" class="img-fluid card-img-top" alt="">
+                <img src="<?= base_url('assets/img/' . $juego['imagen_videojuego']) ?>" class="img-fluid card-img-top" alt="">
                 <div class="capa">
                     <h3><strong><?= esc($juego['titulo_videojuego']) ?></strong></h3><br>
+                    <p><strong>Precio: $</strong> <?= esc($juego['precio_videojuego']) ?></p>
                     <p><strong>Desarrollador:</strong> <?= esc($juego['desarrollador_videojuego']) ?></p>
                     <p><strong>Publicado por:</strong> <?= esc($juego['distribuidor_videojuego']) ?></p>
+                    <p><strong>Descripción:</strong> <?= esc($juego['descripcion_videojuego']) ?></p>
                 </div>
-                <a href="<?= base_url('galeria') ?>" class="stretched-link"></a>
+                <a href="#" class="stretched-link"></a>
               </div>
               <br>
               <?php if(session('login')){

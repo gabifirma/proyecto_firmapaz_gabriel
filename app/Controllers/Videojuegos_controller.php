@@ -56,7 +56,7 @@ class Videojuegos_controller extends BaseController{
         if ( $validation->withRequest($request)->run() ) {
             $img = $this->request->getFile('imagen');
             $nom_aleatorio = $img->getRandomName();
-            $img->move(ROOTPATH.'assets/uploads', $nom_aleatorio);
+            $img->move(ROOTPATH.'assets/img', $nom_aleatorio);
  
             $data = [
                 'titulo_videojuego' => $request->getPost('titulo'),

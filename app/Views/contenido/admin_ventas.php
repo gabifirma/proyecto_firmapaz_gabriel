@@ -19,7 +19,7 @@
                     <?php if (!empty($ventas)): ?>
                         <?php foreach ($ventas as $c): ?>
                             <tr>
-                                <td><?= esc($c['id_persona']) ?></td>
+                                <td><?= esc($c['persona_mail']) ?></td>
                                 <td><?= esc($c['fecha_venta']) ?></td>
                                 <td>$<?= esc($c['total_venta']) ?></td>                                
                                 <td>

@@ -31,8 +31,8 @@
                             <td><?php echo $item['name']; ?></td>
                             <td>$<?php echo $item['price']; ?></td>
                             <td><?php echo $item['qty']; ?></td>                               
-                            <td><?php echo $item['subtotal'] ; $total = $total + $item['subtotal'] ?></td>
-                            <td><?php echo anchor('eliminar_item/' .$item['rowid'], 'Eliminar');?></td>
+                            <td>$<?php echo $item['subtotal'] ; $total = $total + $item['subtotal'] ?></td>
+                            <td><?php echo anchor('eliminar_item/' .$item['rowid'], 'Eliminar', "class='btn btn-success'; style='text-center'");?></td>
                         </tr>
                     <?php endforeach; ?>
                     <?php session()->set('total', $total); ?>
