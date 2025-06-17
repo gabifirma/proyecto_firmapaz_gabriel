@@ -122,4 +122,18 @@ class Admin_controller extends BaseController
             .view('practico/footer_view');
     }
 
+    public function marcar_leido($id_mensaje)
+    {
+        $modelo = new \App\Models\Consultas_model();
+        $modelo->update($id_mensaje, ['leido' => 1]);
+        return redirect()->back()->with('mensaje', 'Mensaje marcado como leído');
+    }
+
+    public function marcar_no_leido($id_mensaje)
+    {
+        $modelo = new \App\Models\Consultas_model();
+        $modelo->update($id_mensaje, ['leido' => 0]);
+        return redirect()->back()->with('mensaje', 'Mensaje marcado como no leído');
+    }
+
 }

@@ -60,3 +60,9 @@ $routes->get('vaciar_carrito/(:any)', 'Carrito_controller::vaciar_carrito');
 $routes->get('ventas', 'Carrito_controller::guardar_venta');
 
 
+$routes->get('perfil_admin', 'Usuarios_controller::ver_perfil');
+$routes->post('actualizar_perfil', 'Usuarios_controller::actualizar_perfil');
+$routes->get('perfil_cliente', 'Usuarios_controller::ver_perfil_cliente');
+$routes->post('actualizar_perfil_cliente', 'Usuarios_controller::actualizar_perfil_cliente');
+$routes->post('marcar_leido/(:num)', 'Admin_controller::marcar_leido/$1');
+$routes->post('marcar_no_leido/(:num)', 'Admin_controller::marcar_no_leido/$1');
