@@ -143,24 +143,29 @@ class Usuarios_controller extends BaseController
     }
 
     public function admin(){
+        if (!session()->get('login')) {
+            return redirect()->to('login');
+        }
         $data['titulo'] = 'Index';
         return view('practico/header_view').view('contenido/nav_admin').view('Backend/contenido_admin').view('practico/footer_view');
     }
 
     public function cliente(){
-
+        if (!session()->get('login')) {
+            return redirect()->to('login');
+        }
         $data['titulo'] = 'Index';
         return view('practico/header_view').view('contenido/nav_cliente').view('Backend/contenido_cliente').view('practico/footer_view');
-    
     }
 
     public function ver_perfil()
     {
-        $usuario_id = session()->get('id'); // Usar siempre 'id' como clave de sesión
+        if (!session()->get('login')) {
+            return redirect()->to('login');
+        }
+        $usuario_id = session()->get('id');
         $modelo = new \App\Models\Personas_Model();
-
         $datos['usuario'] = $modelo->find($usuario_id);
-
         return view('practico/header_view')
             . view('contenido/perfil_view_admin', $datos)
             . view('practico/footer_view');
@@ -209,6 +214,9 @@ class Usuarios_controller extends BaseController
 
     public function ver_perfil_cliente()
     {
+        if (!session()->get('login')) {
+            return redirect()->to('login');
+        }
         $usuario_id = session()->get('id');
         $modelo = new \App\Models\Personas_Model();
         $datos['usuario'] = $modelo->find($usuario_id);
