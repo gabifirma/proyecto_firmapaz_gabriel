@@ -7,10 +7,8 @@
                 <img src="<?= base_url('assets/img/' . $juego['imagen_videojuego']) ?>" class="img-fluid card-img-top" alt="">
                 <div class="capa">
                     <h3><strong><?= esc($juego['titulo_videojuego']) ?></strong></h3><br>
-                    <p><strong>Precio: $</strong> <?= esc($juego['precio_videojuego']) ?></p>
                     <p><strong>Desarrollador:</strong> <?= esc($juego['desarrollador_videojuego']) ?></p>
                     <p><strong>Publicado por:</strong> <?= esc($juego['distribuidor_videojuego']) ?></p>
-                    <p><strong>Descripción:</strong> <?= esc($juego['descripcion_videojuego']) ?></p>
                 </div>
                 <a href="#" class="stretched-link"></a>
               </div>
