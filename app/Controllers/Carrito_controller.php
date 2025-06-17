@@ -89,4 +89,60 @@ class Carrito_controller extends BaseController{
         $cart->destroy();
         return redirect()->route('catalogo_cliente');
     }
+
+    public function completar_datos_cliente() {
+        $personasModel = new \App\Models\Personas_model();
+        $usuario = $personasModel->find(session('id'));
+        return view('contenido/formulario_datos_cliente', ['usuario' => $usuario]);
+    }
+
+    public function guardar_datos_cliente() {
+        $validation = \Config\Services::validation();
+        $request = \Config\Services::request();
+        $rules = [
+            'dni' => 'required',
+            'domicilio' => 'required',
+            'codigo_postal' => 'required',
+        ];
+        if (! $this->validate($rules)) {
+            return redirect()->back()->withInput()->with('validation', $validation->getErrors());
+        }
+        $personasModel = new \App\Models\Personas_model();
+        $personasModel->update(session('id'), [
+            'dni' => $request->getPost('dni'),
+            'domicilio' => $request->getPost('domicilio'),
+            'codigo_postal' => $request->getPost('codigo_postal'),
+        ]);
+        return redirect()->to('formulario_pago');
+    }
+
+    public function formulario_pago() {
+        return view('practico/header_view')
+            .view('contenido/nav_cliente')
+            .view('contenido/formulario_pago')
+            .view('practico/footer_view');
+    }
+
+    public function guardar_pago() {
+        $validation = \Config\Services::validation();
+        $request = \Config\Services::request();
+        $metodo = $request->getPost('metodo_pago');
+        $rules = [
+            'metodo_pago' => 'required',
+        ];
+        if ($metodo === 'tarjeta') {
+            $rules = array_merge($rules, [
+                'numero_tarjeta' => 'required',
+                'nombre_tarjeta' => 'required',
+                'vencimiento' => 'required',
+                'cvv' => 'required',
+            ]);
+        }
+        if (! $this->validate($rules)) {
+            return redirect()->back()->withInput()->with('validation', $validation->getErrors());
+        }
+        // Aquí puedes guardar los datos de pago si lo deseas
+        // Luego registrar la venta
+        return $this->guardar_venta();
+    }
 }

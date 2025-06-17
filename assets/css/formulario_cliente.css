@@ -1,0 +1,7 @@
+.form-group label {
+    color: #fff !important;
+}
+.titulo-verde {
+    color: #198754 !important; /* Bootstrap success */
+    font-weight: bold;
+}

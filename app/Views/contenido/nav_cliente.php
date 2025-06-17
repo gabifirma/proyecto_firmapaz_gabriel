@@ -48,5 +48,3 @@
     </nav>
 
 </section>
-
-</header>

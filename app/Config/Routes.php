@@ -66,3 +66,7 @@ $routes->get('perfil_cliente', 'Usuarios_controller::ver_perfil_cliente');
 $routes->post('actualizar_perfil_cliente', 'Usuarios_controller::actualizar_perfil_cliente');
 $routes->post('marcar_leido/(:num)', 'Admin_controller::marcar_leido/$1');
 $routes->post('marcar_no_leido/(:num)', 'Admin_controller::marcar_no_leido/$1');
+$routes->get('completar_datos_cliente', 'Carrito_controller::completar_datos_cliente');
+$routes->post('guardar_datos_cliente', 'Carrito_controller::guardar_datos_cliente');
+$routes->get('formulario_pago', 'Carrito_controller::formulario_pago');
+$routes->post('guardar_pago', 'Carrito_controller::guardar_pago');

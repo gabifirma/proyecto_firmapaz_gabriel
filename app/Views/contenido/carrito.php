@@ -39,7 +39,7 @@
                     <tr>
                         <td>Total Compra: $<?php echo $total; ?></td>
                         <td><a href="<?php echo base_url('vaciar_carrito/all'); ?>" class="btn btn-success" role="button">Vaciar carrito</a></td>
-                        <td><a href="ventas" class="btn btn-success" role="button">Ordenar compra</a></td>
+                        <td><a href="<?php echo base_url('completar_datos_cliente'); ?>" class="btn btn-success" role="button">Ordenar compra</a></td>
                     </tr>
                 </tbody>
             <?php endif; ?>

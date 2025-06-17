@@ -730,9 +730,17 @@ footer p {
     /* Rojo para mensajes inválidos */
 }
 
+.titulo-contacto {
+    color: #32cd32;
+    font-size: 30px;
+    border-bottom: 2px solid #555;
+    padding-bottom: 10px;
+}
 
-
-
+.form-group label,
+label[for="metodo_pago"] {
+    color: #fff !important;
+}
 
 /*Botones para generos*/
 #botones .btn {
@@ -838,3 +846,4 @@ tr:hover {
         /* Ajusta la posición dentro de la pantalla */
         right: auto;
     }
+}
