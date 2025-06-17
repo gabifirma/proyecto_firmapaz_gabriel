@@ -167,6 +167,7 @@ class Usuarios_controller extends BaseController
         $modelo = new \App\Models\Personas_Model();
         $datos['usuario'] = $modelo->find($usuario_id);
         return view('practico/header_view')
+            . view('contenido/nav_admin')
             . view('contenido/perfil_view_admin', $datos)
             . view('practico/footer_view');
     }
@@ -221,6 +222,7 @@ class Usuarios_controller extends BaseController
         $modelo = new \App\Models\Personas_Model();
         $datos['usuario'] = $modelo->find($usuario_id);
         return view('practico/header_view')
+            . view('contenido/nav_cliente')
             . view('contenido/perfil_view_cliente', $datos)
             . view('practico/footer_view');
     }
