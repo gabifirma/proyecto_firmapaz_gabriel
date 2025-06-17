@@ -153,4 +153,100 @@ class Usuarios_controller extends BaseController
         return view('practico/header_view').view('contenido/nav_cliente').view('Backend/contenido_cliente').view('practico/footer_view');
     
     }
+
+    public function ver_perfil()
+    {
+        $usuario_id = session()->get('id'); // Usar siempre 'id' como clave de sesión
+        $modelo = new \App\Models\Personas_Model();
+
+        $datos['usuario'] = $modelo->find($usuario_id);
+
+        return view('practico/header_view')
+            . view('contenido/perfil_view_admin', $datos)
+            . view('practico/footer_view');
+    }
+
+    public function actualizar_perfil()
+    {
+        helper(['form']);
+
+        $rules = [
+            'nombre'    => 'required|min_length[3]',
+            'apellido'  => 'required|min_length[3]',
+            'correo'    => 'required|valid_email',
+            'pais'      => 'required|min_length[2]',
+        ];
+
+        if ($this->request->getPost('password')) {
+            $rules['password'] = 'required|min_length[6]';
+            $rules['password_confirm'] = 'matches[password]';
+        }
+
+        if (!$this->validate($rules)) {
+            return redirect()->back()->withInput()->with('validation', $this->validator->getErrors());
+        }
+
+        $model = new \App\Models\Personas_Model();
+
+        $data = [
+            'persona_nombre'   => $this->request->getPost('nombre'),
+            'persona_apellido' => $this->request->getPost('apellido'),
+            'persona_mail'     => $this->request->getPost('correo'),
+            'persona_pais'     => $this->request->getPost('pais'),
+        ];
+
+        if ($this->request->getPost('password')) {
+            $data['persona_password'] = password_hash(
+                $this->request->getPost('password'),
+                PASSWORD_DEFAULT
+            );
+        }
+
+        $model->update(session()->get('id'), $data);
+
+        return redirect()->back()->with('mensaje', 'Perfil actualizado correctamente');
+    }
+
+    public function ver_perfil_cliente()
+    {
+        $usuario_id = session()->get('id');
+        $modelo = new \App\Models\Personas_Model();
+        $datos['usuario'] = $modelo->find($usuario_id);
+        return view('practico/header_view')
+            . view('contenido/perfil_view_cliente', $datos)
+            . view('practico/footer_view');
+    }
+
+    public function actualizar_perfil_cliente()
+    {
+        helper(['form']);
+        $rules = [
+            'nombre'    => 'required|min_length[3]',
+            'apellido'  => 'required|min_length[3]',
+            'correo'    => 'required|valid_email',
+            'pais'      => 'required|min_length[2]',
+        ];
+        if ($this->request->getPost('password')) {
+            $rules['password'] = 'required|min_length[6]';
+            $rules['password_confirm'] = 'matches[password]';
+        }
+        if (!$this->validate($rules)) {
+            return redirect()->back()->withInput()->with('validation', $this->validator->getErrors());
+        }
+        $model = new \App\Models\Personas_Model();
+        $data = [
+            'persona_nombre'   => $this->request->getPost('nombre'),
+            'persona_apellido' => $this->request->getPost('apellido'),
+            'persona_mail'     => $this->request->getPost('correo'),
+            'persona_pais'     => $this->request->getPost('pais'),
+        ];
+        if ($this->request->getPost('password')) {
+            $data['persona_password'] = password_hash(
+                $this->request->getPost('password'),
+                PASSWORD_DEFAULT
+            );
+        }
+        $model->update(session()->get('id'), $data);
+        return redirect()->back()->with('mensaje', 'Perfil actualizado correctamente');
+    }
 }
