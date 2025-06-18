@@ -27,7 +27,7 @@
               <a class="nav-link" href="<?php echo base_url('agregar_juego'); ?>">Agregar juegos</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="<?php echo base_url('gestionar_juego'); ?>">Gestionar juegos</a>
+              <a class="nav-link" href="<?php echo base_url('gestionar_juegos'); ?>">Gestionar juegos</a>
             </li>      
           </ul>
 
