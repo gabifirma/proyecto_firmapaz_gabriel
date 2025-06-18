@@ -1,5 +1,11 @@
 <section class="mt-4 container">
-
+    <div class="mt-3 mb-3 ms-1">
+        <?php if (session('login')): ?>
+            <a class="btn btn-outline-success" href="<?php echo base_url('catalogo_cliente'); ?>" role="button">Volver atrás</a>
+        <?php else: ?>
+            <a class="btn btn-outline-success" href="<?php echo base_url('galeria'); ?>" role="button">Volver atrás</a>
+        <?php endif; ?>
+    </div>
     <div class="row row-cols-1 row-cols-md-3 g-4">
         <?php foreach ($videojuegos as $juego): ?>
             <div class="col">
@@ -14,5 +20,5 @@
             </div>
         <?php endforeach; ?>
     </div>
-
+    
 </section>

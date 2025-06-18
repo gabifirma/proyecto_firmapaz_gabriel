@@ -1,3 +1,10 @@
+<div class="mt-3 mb-3 ms-5">
+    <?php if (session('login')): ?>
+        <a class="btn btn-outline-success" href="<?php echo base_url('catalogo_cliente'); ?>" role="button">Volver atrás</a>
+    <?php else: ?>
+        <a class="btn btn-outline-success" href="<?php echo base_url('galeria'); ?>" role="button">Volver atrás</a>
+    <?php endif; ?>
+</div>
 <div class="juego-detalle-flex">
     <aside>
         <div>

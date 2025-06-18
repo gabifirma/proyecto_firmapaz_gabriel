@@ -1,6 +1,23 @@
   <section class="mt-4 container">
-    
-    <div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="row row-cols-1 row-cols-md-5 g-1 mt-2" id="botones">
+      <div class="col">
+        <a href="<?php echo base_url('ver_categoria/4'); ?>"><button type="button" class="btn btn-outline-success btn-lg"><span class="fa-solid--chess"></span><br>Estrategia</button></a>
+      </div>
+      <div class="col">
+        <a href="<?php echo base_url('ver_categoria/1'); ?>"><button type="button" class="btn btn-outline-success btn-lg"><span class="lucide--swords"></span><br>Acción</button></a>
+      </div>
+      <div class="col">
+        <a href="<?php echo base_url('ver_categoria/3'); ?>"><button type="button" class="btn btn-outline-success btn-lg"><span class="mdi--compass"></span><br>Aventura</button></a>
+      </div>
+      <div class="col">
+        <a href="<?php echo base_url('ver_categoria/5'); ?>"><button type="button" class="btn btn-outline-success btn-lg"><span class="iconoir--boxing-glove"></span><br>Pelea</button></a>
+      </div>
+      <div class="col">
+        <a href="<?php echo base_url('ver_categoria/2'); ?>"><button type="button" class="btn btn-outline-success btn-lg"><span class="iconoir--soccer-ball"></span><br>Deportes</button></a>
+      </div>
+    </div>
+
+    <div class="row row-cols-1 row-cols-md-3 g-4 mt-5">
         <?php foreach ($videojuegos as $juego): ?>
           <div class="col">
               <div class="card">
