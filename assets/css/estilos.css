@@ -847,3 +847,39 @@ tr:hover {
         right: auto;
     }
 }
+
+/* Diseño para la vista de detalle de juego */
+.juego-detalle-flex {
+    display: flex;
+    align-items: flex-start;
+    gap: 32px;
+    margin: 40px auto;
+    max-width: 1000px;
+}
+
+.juego-detalle-flex aside {
+    flex: 0 0 320px;
+}
+
+.juego-detalle-flex aside img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.juego-detalle-flex section {
+    flex: 1;
+}
+
+.juego-detalle-flex section h3 {
+    color: white;
+    font-size: 24px;
+    margin-bottom: 16px;
+}
+
+.juego-detalle-flex section h4 {
+    color: white;
+    font-size: 24px;
+    margin-bottom: 16px;
+}

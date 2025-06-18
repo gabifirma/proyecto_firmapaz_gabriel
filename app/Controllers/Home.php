@@ -24,7 +24,7 @@ class Home extends BaseController
     }
     public function galeria(){
         $modelo = new Videojuegos_Model();
-        $data['videojuegos'] = $modelo->findAll(); // Trae todos los registros
+        $data['videojuegos'] = $modelo->where('estado_videojuego', 1)->findAll();// Trae todos los registros
 
         return view('practico/header_view').view('contenido/nav_visitante').view('contenido/cont_galeria', $data).view('practico/footer_view');
     }

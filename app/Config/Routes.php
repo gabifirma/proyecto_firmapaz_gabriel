@@ -51,6 +51,7 @@ $routes->post('actualizar_videojuego/(:num)', 'Videojuegos_controller::actualiza
 $routes->post('eliminar_videojuego/(:num)', 'Videojuegos_controller::eliminar_videojuego/$1');
 $routes->post('cambiar_estado_videojuego/(:num)', 'Videojuegos_controller::cambiar_estado_videojuego/$1');
 $routes->get('catalogo_cliente', 'Videojuegos_controller::catalogo_cliente');
+$routes->get('ver_juego/(:num)', 'Videojuegos_controller::ver_juego/$1');
 
 
 $routes->get('ver_carrito', 'Carrito_controller::ver_carrito');
