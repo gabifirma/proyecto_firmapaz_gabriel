@@ -1,4 +1,4 @@
-    <div class="container mt-5">
+<div class="container mt-5">
         <h1 class="mb-4">Lista de Ventas</h1>
 
         <?php if (session()->getFlashdata('success')): ?>
@@ -20,7 +20,7 @@
                         <?php foreach ($ventas as $c): ?>
                             <tr>
                                 <td><?= esc($c['persona_mail']) ?></td>
-                                <td><?= esc($c['fecha_venta']) ?></td>
+                                <td><?= date('d/m/Y', strtotime($c['fecha_venta'])) ?></td>
                                 <td>$<?= esc($c['total_venta']) ?></td>                                
                                 <td>
                                     <form method="get" action="<?= base_url('detalle_venta/' .$c['id_venta']) ?>">

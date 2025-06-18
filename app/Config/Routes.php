@@ -59,6 +59,7 @@ $routes->post('add_cart', 'Carrito_controller::agregar_carrito');
 $routes->get('eliminar_item/(:any)', 'Carrito_controller::borrar/$1');
 $routes->get('vaciar_carrito/(:any)', 'Carrito_controller::vaciar_carrito');
 $routes->get('ventas', 'Carrito_controller::guardar_venta');
+$routes->post('actualizar_cantidad', 'Carrito_controller::actualizar_cantidad');
 
 
 $routes->get('perfil_admin', 'Usuarios_controller::ver_perfil');
@@ -71,3 +72,5 @@ $routes->get('completar_datos_cliente', 'Carrito_controller::completar_datos_cli
 $routes->post('guardar_datos_cliente', 'Carrito_controller::guardar_datos_cliente');
 $routes->get('formulario_pago', 'Carrito_controller::formulario_pago');
 $routes->post('guardar_pago', 'Carrito_controller::guardar_pago');
+$routes->get('mis_compras', 'Carrito_controller::mis_compras');
+$routes->get('ver_factura/(:num)', 'Carrito_controller::ver_factura/$1');

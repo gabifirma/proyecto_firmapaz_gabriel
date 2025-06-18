@@ -38,6 +38,8 @@
                 <li><hr class="dropdown-divider"></li>
                 <li><a class="dropdown-item" href="<?php echo base_url('perfil_cliente'); ?>" role="button">Perfil</a></li>
                 <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="<?php echo base_url('mis_compras'); ?>" role="button">Mis compras</a></li>
+                <li><hr class="dropdown-divider"></li>
                 <li><a class="dropdown-item" href="<?php echo base_url('logout'); ?>" role="button">Cerrar Sesión</a></li>
               </ul>
             </div>

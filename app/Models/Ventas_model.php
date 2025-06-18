@@ -14,7 +14,7 @@ class Ventas_Model extends Model
     protected $returnType     = 'array';
     protected $useSoftDeletes = false;
 
-    protected $allowedFields = ['id_persona', 'fecha_venta', 'total_venta'];
+    protected $allowedFields = ['id_persona', 'fecha_venta', 'total_venta', 'metodo_pago'];
 
     protected bool $allowEmptyInserts = false;
     protected bool $updateOnlyChanged = true;

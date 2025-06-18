@@ -25,12 +25,23 @@
                     <?php 
                         $total = 0;
                         $i = 1;
-                    foreach ($cart1 as $item): ?>
+                    foreach ($cart1 as $item): 
+                        $juegoModel = new \App\Models\Videojuegos_model();
+                        $juego = $juegoModel->find($item['id']);
+                        $stock = $juego ? $juego['videojuego_stock'] : 1;
+                    ?>
                         <tr>
                             <td><?php echo $i++; ?></td>
                             <td><?php echo $item['name']; ?></td>
                             <td>$<?php echo $item['price']; ?></td>
-                            <td><?php echo $item['qty']; ?></td>                               
+                            <td>
+                                <form action="<?php echo base_url('actualizar_cantidad'); ?>" method="post" style="display:inline-block;">
+                                    <input type="hidden" name="rowid" value="<?php echo $item['rowid']; ?>">
+                                    <input type="number" name="qty" value="<?php echo $item['qty']; ?>" min="1" max="<?php echo $stock; ?>" class="form-control" style="width:80px; display:inline-block;">
+                                    <span style="font-size:12px; color:#aaa;">Stock: <?php echo $stock; ?></span>
+                                    <button type="submit" class="btn btn-primary btn-sm">Actualizar</button>
+                                </form>
+                            </td>
                             <td>$<?php echo $item['subtotal'] ; $total = $total + $item['subtotal'] ?></td>
                             <td><?php echo anchor('eliminar_item/' .$item['rowid'], 'Eliminar', "class='btn btn-success'; style='text-center'");?></td>
                         </tr>
