@@ -3,12 +3,18 @@
 namespace App\Controllers;
 
 use App\Models\Consulta_model;
-use App\Models\Videojuegos_Model;
+use App\Models\Videojuegos_model;
+use App\Models\Detalle_Venta_model;
 
 class Home extends BaseController
 {
     public function index(){
-        return view('practico/header_view').view('contenido/nav_visitante').view('contenido/cont_principal').view('practico/footer_view');   
+        $modelo = new Videojuegos_model();
+        $detalleVenta = new Detalle_Venta_Model();
+
+        $videojuegosMasPopulares = $detalleVenta->obtenerVideojuegosMasPopulares();
+
+        return view('practico/header_view').view('contenido/nav_visitante').view('contenido/cont_principal', ['masPopulares' => $videojuegosMasPopulares]).view('practico/footer_view');   
     }
     public function comercializacion(){
         return view('practico/header_view').view('contenido/nav_visitante').view('contenido/cont_comercializacion').view('practico/footer_view');

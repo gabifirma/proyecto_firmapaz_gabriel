@@ -199,11 +199,37 @@ class Videojuegos_controller extends BaseController{
 
     public function ver_juego($id){
         $juegoModel = new Videojuegos_model();
+        $session = session();
         $juego = $juegoModel->find($id);
 
-        return view('practico/header_view')
-        .view('contenido/nav_visitante')
-        .view('contenido/ver_juego', ['juego' => $juego])
-        .view('practico/footer_view');
+        if($session->get('login')){
+            return view('practico/header_view')
+            .view('contenido/nav_cliente')
+            .view('contenido/ver_juego', ['juego' => $juego])
+            .view('practico/footer_view');
+        }else{
+            return view('practico/header_view')
+            .view('contenido/nav_visitante')
+            .view('contenido/ver_juego', ['juego' => $juego])
+            .view('practico/footer_view');
+        }
+    }
+
+    public function ver_categoria($id_cat){
+        $modelo = new Videojuegos_model();
+        $session = session();
+        $data['videojuegos'] = $modelo->where('id_categoria', $id_cat)->findAll(); // Trae todos los juegos en categorias
+
+        if($session->get('login')){
+            return view('practico/header_view')
+            .view('contenido/nav_cliente')
+            .view('contenido/ver_categoria', $data)
+            .view('practico/footer_view');
+        }else{
+            return view('practico/header_view')
+            .view('contenido/nav_visitante')
+            .view('contenido/ver_categoria', $data)
+            .view('practico/footer_view');
+        }
     }
 }
