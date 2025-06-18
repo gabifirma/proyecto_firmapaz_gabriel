@@ -39,19 +39,68 @@ class Admin_controller extends BaseController
 
     public function listar_videojuegos(){
         $model = new Videojuegos_Model();
-        $categoriasModel = new Categorias_Model(); // Agregar el modelo de categorías
+        $categoriasModel = new Categorias_Model();
 
-        $juegos = $model->findAll();
+        // Obtener todos los parámetros de búsqueda
+        $busqueda = [
+            'id' => $this->request->getGet('id'),
+            'titulo' => $this->request->getGet('titulo'),
+            'desarrollador' => $this->request->getGet('desarrollador'),
+            'distribuidor' => $this->request->getGet('distribuidor'),
+            'categoria' => $this->request->getGet('categoria')
+        ];
 
-        // Obtener nombres de categorías
-        foreach ($juegos as &$juego) {
-            $categoria = $categoriasModel->find($juego['id_categoria']); 
-            $juego['categoria_descripcion'] = $categoria ? $categoria['categoria_descripcion'] : 'Sin categoría';
+        // Obtener todas las categorías para el select
+        $categorias = $categoriasModel->findAll();
+        
+        // Construir la consulta base
+        $builder = $model->select('videojuegos.*, categorias.categoria_descripcion')
+                       ->join('categorias', 'categorias.id = videojuegos.id_categoria', 'left');
+        
+        // Aplicar filtros si existen
+        $filtrosAplicados = false;
+        
+        // Filtrar por ID (búsqueda exacta)
+        if (!empty($busqueda['id'])) {
+            $builder->where('videojuegos.id_videojuego', $busqueda['id']);
+            $filtrosAplicados = true;
         }
- 
+        
+        // Filtrar por título (búsqueda parcial)
+        if (!empty($busqueda['titulo'])) {
+            $builder->like('videojuegos.titulo_videojuego', $busqueda['titulo']);
+            $filtrosAplicados = true;
+        }
+        
+        // Filtrar por desarrollador (búsqueda parcial)
+        if (!empty($busqueda['desarrollador'])) {
+            $builder->like('videojuegos.desarrollador_videojuego', $busqueda['desarrollador']);
+            $filtrosAplicados = true;
+        }
+        
+        // Filtrar por distribuidor (búsqueda parcial)
+        if (!empty($busqueda['distribuidor'])) {
+            $builder->like('videojuegos.distribuidor_videojuego', $busqueda['distribuidor']);
+            $filtrosAplicados = true;
+        }
+        
+        // Filtrar por categoría (selección exacta)
+        if (!empty($busqueda['categoria'])) {
+            $builder->where('categorias.id', $busqueda['categoria']);
+            $filtrosAplicados = true;
+        }
+        
+        // Ordenar y obtener resultados
+        $juegos = $builder->orderBy('videojuegos.titulo_videojuego', 'ASC')
+                         ->findAll();
+
         return view('practico/header_view')
             .view('contenido/nav_admin')
-            .view('contenido/admin_juegos', ['juegos' => $juegos])
+            .view('contenido/admin_juegos', [
+                'juegos' => $juegos,
+                'categorias' => $categorias,
+                'busqueda' => $busqueda
+            ])
             .view('practico/footer_view');
     }
 
@@ -64,17 +113,68 @@ class Admin_controller extends BaseController
 
     public function listar_ventas(){
         $ventasModel = new Ventas_Model();
-        $personaModel = new Personas_Model();
 
-        // Obtener todas las ventas con los datos del cliente, ordenadas por fecha descendente
-        $ventas = $ventasModel->select('venta.*, personas.dni, personas.persona_nombre, personas.persona_apellido')
-                            ->join('personas', 'personas.id = venta.id_persona')
-                            ->orderBy('venta.fecha_venta', 'DESC')
-                            ->findAll();
+        // Obtener todos los parámetros de búsqueda
+        $busqueda = [
+            'id_venta' => $this->request->getGet('id_venta'),
+            'dni' => $this->request->getGet('dni'),
+            'nombre' => $this->request->getGet('nombre'),
+            'apellido' => $this->request->getGet('apellido'),
+            'fecha' => $this->request->getGet('fecha')
+        ];
+        
+        // Construir la consulta base
+        $builder = $ventasModel->select('venta.*, personas.dni, personas.persona_nombre, personas.persona_apellido')
+                             ->join('personas', 'personas.id = venta.id_persona');
+        
+        // Aplicar filtros si existen
+        $filtrosAplicados = false;
+        
+        // Filtrar por ID de venta (búsqueda exacta)
+        if (!empty($busqueda['id_venta'])) {
+            $builder->where('venta.id_venta', $busqueda['id_venta']);
+            $filtrosAplicados = true;
+        }
+        
+        // Filtrar por DNI (búsqueda parcial)
+        if (!empty($busqueda['dni'])) {
+            $builder->like('personas.dni', $busqueda['dni']);
+            $filtrosAplicados = true;
+        }
+        
+        // Filtrar por nombre (búsqueda parcial)
+        if (!empty($busqueda['nombre'])) {
+            $builder->like('personas.persona_nombre', $busqueda['nombre']);
+            $filtrosAplicados = true;
+        }
+        
+        // Filtrar por apellido (búsqueda parcial)
+        if (!empty($busqueda['apellido'])) {
+            $builder->like('personas.persona_apellido', $busqueda['apellido']);
+            $filtrosAplicados = true;
+        }
+        
+        // Filtrar por fecha (búsqueda exacta)
+        if (!empty($busqueda['fecha'])) {
+            $builder->where("DATE(venta.fecha_venta) = '" . $busqueda['fecha'] . "'");
+            $filtrosAplicados = true;
+        }
+        
+        // Si no hay filtros, obtener todas las ventas
+        if (!$filtrosAplicados) {
+            $ventas = $builder->orderBy('venta.fecha_venta', 'DESC')->findAll();
+        } else {
+            // Ordenar y obtener resultados filtrados
+            $ventas = $builder->orderBy('venta.fecha_venta', 'DESC')
+                             ->findAll();
+        }
 
         return view('practico/header_view')
         .view('contenido/nav_admin')
-        .view('contenido/admin_ventas', ['ventas' => $ventas])
+        .view('contenido/admin_ventas', [
+            'ventas' => $ventas,
+            'busqueda' => $busqueda
+        ])
         .view('practico/footer_view');
     }
 
@@ -120,25 +220,68 @@ class Admin_controller extends BaseController
 
     public function gestionar_juegos(){
         $model = new Videojuegos_Model();
-        $categoriasModel = new Categorias_Model(); // Usar el modelo de categorías
-
-        $juegos = $model->findAll();
-
-        // Obtener nombres de categorías
-        foreach ($juegos as &$juego) {
-            $categoria = $categoriasModel->find($juego['id_categoria']);
-
-            // Verificar si la categoría existe y tiene el campo correcto
-            if ($categoria && array_key_exists('categoria_descripcion', $categoria)) {
-                $juego['categoria_descripcion'] = $categoria['categoria_descripcion'];
-            } else {
-                $juego['categoria_descripcion'] = 'Sin categoría';
-            }
+        $categoriasModel = new Categorias_Model();
+        
+        // Obtener parámetros de búsqueda
+        $busqueda = [
+            'id' => $this->request->getGet('id'),
+            'titulo' => $this->request->getGet('titulo'),
+            'desarrollador' => $this->request->getGet('desarrollador'),
+            'distribuidor' => $this->request->getGet('distribuidor'),
+            'categoria' => $this->request->getGet('categoria')
+        ];
+        
+        // Construir la consulta base con join a categorías
+        $builder = $model->select('videojuegos.*, categorias.categoria_descripcion, COALESCE(videojuegos.videojuego_stock, 0) as videojuego_stock')
+                       ->join('categorias', 'categorias.id = videojuegos.id_categoria', 'left');
+        
+        // Aplicar filtros si existen
+        $filtrosAplicados = false;
+        
+        // Filtrar por ID (búsqueda exacta)
+        if (!empty($busqueda['id'])) {
+            $builder->where('videojuegos.id_videojuego', $busqueda['id']);
+            $filtrosAplicados = true;
         }
+        
+        // Filtrar por título (búsqueda parcial)
+        if (!empty($busqueda['titulo'])) {
+            $builder->like('videojuegos.titulo_videojuego', $busqueda['titulo']);
+            $filtrosAplicados = true;
+        }
+        
+        // Filtrar por desarrollador (búsqueda parcial)
+        if (!empty($busqueda['desarrollador'])) {
+            $builder->like('videojuegos.desarrollador_videojuego', $busqueda['desarrollador']);
+            $filtrosAplicados = true;
+        }
+        
+        // Filtrar por distribuidor (búsqueda parcial)
+        if (!empty($busqueda['distribuidor'])) {
+            $builder->like('videojuegos.distribuidor_videojuego', $busqueda['distribuidor']);
+            $filtrosAplicados = true;
+        }
+        
+        // Filtrar por categoría (selección exacta)
+        if (!empty($busqueda['categoria'])) {
+            $builder->where('categorias.id', $busqueda['categoria']);
+            $filtrosAplicados = true;
+        }
+        
+        // Obtener todos los juegos (filtrados o no)
+        $juegos = $builder->orderBy('videojuegos.titulo_videojuego', 'ASC')
+                         ->findAll();
+        
+        // Obtener todas las categorías para el select
+        $categorias = $categoriasModel->findAll();
 
         return view('practico/header_view')
             .view('contenido/nav_admin')
-            .view('contenido/admin_gestion', ['juegos' => $juegos])
+            .view('contenido/admin_gestion', [
+                'juegos' => $juegos,
+                'categorias' => $categorias,
+                'busqueda' => $busqueda
+            ])
             .view('practico/footer_view');
     }
 

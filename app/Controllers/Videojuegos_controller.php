@@ -119,63 +119,117 @@ class Videojuegos_controller extends BaseController{
         $validation = \Config\Services::validation();
         $request = \Config\Services::request();
 
-        $validation->setRules(
-            [
-                'titulo' => 'max_length[150]',
-                'descripcion' => 'max_length[650]',
-                'desarrollador' => 'max_length[100]',
-                'distribuidor' => 'max_length[100]',
-                'precio' => 'max_length[30]',
-                'categoria' => 'required|is_not_unique[categorias.id]',
+        $validation->setRules([
+            'titulo' => [
+                'label' => 'Título',
+                'rules' => 'required|max_length[150]',
+                'errors' => [
+                    'required' => 'El título es obligatorio',
+                    'max_length' => 'El título no puede tener más de 150 caracteres',
+                ]
             ],
-            [   //Errores
-                'titulo' => [
-                    'max_length' => 'Se alcanzó el límite de carácteres',
-                ],
-                'descripcion' => [
-                    'max_length' => 'Se alcanzó el límite de carácteres',
-                ],
-                'desarrollador' => [
-                    'max_length' => 'Se alcanzó el límite de carácteres',
-                ],
-                'distribuidor' => [
-                    'max_length' => 'Se alcanzó el límite de carácteres',                   
-                ],
-                'precio' => [
-                    'max_length' => 'Se alcanzó el límite de carácteres',
-                ],
-                'categoria' => [
-                    'required' => 'Es obligatoria la categoría',
-                    'is_not_unique' => 'Debe seleccionar la categoría',
-                ],
+            'descripcion' => [
+                'label' => 'Descripción',
+                'rules' => 'required|max_length[650]',
+                'errors' => [
+                    'required' => 'La descripción es obligatoria',
+                    'max_length' => 'La descripción no puede tener más de 650 caracteres',
+                ]
+            ],
+            'desarrollador' => [
+                'label' => 'Desarrollador',
+                'rules' => 'required|max_length[100]',
+                'errors' => [
+                    'required' => 'El desarrollador es obligatorio',
+                    'max_length' => 'El desarrollador no puede tener más de 100 caracteres',
+                ]
+            ],
+            'distribuidor' => [
+                'label' => 'Distribuidor',
+                'rules' => 'required|max_length[100]',
+                'errors' => [
+                    'required' => 'El distribuidor es obligatorio',
+                    'max_length' => 'El distribuidor no puede tener más de 100 caracteres',
+                ]
+            ],
+            'precio' => [
+                'label' => 'Precio',
+                'rules' => 'required|numeric|greater_than_equal_to[0]|less_than_equal_to[999999.99]',
+                'errors' => [
+                    'required' => 'El precio es obligatorio',
+                    'numeric' => 'El precio debe ser un número válido',
+                    'greater_than_equal_to' => 'El precio no puede ser negativo',
+                    'less_than_equal_to' => 'El precio no puede ser mayor a 999,999.99',
+                ]
+            ],
+            'stock' => [
+                'label' => 'Stock',
+                'rules' => 'required|integer|greater_than_equal_to[0]|less_than_equal_to[999999]',
+                'errors' => [
+                    'required' => 'El stock es obligatorio',
+                    'integer' => 'El stock debe ser un número entero',
+                    'greater_than_equal_to' => 'El stock no puede ser negativo',
+                    'less_than_equal_to' => 'El stock no puede ser mayor a 999,999',
+                ]
+            ],
+            'categoria' => [
+                'label' => 'Categoría',
+                'rules' => 'required|is_not_unique[categorias.id]',
+                'errors' => [
+                    'required' => 'La categoría es obligatoria',
+                    'is_not_unique' => 'Debe seleccionar una categoría válida',
+                ]
+            ],
+            'imagen' => [
+                'label' => 'Imagen',
+                'rules' => 'permit_empty|mime_in[imagen,image/jpg,image/jpeg,image/png,image/gif]|max_size[imagen,2048]',
+                'errors' => [
+                    'mime_in' => 'El archivo debe ser una imagen (JPG, JPEG, PNG o GIF)',
+                    'max_size' => 'La imagen no puede pesar más de 2MB',
+                ]
+            ],
             ]
         );
 
-        if ( $validation->withRequest($request)->run() ) {
+        if ($validation->withRequest($request)->run()) {
             $juego = new Videojuegos_model();
-            $videojuego = $juego->find($id);
+            $videojuegoActual = $juego->find($id);
             
-            $data = [];
-
-            $img = $this->request->getFile('imagen');
-            if ($img && $img->isValid() && !$img->hasMoved()) {
-                $nom_aleatorio = $img->getRandomName();
-                $img->move(ROOTPATH.'assets/uploads', $nom_aleatorio);
-                $data= ['imagen_videojuego' => $nom_aleatorio];
+            // Mantener la imagen actual por defecto
+            $nombreImagen = $videojuegoActual['imagen_videojuego'];
+            
+            // Procesar la imagen solo si se subió una nueva
+            $imagen = $this->request->getFile('imagen');
+            
+            if ($imagen && $imagen->isValid() && !$imagen->hasMoved()) {
+                // Eliminar la imagen anterior si existe
+                if ($nombreImagen && file_exists(ROOTPATH . 'public/assets/img/' . $nombreImagen)) {
+                    unlink(ROOTPATH . 'public/assets/img/' . $nombreImagen);
+                }
+                
+                // Subir la nueva imagen
+                $nuevoNombre = $imagen->getRandomName();
+                $imagen->move(ROOTPATH . 'public/assets/img', $nuevoNombre);
+                $nombreImagen = $nuevoNombre;
             }
-
-            $data['titulo_videojuego'] = $request->getPost('titulo') ?: $videojuego['titulo_videojuego'];
-            $data['descripcion_videojuego'] = $request->getPost('descripcion') ?: $videojuego['descripcion_videojuego'];
-            $data['desarrollador_videojuego'] = $request->getPost('desarrollador') ?: $videojuego['desarrollador_videojuego'];
-            $data['distribuidor_videojuego'] = $request->getPost('distribuidor') ?: $videojuego['distribuidor_videojuego'];
-            $data['precio_videojuego'] = $request->getPost('precio') !== '' ? $request->getPost('precio') : $videojuego['precio_videojuego'];
-            $data['id_categoria'] = $request->getPost('categoria') ?: $videojuego['id_categoria'];
-            $data['estado_videojuego'] = 1;
-
             
+            // Preparar los datos para actualizar
+            $data = [
+                'titulo_videojuego' => $request->getPost('titulo'),
+                'descripcion_videojuego' => $request->getPost('descripcion'),
+                'desarrollador_videojuego' => $request->getPost('desarrollador'),
+                'distribuidor_videojuego' => $request->getPost('distribuidor'),
+                'precio_videojuego' => $request->getPost('precio'),
+                'videojuego_stock' => $request->getPost('stock'),
+                'id_categoria' => $request->getPost('categoria'),
+                'imagen_videojuego' => $nombreImagen,
+                'estado_videojuego' => 1
+            ];
+            
+            // Actualizar el videojuego
             $juego->update($id, $data);
-
-            return redirect() -> route('gestionar_juego')->with('mensaje', 'Se editó el juego exitosamente!');
+            
+            return redirect()->route('gestionar_juego')->with('mensaje', '¡Juego actualizado exitosamente!');
         }else{
             $categoria = new Categorias_model();
             $juego = new Videojuegos_model();
