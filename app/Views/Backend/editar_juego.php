@@ -369,7 +369,7 @@
                                     </div>
 
                                     <div class="d-flex justify-content-between mt-4">
-                                        <a href="<?= base_url('gestionar_juego') ?>" class="btn btn-outline-secondary">
+                                        <a href="<?= base_url('gestionar_juegos') ?>" class="btn btn-outline-secondary">
                                             <i class="fas fa-arrow-left me-1"></i> Volver
                                         </a>
                                         <button type="submit" class="btn btn-primary px-4">
