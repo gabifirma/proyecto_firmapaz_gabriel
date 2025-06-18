@@ -64,15 +64,13 @@ class Admin_controller extends BaseController
 
     public function listar_ventas(){
         $ventasModel = new Ventas_Model();
-        $correoModel = new Personas_Model();
+        $personaModel = new Personas_Model();
 
-        $ventas = $ventasModel->findAll();
-
-        // Obtener nombres de juegos
-        foreach ($ventas as &$venta) {
-            $correo = $correoModel->find($venta['id_persona']); 
-            $venta['persona_mail'] = $correo ? $correo['persona_mail'] : 'Sin email';
-        }
+        // Obtener todas las ventas con los datos del cliente, ordenadas por fecha descendente
+        $ventas = $ventasModel->select('venta.*, personas.dni, personas.persona_nombre, personas.persona_apellido')
+                            ->join('personas', 'personas.id = venta.id_persona')
+                            ->orderBy('venta.fecha_venta', 'DESC')
+                            ->findAll();
 
         return view('practico/header_view')
         .view('contenido/nav_admin')
@@ -81,20 +79,42 @@ class Admin_controller extends BaseController
     }
 
     public function detalle_venta($id){
+        $ventaModel = new Ventas_Model();
         $detalleModel = new Detalle_Venta_Model();
         $juegosModel = new Videojuegos_Model();
+        $personaModel = new Personas_Model();
 
+        // Obtener información de la venta
+        $venta = $ventaModel->select('venta.*, personas.persona_nombre, personas.persona_apellido, personas.dni, personas.persona_mail as email, personas.domicilio, personas.codigo_postal')
+                          ->join('personas', 'personas.id = venta.id_persona')
+                          ->find($id);
+
+        if (!$venta) {
+            return redirect()->to('/listar_ventas')->with('error', 'Venta no encontrada');
+        }
+
+        // Obtener detalles de la venta
         $detalles = $detalleModel->where('id_venta', $id)->findAll();
+        $subtotal = 0;
 
-        // Obtener nombres de juegos
+        // Obtener nombres de juegos y calcular subtotal
         foreach ($detalles as &$juego) {
             $titulo = $juegosModel->find($juego['id_videojuego']); 
             $juego['titulo_videojuego'] = $titulo ? $titulo['titulo_videojuego'] : 'Sin título';
+            $juego['subtotal'] = $juego['detalle_cantidad'] * $juego['detalle_precio'];
+            $subtotal += $juego['subtotal'];
         }
+
+        $data = [
+            'venta' => $venta,
+            'detalles' => $detalles,
+            'subtotal' => $subtotal,
+            'fecha' => date('d/m/Y H:i:s', strtotime($venta['fecha_venta']))
+        ];
 
         return view('practico/header_view')
             .view('contenido/nav_admin')
-            .view('contenido/admin_detalle_venta', ['detalles' => $detalles])
+            .view('contenido/admin_detalle_venta', $data)
             .view('practico/footer_view');    
     }
 

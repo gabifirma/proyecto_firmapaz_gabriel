@@ -9,7 +9,10 @@
             <table class="table table-striped table-bordered align-middle">
                 <thead class="table-light">
                     <tr>
-                        <th>Cliente</th>
+                        <th>ID Venta</th>
+                        <th>DNI</th>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
                         <th>Fecha de Venta</th>
                         <th>Total ($)</th>
                         <th>Acción</th>
@@ -17,22 +20,24 @@
                 </thead>
                 <tbody>
                     <?php if (!empty($ventas)): ?>
-                        <?php foreach ($ventas as $c): ?>
+                        <?php foreach ($ventas as $venta): ?>
                             <tr>
-                                <td><?= esc($c['persona_mail']) ?></td>
-                                <td><?= date('d/m/Y', strtotime($c['fecha_venta'])) ?></td>
-                                <td>$<?= esc($c['total_venta']) ?></td>                                
+                                <td><?= esc($venta['id_venta']) ?></td>
+                                <td><?= esc($venta['dni']) ?></td>
+                                <td><?= esc($venta['persona_nombre']) ?></td>
+                                <td><?= esc($venta['persona_apellido']) ?></td>
+                                <td><?= date('d/m/Y', strtotime($venta['fecha_venta'])) ?></td>
+                                <td>$<?= number_format($venta['total_venta'], 2) ?></td>                                
                                 <td>
-                                    <form method="get" action="<?= base_url('detalle_venta/' .$c['id_venta']) ?>">
-                                        <?= csrf_field() ?>
-                                        <button type="submit" class="btn btn-sm btn-danger">Detalles de Venta</button>
-                                    </form>
+                                    <a href="<?= base_url('detalle_venta/' . $venta['id_venta']) ?>" class="btn btn-sm btn-primary">
+                                        Ver Detalle
+                                    </a>
                                 </td>
                             </tr>
                         <?php endforeach; ?>
                     <?php else: ?>
                         <tr>
-                            <td colspan="5" class="text-center">No hay ventas registradas.</td>
+                            <td colspan="7" class="text-center">No hay ventas registradas.</td>
                         </tr>
                     <?php endif; ?>
                 </tbody>

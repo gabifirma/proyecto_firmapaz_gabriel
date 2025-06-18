@@ -724,10 +724,458 @@ footer p {
     /* Verde para mensajes válidos */
 }
 
-/* Invalidación de campos registrarse y contacto*/
-.formulario-registrarse .invalid-feedback {
-    color: #ff6347;
-    /* Rojo para mensajes inválidos */
+/* Estilos para el detalle de venta en admin */
+.detalle-venta-container {
+    color: #e0e0e0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background-color: #121212;
+    min-height: 100vh;
+    padding: 20px 0;
+}
+
+.detalle-venta-container .container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: #1e1e1e;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    padding: 30px;
+    margin-top: 20px;
+    border: 1px solid #333;
+}
+
+.detalle-venta-container .card {
+    border: 1px solid #333;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    margin-bottom: 25px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #252525;
+}
+
+.detalle-venta-container .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+    border-color: #444;
+}
+
+.detalle-venta-container .card-header {
+    background-color: #2d2d2d;
+    border-bottom: 1px solid #444;
+    padding: 15px 20px;
+}
+
+.detalle-venta-container .card-header h2 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #32cd32;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+.detalle-venta-container .card-header i {
+    margin-right: 10px;
+    color: #0d6efd;
+}
+
+.detalle-venta-container .card-body {
+    padding: 20px;
+    background-color: #252525;
+    color: #e0e0e0;
+}
+
+/* Asegurar que todo el texto dentro del contenedor sea visible */
+.detalle-venta-container,
+.detalle-venta-container p,
+.detalle-venta-container span:not(.badge),
+.detalle-venta-container h1,
+.detalle-venta-container h2,
+.detalle-venta-container h3,
+.detalle-venta-container h4,
+.detalle-venta-container h5,
+.detalle-venta-container h6,
+.detalle-venta-container .h1,
+.detalle-venta-container .h2,
+.detalle-venta-container .h3,
+.detalle-venta-container .h4,
+.detalle-venta-container .h5,
+.detalle-venta-container .h6,
+.detalle-venta-container .small {
+    color: #e0e0e0 !important;
+}
+
+.detalle-venta-container .h2,
+.detalle-venta-container .h3,
+.detalle-venta-container .h4,
+.detalle-venta-container .h5,
+.detalle-venta-container .h6,
+.detalle-venta-container .text-muted {
+    color: #a0a0a0 !important;
+}
+
+/* Asegurar que los enlaces sean visibles */
+.detalle-venta-container a:not(.btn) {
+    color: #4caf50;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.detalle-venta-container a:not(.btn):hover {
+    color: #32cd32;
+    text-decoration: underline;
+}
+
+/* Ajustar los textos en las tarjetas */
+.detalle-venta-container .card {
+    color: #e0e0e0 !important;
+}
+
+/* Asegurar que los textos en los elementos de formulario sean visibles */
+.detalle-venta-container .form-control,
+.detalle-venta-container .form-select,
+.detalle-venta-container input,
+.detalle-venta-container select,
+.detalle-venta-container textarea {
+    background-color: #2d2d2d !important;
+    color: #e0e0e0 !important;
+    border-color: #444 !important;
+}
+
+/* Asegurar que los placeholders sean visibles */
+.detalle-venta-container ::placeholder {
+    color: #a0a0a0 !important;
+    opacity: 1;
+}
+
+/* Ajustar los textos en los dropdowns */
+.detalle-venta-container .dropdown-menu {
+    background-color: #2d2d2d;
+    border-color: #444;
+}
+
+.detalle-venta-container .dropdown-item {
+    color: #e0e0e0;
+}
+
+.detalle-venta-container .dropdown-item:hover {
+    background-color: #383838;
+    color: #32cd32;
+}
+
+/* Ajustar los textos en los tooltips */
+.detalle-venta-container .tooltip-inner {
+    background-color: #2d2d2d;
+    color: #e0e0e0;
+    border: 1px solid #444;
+}
+
+/* Ajustar los textos en los popovers */
+.detalle-venta-container .popover {
+    background-color: #2d2d2d;
+    border-color: #444;
+}
+
+.detalle-venta-container .popover-header {
+    background-color: #252525;
+    border-bottom-color: #444;
+    color: #32cd32;
+}
+
+.detalle-venta-container .popover-body {
+    color: #e0e0e0;
+}
+
+/* Asegurar que los textos en las tablas sean visibles */
+.detalle-venta-container table {
+    color: #e0e0e0;
+}
+
+.detalle-venta-container table td,
+.detalle-venta-container table th {
+    color: #e0e0e0;
+}
+
+/* Ajustar los textos en los badges */
+.detalle-venta-container .badge {
+    color: #e0e0e0 !important;
+}
+
+/* Estilos para la información del comprador */
+.info-comprador {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 25px;
+    padding: 15px;
+    background-color: #2d2d2d;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    border: 1px solid #444;
+}
+
+.info-comprador:hover {
+    background-color: #383838;
+    transform: translateX(5px);
+    border-color: #32cd32;
+}
+
+.info-comprador .icono {
+    background-color: #1e1e1e;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    color: #32cd32;
+    font-size: 1.1rem;
+    border: 1px solid #444;
+}
+
+.info-comprador .texto h4 {
+    font-size: 1rem;
+    margin: 0 0 5px 0;
+    color: #e0e0e0;
+    font-weight: 600;
+}
+
+.info-comprador .texto p {
+    margin: 0;
+    color: #a0a0a0;
+    font-size: 0.9rem;
+}
+
+.info-comprador .texto a {
+    color: #4caf50;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.info-comprador .texto a:hover {
+    color: #32cd32;
+    text-decoration: underline;
+}
+
+/* Estilos para productos */
+.producto-item {
+    padding: 15px 20px;
+    border-bottom: 1px solid #444;
+    transition: all 0.2s ease;
+    background-color: #252525;
+}
+
+.producto-item:last-child {
+    border-bottom: none;
+}
+
+.producto-item:hover {
+    background-color: #2d2d2d;
+    border-color: #32cd32;
+}
+
+/* Estilos para el resumen de pago */
+.resumen-pago {
+    background-color: #2d2d2d;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+    border: 1px solid #444;
+}
+
+.resumen-pago h3 {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    color: #32cd32;
+    font-weight: 600;
+    border-bottom: 1px solid #444;
+    padding-bottom: 10px;
+}
+
+.resumen-pago .total {
+    color: #4caf50;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* Estilos para el pie de página */
+.pie-pagina {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #444;
+    color: #a0a0a0;
+    font-size: 0.9rem;
+}
+
+.pie-pagina .iconos {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 15px;
+}
+
+.pie-pagina .iconos > div {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #32cd32;
+}
+
+.pie-pagina .iconos i {
+    font-size: 1.2rem;
+    transition: color 0.2s;
+}
+
+.pie-pagina .iconos i:hover {
+    color: #4caf50;
+}
+
+/* Estilos para la barra superior */
+.detalle-venta-container .top-bar {
+    background-color: #1e1e1e;
+    padding: 10px 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    margin-bottom: 25px;
+    border-bottom: 1px solid #333;
+}
+
+/* Estilos para el encabezado */
+.detalle-venta-container .encabezado {
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #444;
+}
+
+.detalle-venta-container .encabezado img {
+    max-height: 60px;
+    margin-bottom: 15px;
+    filter: drop-shadow(0 0 5px rgba(50, 205, 50, 0.5));
+    transition: transform 0.3s ease;
+}
+
+.detalle-venta-container .encabezado img:hover {
+    transform: scale(1.05);
+}
+
+.detalle-venta-container .encabezado h1 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #32cd32;
+    text-shadow: 0 0 10px rgba(50, 205, 50, 0.3);
+}
+
+/* Estilos para badges */
+.detalle-venta-container .badge {
+    font-weight: 500;
+    padding: 0.5em 0.9em;
+    border-radius: 20px;
+    font-size: 0.85em;
+    letter-spacing: 0.3px;
+    background-color: #2d2d2d;
+    color: #e0e0e0;
+    border: 1px solid #444;
+    transition: all 0.3s ease;
+}
+
+/* Estilo específico para el badge de método de pago */
+.detalle-venta-container .encabezado .badge {
+    margin-top: 10px;
+    background-color: #1e3a1e !important;
+    color: #4caf50 !important;
+    border: 1px solid #2d5a2d !important;
+    font-size: 0.9em;
+    padding: 0.5em 1em;
+    box-shadow: 0 0 10px rgba(76, 175, 80, 0.2);
+}
+
+.detalle-venta-container .encabezado .badge:hover {
+    background-color: #2d5a2d !important;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(76, 175, 80, 0.3);
+}
+
+/* Estilo para el badge de estado de pago */
+.detalle-venta-container .bg-success.bg-opacity-10 {
+    background-color: rgba(25, 135, 84, 0.2) !important;
+    color: #4caf50 !important;
+    border: 1px solid rgba(25, 135, 84, 0.3) !important;
+}
+
+/* Estilos para botones */
+.detalle-venta-container .btn-outline-secondary {
+    border-color: #444;
+    color: #a0a0a0;
+    background-color: transparent;
+    transition: all 0.3s ease;
+}
+
+.detalle-venta-container .btn-outline-secondary:hover {
+    background-color: #32cd32;
+    border-color: #32cd32;
+    color: #fff;
+    box-shadow: 0 0 10px rgba(50, 205, 50, 0.3);
+}
+
+/* Estilos para la tabla de productos */
+.detalle-venta-container table {
+    color: #e0e0e0;
+    background-color: #252525;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.detalle-venta-container table th {
+    background-color: #2d2d2d;
+    color: #32cd32;
+    border-bottom: 2px solid #444;
+}
+
+.detalle-venta-container table td {
+    border-bottom: 1px solid #444;
+    vertical-align: middle;
+}
+
+.detalle-venta-container table tr:last-child td {
+    border-bottom: none;
+}
+
+.detalle-venta-container table tr:hover {
+    background-color: #2d2d2d;
+}
+
+/* Estilos para impresión */
+@media print {
+    .detalle-venta-container {
+        background-color: #fff !important;
+        padding: 0 !important;
+    }
+    
+    .detalle-venta-container .container {
+        box-shadow: none !important;
+        padding: 10px !important;
+        margin: 0 !important;
+        max-width: 100% !important;
+    }
+    
+    .no-print, .btn {
+        display: none !important;
+    }
+    
+    .card {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+    
+    .info-comprador {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
 }
 
 .titulo-contacto {
