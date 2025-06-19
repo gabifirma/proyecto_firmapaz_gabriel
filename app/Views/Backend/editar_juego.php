@@ -53,7 +53,7 @@
 
                     <div class="form-group mt-3">
                         <label for="videojuego_stock">Stock disponible</label>
-                        <?php echo form_input(['name' => 'videojuego_stock', 'id' => 'videojuego_stock', 'type' => 'number', 'class' => 'form-control', 'min' => '0', 'value' => $videojuego["videojuego_stock"] ]); ?>
+                        <?php echo form_input(['name' => 'stock', 'id' => 'stock', 'type' => 'text', 'class' => 'form-control', 'placeholder' => 'Ingrese el stock del juego', 'value' => $videojuego["videojuego_stock"] ]); ?>
                     </div>
 
                     <div class="form-group mt-3">

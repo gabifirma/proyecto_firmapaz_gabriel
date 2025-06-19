@@ -2687,3 +2687,540 @@ DEBUG - 2025-06-19 13:49:38 --> Datos del juego: Array
 
 DEBUG - 2025-06-19 13:49:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 DEBUG - 2025-06-19 13:49:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 14:03:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 14:03:37 --> ID del juego: 5
+DEBUG - 2025-06-19 14:03:37 --> Datos del juego: Array
+(
+    [id_videojuego] => 5
+    [titulo_videojuego] => Doom
+    [descripcion_videojuego] => Este juego se centra en las hazañas de un marine espacial no identificado que opera bajo las órdenes de la Union Aerospace Corporation (UAC), que lucha contra hordas de demonios y no muertos en el inframundo y la Tierra, protagonizando diversos viajes por portales entre ambos mundos.
+    [desarrollador_videojuego] => id Software
+    [distribuidor_videojuego] => Bethesda Softworks
+    [precio_videojuego] => 25999
+    [imagen_videojuego] => juego17.jpg
+    [id_categoria] => 1
+    [estado_videojuego] => 1
+    [videojuego_stock] => 93
+)
+
+DEBUG - 2025-06-19 14:03:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 14:03:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 14:03:44 --> ID del juego: 6
+DEBUG - 2025-06-19 14:03:44 --> Datos del juego: Array
+(
+    [id_videojuego] => 6
+    [titulo_videojuego] => Gotham Knigths
+    [descripcion_videojuego] => Es un RPG de mundo abierto, ambientado en la versión más dinámica e interactiva de Ciudad Gótica hasta ahora. Juega en solitario o con otro héroe y patrulla los cinco distritos de Ciudad Gótica para sorprender a los criminales dondequiera que se encuentren.
+    [desarrollador_videojuego] => WB Games Montréal
+    [distribuidor_videojuego] => WB Games
+    [precio_videojuego] => 15999
+    [imagen_videojuego] => nuevo1.jpg
+    [id_categoria] => 3
+    [estado_videojuego] => 1
+    [videojuego_stock] => 200
+)
+
+DEBUG - 2025-06-19 14:03:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 14:03:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 14:03:54 --> ID del juego: 9
+DEBUG - 2025-06-19 14:03:54 --> Datos del juego: Array
+(
+    [id_videojuego] => 9
+    [titulo_videojuego] => Fórmula 1 (2024)
+    [descripcion_videojuego] => Compite a tu manera en EA SPORTS F1® 25, el videojuego oficial del 2025 FIA Formula One World Championship™ con un modo Mi Equipo renovado, el emocionante tercer capítulo de Braking Point, personalización mejorada y mucho más que te espera.
+    [desarrollador_videojuego] => Codemaster
+    [distribuidor_videojuego] => Electronic Arts
+    [precio_videojuego] => 58999
+    [imagen_videojuego] => 1748957274_a39f5d6ace0d2ebf8a17.jpg
+    [id_categoria] => 2
+    [estado_videojuego] => 1
+    [videojuego_stock] => 499
+)
+
+DEBUG - 2025-06-19 14:04:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 14:04:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 14:04:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 14:04:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 14:04:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 14:04:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 14:04:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 14:04:55 --> Entró a actualizar_videojuego con ID: 7
+DEBUG - 2025-06-19 14:04:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 14:04:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 14:05:10 --> Entró a actualizar_videojuego con ID: 7
+DEBUG - 2025-06-19 14:05:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 14:05:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 14:05:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 14:11:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 14:11:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-06-19 14:11:42 --> CodeIgniter\HTTP\Exceptions\HTTPException: The route for "gestionar_juego" cannot be found.
+[Method: POST, Route: actualizar_videojuego/7]
+in SYSTEMPATH\HTTP\RedirectResponse.php on line 63.
+ 1 SYSTEMPATH\HTTP\RedirectResponse.php(63): CodeIgniter\HTTP\Exceptions\HTTPException::forInvalidRedirectRoute('gestionar_juego')
+ 2 APPPATH\Controllers\Videojuegos_controller.php(188): CodeIgniter\HTTP\RedirectResponse->route(false)
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Videojuegos_controller->actualizar_videojuego('7')
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Videojuegos_controller))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-06-19 14:12:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 14:12:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 14:12:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 14:12:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 14:12:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 14:12:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 14:14:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 14:14:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 14:15:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 14:15:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 14:16:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 14:16:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 14:16:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 14:16:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 14:17:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 14:17:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 14:17:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 14:17:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 14:17:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 14:17:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 14:17:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 14:19:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 14:19:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 14:19:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 14:19:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 14:21:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 14:21:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 14:21:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 14:21:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 14:21:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 14:21:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 14:21:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 14:21:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 14:22:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 14:22:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 14:22:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 14:22:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 14:22:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 14:22:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 14:23:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 14:23:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 14:23:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 14:25:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 14:25:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 14:25:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 14:25:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 14:25:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 14:25:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 14:25:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 14:25:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 14:25:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 14:26:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 14:26:00 --> ID del juego: 13
+DEBUG - 2025-06-19 14:26:00 --> Datos del juego: Array
+(
+    [id_videojuego] => 13
+    [titulo_videojuego] => Call of Duty: Black Ops 6 (Lote Multigeneracional)
+    [descripcion_videojuego] => Call of Duty: Black Ops 6 es un juego de disparos en primera persona desarrollado por Treyarch y Raven Software, ambientado a principios de la década de 1990, durante un período de transición política global con el fin de la Guerra Fría. El juego se centra en una historia de suspense, espionaje y acción, donde los jugadores se encontrarán en medio de una conspiración clandestina que involucra a los niveles más altos de la CIA. 
+    [desarrollador_videojuego] => Treyarch
+    [distribuidor_videojuego] => Activision
+    [precio_videojuego] => 58999
+    [imagen_videojuego] => 1750343109_8d6f3ea4ac0709b2161c.jpg
+    [id_categoria] => 1
+    [estado_videojuego] => 1
+    [videojuego_stock] => 20
+)
+
+DEBUG - 2025-06-19 14:26:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 14:26:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 14:26:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 14:26:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 14:26:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 14:26:33 --> ID del juego: 13
+DEBUG - 2025-06-19 14:26:33 --> Datos del juego: Array
+(
+    [id_videojuego] => 13
+    [titulo_videojuego] => Call of Duty: Black Ops 6 (Lote Multigeneracional)
+    [descripcion_videojuego] => Call of Duty: Black Ops 6 es un juego de disparos en primera persona desarrollado por Treyarch y Raven Software, ambientado a principios de la década de 1990, durante un período de transición política global con el fin de la Guerra Fría. El juego se centra en una historia de suspense, espionaje y acción, donde los jugadores se encontrarán en medio de una conspiración clandestina que involucra a los niveles más altos de la CIA. 
+    [desarrollador_videojuego] => Treyarch
+    [distribuidor_videojuego] => Activision
+    [precio_videojuego] => 58999
+    [imagen_videojuego] => 1750343109_8d6f3ea4ac0709b2161c.jpg
+    [id_categoria] => 1
+    [estado_videojuego] => 1
+    [videojuego_stock] => 20
+)
+
+DEBUG - 2025-06-19 14:26:36 --> === INICIO agregar_carrito ===
+DEBUG - 2025-06-19 14:26:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-06-19 14:26:36 --> Cart Class Initialized
+DEBUG - 2025-06-19 14:26:36 --> Datos de la solicitud: Array
+(
+    [method] => POST
+    [juego_id] => 13
+    [post_data] => Array
+        (
+            [id] => 13
+            [titulo] => Call of Duty: Black Ops 6 (Lote Multigeneracional)
+            [precio] => 58999
+        )
+
+    [get_data] => Array
+        (
+        )
+
+    [raw_input] => id=13&titulo=Call+of+Duty%3A+Black+Ops+6+%28Lote+Multigeneracional%29&precio=58999
+    [session] => Array
+        (
+            [__ci_last_regenerate] => 1750343153
+            [_ci_previous_url] => http://localhost/proyecto_firmapaz_gabriel/ver_juego/13
+            [id] => 6
+            [nombre] => joel
+            [apellido] => gomez
+            [perfil] => 2
+            [login] => 1
+        )
+
+)
+
+ERROR - 2025-06-19 14:26:36 --> An invalid name was submitted as the product name: Call of Duty: Black Ops 6 (Lote Multigeneracional) The name can only contain alpha-numeric characters, dashes, underscores, colons, and spaces
+DEBUG - 2025-06-19 14:26:36 --> Juego agregado al carrito exitosamente: Call of Duty: Black Ops 6 (Lote Multigeneracional)
+DEBUG - 2025-06-19 14:26:36 --> === FIN agregar_carrito (éxito) ===
+DEBUG - 2025-06-19 14:26:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-06-19 14:26:36 --> Cart Class Initialized
+DEBUG - 2025-06-19 14:26:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 14:26:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 14:27:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 14:27:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 14:27:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 14:27:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 14:27:12 --> ID del juego: 13
+DEBUG - 2025-06-19 14:27:12 --> Datos del juego: Array
+(
+    [id_videojuego] => 13
+    [titulo_videojuego] => Call of Duty: Black Ops 6 (Lote Multigeneracional)
+    [descripcion_videojuego] => Call of Duty: Black Ops 6 es un juego de disparos en primera persona desarrollado por Treyarch y Raven Software, ambientado a principios de la década de 1990, durante un período de transición política global con el fin de la Guerra Fría. El juego se centra en una historia de suspense, espionaje y acción, donde los jugadores se encontrarán en medio de una conspiración clandestina que involucra a los niveles más altos de la CIA. 
+    [desarrollador_videojuego] => Treyarch
+    [distribuidor_videojuego] => Activision
+    [precio_videojuego] => 58999
+    [imagen_videojuego] => 1750343109_8d6f3ea4ac0709b2161c.jpg
+    [id_categoria] => 1
+    [estado_videojuego] => 1
+    [videojuego_stock] => 19
+)
+
+DEBUG - 2025-06-19 14:27:14 --> === INICIO agregar_carrito ===
+DEBUG - 2025-06-19 14:27:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-06-19 14:27:14 --> Cart Class Initialized
+DEBUG - 2025-06-19 14:27:14 --> Datos de la solicitud: Array
+(
+    [method] => POST
+    [juego_id] => 13
+    [post_data] => Array
+        (
+            [id] => 13
+            [titulo] => Call of Duty: Black Ops 6 (Lote Multigeneracional)
+            [precio] => 58999
+        )
+
+    [get_data] => Array
+        (
+        )
+
+    [raw_input] => id=13&titulo=Call+of+Duty%3A+Black+Ops+6+%28Lote+Multigeneracional%29&precio=58999
+    [session] => Array
+        (
+            [__ci_last_regenerate] => 1750343208
+            [_ci_previous_url] => http://localhost/proyecto_firmapaz_gabriel/ver_juego/13
+            [id] => 5
+            [nombre] => juan
+            [apellido] => perez
+            [perfil] => 2
+            [login] => 1
+        )
+
+)
+
+ERROR - 2025-06-19 14:27:14 --> An invalid name was submitted as the product name: Call of Duty: Black Ops 6 (Lote Multigeneracional) The name can only contain alpha-numeric characters, dashes, underscores, colons, and spaces
+DEBUG - 2025-06-19 14:27:14 --> Juego agregado al carrito exitosamente: Call of Duty: Black Ops 6 (Lote Multigeneracional)
+DEBUG - 2025-06-19 14:27:14 --> === FIN agregar_carrito (éxito) ===
+DEBUG - 2025-06-19 14:27:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-06-19 14:27:14 --> Cart Class Initialized
+DEBUG - 2025-06-19 14:27:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 14:27:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 14:27:18 --> ID del juego: 3
+DEBUG - 2025-06-19 14:27:18 --> Datos del juego: Array
+(
+    [id_videojuego] => 3
+    [titulo_videojuego] => FIFA 24
+    [descripcion_videojuego] => Este  es el comienzo del futuro del fútbol. Con este título innovador y auténtico, te sentirás mucho más cerca del juego gracias a una experiencia futbolística más real que nunca y a la compañía de los mejores jugadores de los equipos, ligas y competencias más grandes del mundo.
+    [desarrollador_videojuego] => EA Vancouver
+    [distribuidor_videojuego] => Electronic Arts
+    [precio_videojuego] => 15999
+    [imagen_videojuego] => juego7.jpg
+    [id_categoria] => 2
+    [estado_videojuego] => 1
+    [videojuego_stock] => 89
+)
+
+DEBUG - 2025-06-19 14:27:20 --> === INICIO agregar_carrito ===
+DEBUG - 2025-06-19 14:27:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-06-19 14:27:20 --> Cart Class Initialized
+DEBUG - 2025-06-19 14:27:20 --> Datos de la solicitud: Array
+(
+    [method] => POST
+    [juego_id] => 3
+    [post_data] => Array
+        (
+            [id] => 3
+            [titulo] => FIFA 24
+            [precio] => 15999
+        )
+
+    [get_data] => Array
+        (
+        )
+
+    [raw_input] => id=3&titulo=FIFA+24&precio=15999
+    [session] => Array
+        (
+            [__ci_last_regenerate] => 1750343208
+            [_ci_previous_url] => http://localhost/proyecto_firmapaz_gabriel/ver_juego/3
+            [id] => 5
+            [nombre] => juan
+            [apellido] => perez
+            [perfil] => 2
+            [login] => 1
+        )
+
+)
+
+DEBUG - 2025-06-19 14:27:20 --> Juego agregado al carrito exitosamente: FIFA 24
+DEBUG - 2025-06-19 14:27:20 --> === FIN agregar_carrito (éxito) ===
+DEBUG - 2025-06-19 14:27:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-06-19 14:27:20 --> Cart Class Initialized
+DEBUG - 2025-06-19 14:27:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 14:27:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 14:27:27 --> ID del juego: 9
+DEBUG - 2025-06-19 14:27:27 --> Datos del juego: Array
+(
+    [id_videojuego] => 9
+    [titulo_videojuego] => Fórmula 1 (2024)
+    [descripcion_videojuego] => Compite a tu manera en EA SPORTS F1® 25, el videojuego oficial del 2025 FIA Formula One World Championship™ con un modo Mi Equipo renovado, el emocionante tercer capítulo de Braking Point, personalización mejorada y mucho más que te espera.
+    [desarrollador_videojuego] => Codemaster
+    [distribuidor_videojuego] => Electronic Arts
+    [precio_videojuego] => 58999
+    [imagen_videojuego] => 1748957274_a39f5d6ace0d2ebf8a17.jpg
+    [id_categoria] => 2
+    [estado_videojuego] => 1
+    [videojuego_stock] => 499
+)
+
+DEBUG - 2025-06-19 14:27:28 --> === INICIO agregar_carrito ===
+DEBUG - 2025-06-19 14:27:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-06-19 14:27:28 --> Cart Class Initialized
+DEBUG - 2025-06-19 14:27:28 --> Datos de la solicitud: Array
+(
+    [method] => POST
+    [juego_id] => 9
+    [post_data] => Array
+        (
+            [id] => 9
+            [titulo] => Fórmula 1 (2024)
+            [precio] => 58999
+        )
+
+    [get_data] => Array
+        (
+        )
+
+    [raw_input] => id=9&titulo=F%C3%B3rmula+1+%282024%29&precio=58999
+    [session] => Array
+        (
+            [__ci_last_regenerate] => 1750343208
+            [_ci_previous_url] => http://localhost/proyecto_firmapaz_gabriel/ver_juego/9
+            [id] => 5
+            [nombre] => juan
+            [apellido] => perez
+            [perfil] => 2
+            [login] => 1
+            [cart_contents] => Array
+                (
+                    [cart_total] => 15999
+                    [total_items] => 1
+                    [eccbc87e4b5ce2fe28308fd9f2a7baf3] => Array
+                        (
+                            [id] => 3
+                            [name] => FIFA 24
+                            [price] => 15999
+                            [qty] => 1
+                            [rowid] => eccbc87e4b5ce2fe28308fd9f2a7baf3
+                            [subtotal] => 15999
+                        )
+
+                )
+
+            [total] => 15999
+        )
+
+)
+
+ERROR - 2025-06-19 14:27:28 --> An invalid name was submitted as the product name: Fórmula 1 (2024) The name can only contain alpha-numeric characters, dashes, underscores, colons, and spaces
+DEBUG - 2025-06-19 14:27:28 --> Juego agregado al carrito exitosamente: Fórmula 1 (2024)
+DEBUG - 2025-06-19 14:27:28 --> === FIN agregar_carrito (éxito) ===
+DEBUG - 2025-06-19 14:27:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-06-19 14:27:29 --> Cart Class Initialized
+DEBUG - 2025-06-19 14:27:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 14:27:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 14:27:35 --> ID del juego: 8
+DEBUG - 2025-06-19 14:27:35 --> Datos del juego: Array
+(
+    [id_videojuego] => 8
+    [titulo_videojuego] => Mortal Kombatt 11
+    [descripcion_videojuego] => Se trata de la undécima secuela de una serie de títulos de combate y peleas de marcada estructura 2D, que en esta ocasión, además de añadir los mejores gráficos de la serie, presentará luchadores clásicos y nuevos, más modos de juego y una oferta online que quiere marcar un antes y un después.
+    [desarrollador_videojuego] => NetherRealm Studios
+    [distribuidor_videojuego] => WB Games
+    [precio_videojuego] => 20999
+    [imagen_videojuego] => nuevo3.jpg
+    [id_categoria] => 5
+    [estado_videojuego] => 1
+    [videojuego_stock] => 36
+)
+
+DEBUG - 2025-06-19 14:27:37 --> === INICIO agregar_carrito ===
+DEBUG - 2025-06-19 14:27:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-06-19 14:27:37 --> Cart Class Initialized
+DEBUG - 2025-06-19 14:27:37 --> Datos de la solicitud: Array
+(
+    [method] => POST
+    [juego_id] => 8
+    [post_data] => Array
+        (
+            [id] => 8
+            [titulo] => Mortal Kombatt 11
+            [precio] => 20999
+        )
+
+    [get_data] => Array
+        (
+        )
+
+    [raw_input] => id=8&titulo=Mortal+Kombatt+11&precio=20999
+    [session] => Array
+        (
+            [__ci_last_regenerate] => 1750343208
+            [_ci_previous_url] => http://localhost/proyecto_firmapaz_gabriel/ver_juego/8
+            [id] => 5
+            [nombre] => juan
+            [apellido] => perez
+            [perfil] => 2
+            [login] => 1
+            [cart_contents] => Array
+                (
+                    [cart_total] => 15999
+                    [total_items] => 1
+                    [eccbc87e4b5ce2fe28308fd9f2a7baf3] => Array
+                        (
+                            [id] => 3
+                            [name] => FIFA 24
+                            [price] => 15999
+                            [qty] => 1
+                            [rowid] => eccbc87e4b5ce2fe28308fd9f2a7baf3
+                            [subtotal] => 15999
+                        )
+
+                )
+
+            [total] => 15999
+        )
+
+)
+
+DEBUG - 2025-06-19 14:27:37 --> Juego agregado al carrito exitosamente: Mortal Kombatt 11
+DEBUG - 2025-06-19 14:27:37 --> === FIN agregar_carrito (éxito) ===
+DEBUG - 2025-06-19 14:27:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-06-19 14:27:37 --> Cart Class Initialized
+DEBUG - 2025-06-19 14:27:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 14:27:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 14:27:57 --> ID del juego: 7
+DEBUG - 2025-06-19 14:27:57 --> Datos del juego: Array
+(
+    [id_videojuego] => 7
+    [titulo_videojuego] => Age of Empires IV: Anniversary Edition
+    [descripcion_videojuego] => Combina lo que ya le funcionó en su momento con fórmulas innovadoras para que disfrutes expandiendo tu imperio hasta donde alcancen tus ojos, todo ello con una impresionante fidelidad visual en 4K que eleva a este juego de estrategia en tiempo real a otro nivel.
+    [desarrollador_videojuego] => Relic Entertainment
+    [distribuidor_videojuego] => Xbox Game Studios3
+    [precio_videojuego] => 19000
+    [imagen_videojuego] => nuevo2.jpg
+    [id_categoria] => 4
+    [estado_videojuego] => 1
+    [videojuego_stock] => 100
+)
+
+DEBUG - 2025-06-19 14:27:58 --> === INICIO agregar_carrito ===
+DEBUG - 2025-06-19 14:27:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-06-19 14:27:58 --> Cart Class Initialized
+DEBUG - 2025-06-19 14:27:58 --> Datos de la solicitud: Array
+(
+    [method] => POST
+    [juego_id] => 7
+    [post_data] => Array
+        (
+            [id] => 7
+            [titulo] => Age of Empires IV: Anniversary Edition
+            [precio] => 19000
+        )
+
+    [get_data] => Array
+        (
+        )
+
+    [raw_input] => id=7&titulo=Age+of+Empires+IV%3A+Anniversary+Edition&precio=19000
+    [session] => Array
+        (
+            [__ci_last_regenerate] => 1750343208
+            [_ci_previous_url] => http://localhost/proyecto_firmapaz_gabriel/ver_juego/7
+            [id] => 5
+            [nombre] => juan
+            [apellido] => perez
+            [perfil] => 2
+            [login] => 1
+            [cart_contents] => Array
+                (
+                    [cart_total] => 36998
+                    [total_items] => 2
+                    [eccbc87e4b5ce2fe28308fd9f2a7baf3] => Array
+                        (
+                            [id] => 3
+                            [name] => FIFA 24
+                            [price] => 15999
+                            [qty] => 1
+                            [rowid] => eccbc87e4b5ce2fe28308fd9f2a7baf3
+                            [subtotal] => 15999
+                        )
+
+                    [c9f0f895fb98ab9159f51fd0297e236d] => Array
+                        (
+                            [id] => 8
+                            [name] => Mortal Kombatt 11
+                            [price] => 20999
+                            [qty] => 1
+                            [rowid] => c9f0f895fb98ab9159f51fd0297e236d
+                            [subtotal] => 20999
+                        )
+
+                )
+
+            [total] => 36998
+        )
+
+)
+
+DEBUG - 2025-06-19 14:27:58 --> Juego agregado al carrito exitosamente: Age of Empires IV: Anniversary Edition
+DEBUG - 2025-06-19 14:27:58 --> === FIN agregar_carrito (éxito) ===
+DEBUG - 2025-06-19 14:27:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-06-19 14:27:58 --> Cart Class Initialized
+DEBUG - 2025-06-19 14:28:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-06-19 14:28:03 --> Cart Class Initialized
+DEBUG - 2025-06-19 14:28:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-06-19 14:28:04 --> Cart Class Initialized
