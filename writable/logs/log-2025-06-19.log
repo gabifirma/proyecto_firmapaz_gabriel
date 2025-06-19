@@ -1786,3 +1786,904 @@ DEBUG - 2025-06-19 04:16:46 --> Session: Class initialized using 'CodeIgniter\Se
 DEBUG - 2025-06-19 04:16:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 DEBUG - 2025-06-19 04:16:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 DEBUG - 2025-06-19 04:16:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 12:19:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 12:19:08 --> ID del juego: 5
+DEBUG - 2025-06-19 12:19:08 --> Datos del juego: Array
+(
+    [id_videojuego] => 5
+    [titulo_videojuego] => Doom
+    [descripcion_videojuego] => Este juego se centra en las hazañas de un marine espacial no identificado que opera bajo las órdenes de la Union Aerospace Corporation (UAC), que lucha contra hordas de demonios y no muertos en el inframundo y la Tierra, protagonizando diversos viajes por portales entre ambos mundos.
+    [desarrollador_videojuego] => id Software
+    [distribuidor_videojuego] => Bethesda Softworks
+    [precio_videojuego] => 25999
+    [imagen_videojuego] => juego17.jpg
+    [id_categoria] => 1
+    [estado_videojuego] => 1
+    [videojuego_stock] => 93
+)
+
+DEBUG - 2025-06-19 12:19:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 12:19:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 12:19:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 12:19:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 12:20:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 12:20:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 12:20:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-06-19 12:20:06 --> Cart Class Initialized
+DEBUG - 2025-06-19 12:20:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 12:20:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 12:20:10 --> ID del juego: 3
+DEBUG - 2025-06-19 12:20:10 --> Datos del juego: Array
+(
+    [id_videojuego] => 3
+    [titulo_videojuego] => FIFA 24
+    [descripcion_videojuego] => Este  es el comienzo del futuro del fútbol. Con este título innovador y auténtico, te sentirás mucho más cerca del juego gracias a una experiencia futbolística más real que nunca y a la compañía de los mejores jugadores de los equipos, ligas y competencias más grandes del mundo.
+    [desarrollador_videojuego] => EA Vancouver
+    [distribuidor_videojuego] => Electronic Arts
+    [precio_videojuego] => 15999
+    [imagen_videojuego] => juego7.jpg
+    [id_categoria] => 2
+    [estado_videojuego] => 1
+    [videojuego_stock] => 89
+)
+
+DEBUG - 2025-06-19 12:20:12 --> === INICIO agregar_carrito ===
+DEBUG - 2025-06-19 12:20:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-06-19 12:20:12 --> Cart Class Initialized
+DEBUG - 2025-06-19 12:20:12 --> Datos de la solicitud: Array
+(
+    [method] => POST
+    [juego_id] => 3
+    [post_data] => Array
+        (
+            [id] => 3
+            [titulo] => FIFA 24
+            [precio] => 15999
+        )
+
+    [get_data] => Array
+        (
+        )
+
+    [raw_input] => id=3&titulo=FIFA+24&precio=15999
+    [session] => Array
+        (
+            [__ci_last_regenerate] => 1750335548
+            [_ci_previous_url] => http://localhost/proyecto_firmapaz_gabriel/ver_juego/3
+            [id] => 5
+            [nombre] => juan
+            [apellido] => perez
+            [perfil] => 2
+            [login] => 1
+        )
+
+)
+
+DEBUG - 2025-06-19 12:20:12 --> Juego agregado al carrito exitosamente: FIFA 24
+DEBUG - 2025-06-19 12:20:12 --> === FIN agregar_carrito (éxito) ===
+DEBUG - 2025-06-19 12:20:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-06-19 12:20:12 --> Cart Class Initialized
+DEBUG - 2025-06-19 12:20:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-06-19 12:20:19 --> Cart Class Initialized
+DEBUG - 2025-06-19 12:20:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-06-19 12:20:22 --> Cart Class Initialized
+DEBUG - 2025-06-19 12:20:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 12:20:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 12:20:26 --> ID del juego: 2
+DEBUG - 2025-06-19 12:20:26 --> Datos del juego: Array
+(
+    [id_videojuego] => 2
+    [titulo_videojuego] => Among Us
+    [descripcion_videojuego] => Un juego exclusivamente online donde la verdadera oposición son los otros jugadores que están contigo. Cada juego será diferente dependiendo del rol que estés jugando y de la experiencia o astucia de los otros jugadores.
+    [desarrollador_videojuego] => Innersloth
+    [distribuidor_videojuego] => Innersloth
+    [precio_videojuego] => 5999
+    [imagen_videojuego] => juego14.jpg
+    [id_categoria] => 4
+    [estado_videojuego] => 1
+    [videojuego_stock] => 26
+)
+
+DEBUG - 2025-06-19 12:20:28 --> === INICIO agregar_carrito ===
+DEBUG - 2025-06-19 12:20:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-06-19 12:20:28 --> Cart Class Initialized
+DEBUG - 2025-06-19 12:20:28 --> Datos de la solicitud: Array
+(
+    [method] => POST
+    [juego_id] => 2
+    [post_data] => Array
+        (
+            [id] => 2
+            [titulo] => Among Us
+            [precio] => 5999
+        )
+
+    [get_data] => Array
+        (
+        )
+
+    [raw_input] => id=2&titulo=Among+Us&precio=5999
+    [session] => Array
+        (
+            [__ci_last_regenerate] => 1750335548
+            [_ci_previous_url] => http://localhost/proyecto_firmapaz_gabriel/ver_juego/2
+            [id] => 5
+            [nombre] => juan
+            [apellido] => perez
+            [perfil] => 2
+            [login] => 1
+            [cart_contents] => Array
+                (
+                    [cart_total] => 47997
+                    [total_items] => 3
+                    [eccbc87e4b5ce2fe28308fd9f2a7baf3] => Array
+                        (
+                            [id] => 3
+                            [name] => FIFA 24
+                            [price] => 15999
+                            [qty] => 3
+                            [rowid] => eccbc87e4b5ce2fe28308fd9f2a7baf3
+                            [subtotal] => 47997
+                        )
+
+                )
+
+            [total] => 15999
+        )
+
+)
+
+DEBUG - 2025-06-19 12:20:28 --> Juego agregado al carrito exitosamente: Among Us
+DEBUG - 2025-06-19 12:20:28 --> === FIN agregar_carrito (éxito) ===
+DEBUG - 2025-06-19 12:20:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-06-19 12:20:29 --> Cart Class Initialized
+DEBUG - 2025-06-19 12:20:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-06-19 12:20:31 --> Cart Class Initialized
+DEBUG - 2025-06-19 12:20:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 12:20:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 12:20:35 --> ID del juego: 10
+DEBUG - 2025-06-19 12:20:35 --> Datos del juego: Array
+(
+    [id_videojuego] => 10
+    [titulo_videojuego] => Call of Duty: Black Ops 6 (Lote Multigeneracional)
+    [descripcion_videojuego] => Se sitúa a principios de los años 90, durante un período de transición y cambios en la política mundial, justo después del fin de la Guerra Fría. El juego presenta una narrativa de suspense y espionaje, con una campaña que incluye escenas cinematográficas, momentos llenos de acción, atracos arriesgados y actividades de espionaje clandestinas. Además, cuenta con un sistema de juego dinámico y una gran variedad de escenarios. 
+    [desarrollador_videojuego] => Treyarch
+    [distribuidor_videojuego] => Activision
+    [precio_videojuego] => 82000
+    [imagen_videojuego] => 1750165660_1f887ffb597654aebdea.jpg
+    [id_categoria] => 1
+    [estado_videojuego] => 1
+    [videojuego_stock] => 89
+)
+
+DEBUG - 2025-06-19 12:20:36 --> === INICIO agregar_carrito ===
+DEBUG - 2025-06-19 12:20:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-06-19 12:20:36 --> Cart Class Initialized
+DEBUG - 2025-06-19 12:20:36 --> Datos de la solicitud: Array
+(
+    [method] => POST
+    [juego_id] => 10
+    [post_data] => Array
+        (
+            [id] => 10
+            [titulo] => Call of Duty: Black Ops 6 (Lote Multigeneracional)
+            [precio] => 82000
+        )
+
+    [get_data] => Array
+        (
+        )
+
+    [raw_input] => id=10&titulo=Call+of+Duty%3A+Black+Ops+6+%28Lote+Multigeneracional%29&precio=82000
+    [session] => Array
+        (
+            [__ci_last_regenerate] => 1750335548
+            [_ci_previous_url] => http://localhost/proyecto_firmapaz_gabriel/ver_juego/10
+            [id] => 5
+            [nombre] => juan
+            [apellido] => perez
+            [perfil] => 2
+            [login] => 1
+            [cart_contents] => Array
+                (
+                    [cart_total] => 59995
+                    [total_items] => 5
+                    [eccbc87e4b5ce2fe28308fd9f2a7baf3] => Array
+                        (
+                            [id] => 3
+                            [name] => FIFA 24
+                            [price] => 15999
+                            [qty] => 3
+                            [rowid] => eccbc87e4b5ce2fe28308fd9f2a7baf3
+                            [subtotal] => 47997
+                        )
+
+                    [c81e728d9d4c2f636f067f89cc14862c] => Array
+                        (
+                            [id] => 2
+                            [name] => Among Us
+                            [price] => 5999
+                            [qty] => 2
+                            [rowid] => c81e728d9d4c2f636f067f89cc14862c
+                            [subtotal] => 11998
+                        )
+
+                )
+
+            [total] => 53996
+        )
+
+)
+
+ERROR - 2025-06-19 12:20:36 --> An invalid name was submitted as the product name: Call of Duty: Black Ops 6 (Lote Multigeneracional) The name can only contain alpha-numeric characters, dashes, underscores, colons, and spaces
+DEBUG - 2025-06-19 12:20:36 --> Juego agregado al carrito exitosamente: Call of Duty: Black Ops 6 (Lote Multigeneracional)
+DEBUG - 2025-06-19 12:20:36 --> === FIN agregar_carrito (éxito) ===
+DEBUG - 2025-06-19 12:20:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-06-19 12:20:36 --> Cart Class Initialized
+DEBUG - 2025-06-19 12:20:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 12:20:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 12:20:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 12:20:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-06-19 12:20:49 --> Cart Class Initialized
+DEBUG - 2025-06-19 12:20:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 12:20:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 12:21:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 12:21:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 12:23:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 12:25:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 12:25:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 12:25:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 12:25:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 12:26:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 12:26:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 12:27:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 12:27:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 12:27:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 12:27:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 12:27:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 12:27:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 12:55:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-06-19 12:55:57 --> ErrorException: Undefined variable $categoria
+[Method: GET, Route: editar_videojuego/1]
+in APPPATH\Views\Backend\editar_juego.php on line 54.
+ 1 APPPATH\Views\Backend\editar_juego.php(54): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $categoria', 'C:\\xampp\\htdocs\\proyecto_firmapaz_gabriel\\app\\Views\\Backend\\editar_juego.php', 54)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\proyecto_firmapaz_gabriel\\app\\Views\\Backend\\editar_juego.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('Backend/editar_juego', [], true)
+ 5 APPPATH\Controllers\Videojuegos_controller.php(106): view('Backend/editar_juego', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Videojuegos_controller->form_editar_videojuego('1')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Videojuegos_controller))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-06-19 12:55:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-06-19 12:56:00 --> ErrorException: Undefined variable $categoria
+[Method: GET, Route: editar_videojuego/1]
+in APPPATH\Views\Backend\editar_juego.php on line 54.
+ 1 APPPATH\Views\Backend\editar_juego.php(54): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $categoria', 'C:\\xampp\\htdocs\\proyecto_firmapaz_gabriel\\app\\Views\\Backend\\editar_juego.php', 54)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\proyecto_firmapaz_gabriel\\app\\Views\\Backend\\editar_juego.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('Backend/editar_juego', [], true)
+ 5 APPPATH\Controllers\Videojuegos_controller.php(106): view('Backend/editar_juego', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Videojuegos_controller->form_editar_videojuego('1')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Videojuegos_controller))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-06-19 12:56:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-06-19 12:56:01 --> ErrorException: Undefined variable $categoria
+[Method: GET, Route: editar_videojuego/1]
+in APPPATH\Views\Backend\editar_juego.php on line 54.
+ 1 APPPATH\Views\Backend\editar_juego.php(54): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $categoria', 'C:\\xampp\\htdocs\\proyecto_firmapaz_gabriel\\app\\Views\\Backend\\editar_juego.php', 54)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\proyecto_firmapaz_gabriel\\app\\Views\\Backend\\editar_juego.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('Backend/editar_juego', [], true)
+ 5 APPPATH\Controllers\Videojuegos_controller.php(106): view('Backend/editar_juego', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Videojuegos_controller->form_editar_videojuego('1')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Videojuegos_controller))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-06-19 12:57:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 12:57:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 12:58:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 12:58:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 12:59:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 12:59:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-06-19 12:59:11 --> ErrorException: Undefined variable $categoria
+[Method: GET, Route: editar_videojuego/7]
+in APPPATH\Views\Backend\editar_juego.php on line 54.
+ 1 APPPATH\Views\Backend\editar_juego.php(54): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $categoria', 'C:\\xampp\\htdocs\\proyecto_firmapaz_gabriel\\app\\Views\\Backend\\editar_juego.php', 54)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\proyecto_firmapaz_gabriel\\app\\Views\\Backend\\editar_juego.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('Backend/editar_juego', [], true)
+ 5 APPPATH\Controllers\Videojuegos_controller.php(106): view('Backend/editar_juego', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Videojuegos_controller->form_editar_videojuego('7')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Videojuegos_controller))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-06-19 13:02:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 13:02:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-06-19 13:02:43 --> ErrorException: Undefined variable $categoria
+[Method: GET, Route: editar_videojuego/7]
+in APPPATH\Views\Backend\editar_juego.php on line 54.
+ 1 APPPATH\Views\Backend\editar_juego.php(54): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $categoria', 'C:\\xampp\\htdocs\\proyecto_firmapaz_gabriel\\app\\Views\\Backend\\editar_juego.php', 54)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\proyecto_firmapaz_gabriel\\app\\Views\\Backend\\editar_juego.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('Backend/editar_juego', [], true)
+ 5 APPPATH\Controllers\Videojuegos_controller.php(106): view('Backend/editar_juego', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Videojuegos_controller->form_editar_videojuego('7')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Videojuegos_controller))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-06-19 13:02:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 13:02:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 13:02:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-06-19 13:02:51 --> ErrorException: Undefined variable $categoria
+[Method: GET, Route: editar_videojuego/7]
+in APPPATH\Views\Backend\editar_juego.php on line 54.
+ 1 APPPATH\Views\Backend\editar_juego.php(54): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $categoria', 'C:\\xampp\\htdocs\\proyecto_firmapaz_gabriel\\app\\Views\\Backend\\editar_juego.php', 54)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\proyecto_firmapaz_gabriel\\app\\Views\\Backend\\editar_juego.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('Backend/editar_juego', [], true)
+ 5 APPPATH\Controllers\Videojuegos_controller.php(106): view('Backend/editar_juego', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Videojuegos_controller->form_editar_videojuego('7')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Videojuegos_controller))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-06-19 13:04:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 13:04:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-06-19 13:04:48 --> ErrorException: Undefined variable $categoria
+[Method: GET, Route: editar_videojuego/7]
+in APPPATH\Views\Backend\editar_juego.php on line 54.
+ 1 APPPATH\Views\Backend\editar_juego.php(54): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $categoria', 'C:\\xampp\\htdocs\\proyecto_firmapaz_gabriel\\app\\Views\\Backend\\editar_juego.php', 54)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\proyecto_firmapaz_gabriel\\app\\Views\\Backend\\editar_juego.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('Backend/editar_juego', [], true)
+ 5 APPPATH\Controllers\Videojuegos_controller.php(106): view('Backend/editar_juego', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Videojuegos_controller->form_editar_videojuego('7')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Videojuegos_controller))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-06-19 13:05:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 13:05:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 13:07:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 13:07:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-06-19 13:07:05 --> ErrorException: Undefined variable $categoria
+[Method: GET, Route: editar_videojuego/7]
+in APPPATH\Views\Backend\editar_juego.php on line 54.
+ 1 APPPATH\Views\Backend\editar_juego.php(54): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $categoria', 'C:\\xampp\\htdocs\\proyecto_firmapaz_gabriel\\app\\Views\\Backend\\editar_juego.php', 54)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\proyecto_firmapaz_gabriel\\app\\Views\\Backend\\editar_juego.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('Backend/editar_juego', [], true)
+ 5 APPPATH\Controllers\Videojuegos_controller.php(106): view('Backend/editar_juego', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Videojuegos_controller->form_editar_videojuego('7')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Videojuegos_controller))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-06-19 13:08:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 13:08:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-06-19 13:08:58 --> ErrorException: Undefined variable $categoria
+[Method: GET, Route: editar_videojuego/7]
+in APPPATH\Views\Backend\editar_juego.php on line 54.
+ 1 APPPATH\Views\Backend\editar_juego.php(54): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $categoria', 'C:\\xampp\\htdocs\\proyecto_firmapaz_gabriel\\app\\Views\\Backend\\editar_juego.php', 54)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\proyecto_firmapaz_gabriel\\app\\Views\\Backend\\editar_juego.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('Backend/editar_juego', [], true)
+ 5 APPPATH\Controllers\Videojuegos_controller.php(106): view('Backend/editar_juego', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Videojuegos_controller->form_editar_videojuego('7')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Videojuegos_controller))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-06-19 13:11:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 13:11:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 13:11:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 13:11:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 13:11:24 --> Entró a actualizar_videojuego con ID: 7
+DEBUG - 2025-06-19 13:11:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 13:11:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 13:11:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 13:11:39 --> Entró a actualizar_videojuego con ID: 7
+DEBUG - 2025-06-19 13:11:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 13:14:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 13:14:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 13:14:23 --> Entró a actualizar_videojuego con ID: 6
+DEBUG - 2025-06-19 13:14:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 13:14:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 13:14:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 13:14:49 --> Entró a actualizar_videojuego con ID: 7
+DEBUG - 2025-06-19 13:14:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 13:16:39 --> Entró a actualizar_videojuego con ID: 7
+DEBUG - 2025-06-19 13:16:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 13:16:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 13:17:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 13:17:27 --> Entró a actualizar_videojuego con ID: 7
+DEBUG - 2025-06-19 13:17:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 13:17:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 13:17:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 13:17:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 13:18:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 13:18:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 13:18:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 13:19:09 --> Entró a actualizar_videojuego con ID: 7
+DEBUG - 2025-06-19 13:19:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 13:19:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 13:19:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 13:20:14 --> Entró a actualizar_videojuego con ID: 7
+DEBUG - 2025-06-19 13:20:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 13:21:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 13:22:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 13:22:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 13:25:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 13:25:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 13:25:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 13:25:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 13:25:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 13:25:45 --> Entró a actualizar_videojuego con ID: 13
+DEBUG - 2025-06-19 13:25:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 13:25:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 13:26:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 13:34:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 13:34:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 13:34:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-06-19 13:34:43 --> ParseError: syntax error, unexpected token "if", expecting "function" or "const"
+[Method: GET, Route: editar_videojuego/7]
+in APPPATH\Controllers\Videojuegos_controller.php on line 280.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\proyecto_firmapaz_gabriel\\app\\Controllers\\Videojuegos_controller.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(271): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Videojuegos_controller')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Videojuegos_controller')
+ 4 SYSTEMPATH\CodeIgniter.php(885): class_exists('\\App\\Controllers\\Videojuegos_controller', true)
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-06-19 13:34:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-06-19 13:34:54 --> ParseError: syntax error, unexpected token "if", expecting "function" or "const"
+[Method: GET, Route: editar_videojuego/4]
+in APPPATH\Controllers\Videojuegos_controller.php on line 280.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\proyecto_firmapaz_gabriel\\app\\Controllers\\Videojuegos_controller.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(271): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Videojuegos_controller')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Videojuegos_controller')
+ 4 SYSTEMPATH\CodeIgniter.php(885): class_exists('\\App\\Controllers\\Videojuegos_controller', true)
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-06-19 13:35:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-06-19 13:35:07 --> ParseError: syntax error, unexpected token "if", expecting "function" or "const"
+[Method: GET, Route: editar_videojuego/7]
+in APPPATH\Controllers\Videojuegos_controller.php on line 280.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\proyecto_firmapaz_gabriel\\app\\Controllers\\Videojuegos_controller.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(271): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Videojuegos_controller')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Videojuegos_controller')
+ 4 SYSTEMPATH\CodeIgniter.php(885): class_exists('\\App\\Controllers\\Videojuegos_controller', true)
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-06-19 13:35:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-06-19 13:37:33 --> ParseError: syntax error, unexpected token "if", expecting "function" or "const"
+[Method: GET, Route: editar_videojuego/7]
+in APPPATH\Controllers\Videojuegos_controller.php on line 280.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\proyecto_firmapaz_gabriel\\app\\Controllers\\Videojuegos_controller.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(271): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Videojuegos_controller')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Videojuegos_controller')
+ 4 SYSTEMPATH\CodeIgniter.php(885): class_exists('\\App\\Controllers\\Videojuegos_controller', true)
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-06-19 13:37:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-06-19 13:37:38 --> ParseError: syntax error, unexpected token "if", expecting "function" or "const"
+[Method: GET, Route: agregar_juego]
+in APPPATH\Controllers\Videojuegos_controller.php on line 280.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\proyecto_firmapaz_gabriel\\app\\Controllers\\Videojuegos_controller.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(271): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Videojuegos_controller')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Videojuegos_controller')
+ 4 SYSTEMPATH\CodeIgniter.php(885): class_exists('\\App\\Controllers\\Videojuegos_controller', true)
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-06-19 13:37:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 13:37:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-06-19 13:38:30 --> ParseError: syntax error, unexpected token "if", expecting "function" or "const"
+[Method: GET, Route: catalogo_cliente]
+in APPPATH\Controllers\Videojuegos_controller.php on line 280.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\proyecto_firmapaz_gabriel\\app\\Controllers\\Videojuegos_controller.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(271): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Videojuegos_controller')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Videojuegos_controller')
+ 4 SYSTEMPATH\CodeIgniter.php(885): class_exists('\\App\\Controllers\\Videojuegos_controller', true)
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-06-19 13:38:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 13:38:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 13:38:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-06-19 13:38:47 --> ParseError: syntax error, unexpected token "if", expecting "function" or "const"
+[Method: GET, Route: catalogo_cliente]
+in APPPATH\Controllers\Videojuegos_controller.php on line 280.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\proyecto_firmapaz_gabriel\\app\\Controllers\\Videojuegos_controller.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(271): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Videojuegos_controller')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Videojuegos_controller')
+ 4 SYSTEMPATH\CodeIgniter.php(885): class_exists('\\App\\Controllers\\Videojuegos_controller', true)
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-19 13:38:50 --> ParseError: syntax error, unexpected token "if", expecting "function" or "const"
+[Method: GET, Route: catalogo_cliente]
+in APPPATH\Controllers\Videojuegos_controller.php on line 280.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\proyecto_firmapaz_gabriel\\app\\Controllers\\Videojuegos_controller.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(271): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Videojuegos_controller')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Videojuegos_controller')
+ 4 SYSTEMPATH\CodeIgniter.php(885): class_exists('\\App\\Controllers\\Videojuegos_controller', true)
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-06-19 13:39:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 13:39:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 13:39:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 13:39:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 13:39:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 13:39:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-06-19 13:39:33 --> ParseError: syntax error, unexpected token "if", expecting "function" or "const"
+[Method: GET, Route: catalogo_cliente]
+in APPPATH\Controllers\Videojuegos_controller.php on line 280.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\proyecto_firmapaz_gabriel\\app\\Controllers\\Videojuegos_controller.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(271): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Videojuegos_controller')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Videojuegos_controller')
+ 4 SYSTEMPATH\CodeIgniter.php(885): class_exists('\\App\\Controllers\\Videojuegos_controller', true)
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-06-19 13:43:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 13:44:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 13:44:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 13:44:20 --> Entró a actualizar_videojuego con ID: 7
+DEBUG - 2025-06-19 13:44:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 13:44:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 13:44:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 13:44:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 13:44:37 --> Entró a actualizar_videojuego con ID: 7
+DEBUG - 2025-06-19 13:44:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 13:44:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 13:44:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 13:44:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 13:45:09 --> Entró a actualizar_videojuego con ID: 7
+DEBUG - 2025-06-19 13:45:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 13:45:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 13:45:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 13:45:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 13:45:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 13:45:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 13:46:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 13:46:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 13:46:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 13:46:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 13:46:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 13:46:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 13:46:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 13:46:41 --> ID del juego: 1
+DEBUG - 2025-06-19 13:46:41 --> Datos del juego: Array
+(
+    [id_videojuego] => 1
+    [titulo_videojuego] => Halo Infinite
+    [descripcion_videojuego] => Cuando se pierde toda esperanza y el destino de la humanidad pende de un hilo, el Jefe Maestro está listo para enfrentarse al enemigo más despiadado al que se haya enfrentado. Entra en la armadura del héroe más grande de la humanidad para experimentar una aventura épica de mundo abierto y explora las enormes dimensiones del anillo Halo.
+    [desarrollador_videojuego] => 343 Industries
+    [distribuidor_videojuego] => Xbox Game Studios
+    [precio_videojuego] => 79999
+    [imagen_videojuego] => juego8.jpg
+    [id_categoria] => 1
+    [estado_videojuego] => 1
+    [videojuego_stock] => 595
+)
+
+DEBUG - 2025-06-19 13:46:43 --> === INICIO agregar_carrito ===
+DEBUG - 2025-06-19 13:46:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-06-19 13:46:43 --> Cart Class Initialized
+DEBUG - 2025-06-19 13:46:43 --> Datos de la solicitud: Array
+(
+    [method] => POST
+    [juego_id] => 1
+    [post_data] => Array
+        (
+            [id] => 1
+            [titulo] => Halo Infinite
+            [precio] => 79999
+        )
+
+    [get_data] => Array
+        (
+        )
+
+    [raw_input] => id=1&titulo=Halo+Infinite&precio=79999
+    [session] => Array
+        (
+            [__ci_last_regenerate] => 1750340776
+            [_ci_previous_url] => http://localhost/proyecto_firmapaz_gabriel/ver_juego/1
+            [id] => 5
+            [nombre] => juan
+            [apellido] => perez
+            [perfil] => 2
+            [login] => 1
+        )
+
+)
+
+DEBUG - 2025-06-19 13:46:43 --> Juego agregado al carrito exitosamente: Halo Infinite
+DEBUG - 2025-06-19 13:46:43 --> === FIN agregar_carrito (éxito) ===
+DEBUG - 2025-06-19 13:46:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-06-19 13:46:43 --> Cart Class Initialized
+DEBUG - 2025-06-19 13:46:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 13:46:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 13:46:48 --> ID del juego: 10
+DEBUG - 2025-06-19 13:46:48 --> Datos del juego: Array
+(
+    [id_videojuego] => 10
+    [titulo_videojuego] => Call of Duty: Black Ops 6 (Lote Multigeneracional)
+    [descripcion_videojuego] => Se sitúa a principios de los años 90, durante un período de transición y cambios en la política mundial, justo después del fin de la Guerra Fría. El juego presenta una narrativa de suspense y espionaje, con una campaña que incluye escenas cinematográficas, momentos llenos de acción, atracos arriesgados y actividades de espionaje clandestinas. Además, cuenta con un sistema de juego dinámico y una gran variedad de escenarios. 
+    [desarrollador_videojuego] => Treyarch
+    [distribuidor_videojuego] => Activision
+    [precio_videojuego] => 82000
+    [imagen_videojuego] => 1750165660_1f887ffb597654aebdea.jpg
+    [id_categoria] => 1
+    [estado_videojuego] => 1
+    [videojuego_stock] => 88
+)
+
+DEBUG - 2025-06-19 13:46:50 --> === INICIO agregar_carrito ===
+DEBUG - 2025-06-19 13:46:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-06-19 13:46:50 --> Cart Class Initialized
+DEBUG - 2025-06-19 13:46:50 --> Datos de la solicitud: Array
+(
+    [method] => POST
+    [juego_id] => 10
+    [post_data] => Array
+        (
+            [id] => 10
+            [titulo] => Call of Duty: Black Ops 6 (Lote Multigeneracional)
+            [precio] => 82000
+        )
+
+    [get_data] => Array
+        (
+        )
+
+    [raw_input] => id=10&titulo=Call+of+Duty%3A+Black+Ops+6+%28Lote+Multigeneracional%29&precio=82000
+    [session] => Array
+        (
+            [__ci_last_regenerate] => 1750340776
+            [_ci_previous_url] => http://localhost/proyecto_firmapaz_gabriel/ver_juego/10
+            [id] => 5
+            [nombre] => juan
+            [apellido] => perez
+            [perfil] => 2
+            [login] => 1
+            [cart_contents] => Array
+                (
+                    [cart_total] => 79999
+                    [total_items] => 1
+                    [c4ca4238a0b923820dcc509a6f75849b] => Array
+                        (
+                            [id] => 1
+                            [name] => Halo Infinite
+                            [price] => 79999
+                            [qty] => 1
+                            [rowid] => c4ca4238a0b923820dcc509a6f75849b
+                            [subtotal] => 79999
+                        )
+
+                )
+
+            [total] => 79999
+        )
+
+)
+
+ERROR - 2025-06-19 13:46:50 --> An invalid name was submitted as the product name: Call of Duty: Black Ops 6 (Lote Multigeneracional) The name can only contain alpha-numeric characters, dashes, underscores, colons, and spaces
+DEBUG - 2025-06-19 13:46:50 --> Juego agregado al carrito exitosamente: Call of Duty: Black Ops 6 (Lote Multigeneracional)
+DEBUG - 2025-06-19 13:46:50 --> === FIN agregar_carrito (éxito) ===
+DEBUG - 2025-06-19 13:46:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-06-19 13:46:50 --> Cart Class Initialized
+DEBUG - 2025-06-19 13:46:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 13:46:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 13:46:57 --> ID del juego: 13
+DEBUG - 2025-06-19 13:46:57 --> Datos del juego: Array
+(
+    [id_videojuego] => 13
+    [titulo_videojuego] => State of Decay 2
+    [descripcion_videojuego] => Juego de zombies
+    [desarrollador_videojuego] => Microsofft Studios
+    [distribuidor_videojuego] => Xbox
+    [precio_videojuego] => 50000
+    [imagen_videojuego] => 1750339527_0cb4d4dc49a2eb3666e1.jpg
+    [id_categoria] => 1
+    [estado_videojuego] => 1
+    [videojuego_stock] => 0
+)
+
+DEBUG - 2025-06-19 13:47:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 13:47:38 --> ID del juego: 13
+DEBUG - 2025-06-19 13:47:38 --> Datos del juego: Array
+(
+    [id_videojuego] => 13
+    [titulo_videojuego] => State of Decay 2
+    [descripcion_videojuego] => Juego de zombies
+    [desarrollador_videojuego] => Microsofft Studios
+    [distribuidor_videojuego] => Xbox
+    [precio_videojuego] => 50000
+    [imagen_videojuego] => 1750339527_0cb4d4dc49a2eb3666e1.jpg
+    [id_categoria] => 1
+    [estado_videojuego] => 1
+    [videojuego_stock] => 50
+)
+
+DEBUG - 2025-06-19 13:47:40 --> === INICIO agregar_carrito ===
+DEBUG - 2025-06-19 13:47:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-06-19 13:47:40 --> Cart Class Initialized
+DEBUG - 2025-06-19 13:47:40 --> Datos de la solicitud: Array
+(
+    [method] => POST
+    [juego_id] => 13
+    [post_data] => Array
+        (
+            [id] => 13
+            [titulo] => State of Decay 2
+            [precio] => 50000
+        )
+
+    [get_data] => Array
+        (
+        )
+
+    [raw_input] => id=13&titulo=State+of+Decay+2&precio=50000
+    [session] => Array
+        (
+            [__ci_last_regenerate] => 1750340776
+            [_ci_previous_url] => http://localhost/proyecto_firmapaz_gabriel/ver_juego/13
+            [id] => 5
+            [nombre] => juan
+            [apellido] => perez
+            [perfil] => 2
+            [login] => 1
+            [cart_contents] => Array
+                (
+                    [cart_total] => 79999
+                    [total_items] => 1
+                    [c4ca4238a0b923820dcc509a6f75849b] => Array
+                        (
+                            [id] => 1
+                            [name] => Halo Infinite
+                            [price] => 79999
+                            [qty] => 1
+                            [rowid] => c4ca4238a0b923820dcc509a6f75849b
+                            [subtotal] => 79999
+                        )
+
+                )
+
+            [total] => 79999
+        )
+
+)
+
+DEBUG - 2025-06-19 13:47:40 --> Juego agregado al carrito exitosamente: State of Decay 2
+DEBUG - 2025-06-19 13:47:40 --> === FIN agregar_carrito (éxito) ===
+DEBUG - 2025-06-19 13:47:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-06-19 13:47:41 --> Cart Class Initialized
+DEBUG - 2025-06-19 13:47:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-06-19 13:47:48 --> Cart Class Initialized
+DEBUG - 2025-06-19 13:47:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-06-19 13:47:48 --> Cart Class Initialized
+DEBUG - 2025-06-19 13:47:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 13:48:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 13:48:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 13:48:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 13:49:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 13:49:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 13:49:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 13:49:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 13:49:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 13:49:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 13:49:22 --> ID del juego: 13
+DEBUG - 2025-06-19 13:49:22 --> Datos del juego: Array
+(
+    [id_videojuego] => 13
+    [titulo_videojuego] => State of Decay 2
+    [descripcion_videojuego] => Juego de zombies
+    [desarrollador_videojuego] => Microsofft Studios
+    [distribuidor_videojuego] => Xbox
+    [precio_videojuego] => 50000
+    [imagen_videojuego] => 1750339527_0cb4d4dc49a2eb3666e1.jpg
+    [id_categoria] => 1
+    [estado_videojuego] => 1
+    [videojuego_stock] => 49
+)
+
+DEBUG - 2025-06-19 13:49:25 --> === INICIO agregar_carrito ===
+DEBUG - 2025-06-19 13:49:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-06-19 13:49:25 --> Cart Class Initialized
+DEBUG - 2025-06-19 13:49:25 --> Datos de la solicitud: Array
+(
+    [method] => POST
+    [juego_id] => 13
+    [post_data] => Array
+        (
+            [id] => 13
+            [titulo] => State of Decay 2
+            [precio] => 50000
+        )
+
+    [get_data] => Array
+        (
+        )
+
+    [raw_input] => id=13&titulo=State+of+Decay+2&precio=50000
+    [session] => Array
+        (
+            [__ci_last_regenerate] => 1750340918
+            [_ci_previous_url] => http://localhost/proyecto_firmapaz_gabriel/ver_juego/13
+            [id] => 5
+            [nombre] => juan
+            [apellido] => perez
+            [perfil] => 2
+            [login] => 1
+        )
+
+)
+
+DEBUG - 2025-06-19 13:49:25 --> Juego agregado al carrito exitosamente: State of Decay 2
+DEBUG - 2025-06-19 13:49:25 --> === FIN agregar_carrito (éxito) ===
+DEBUG - 2025-06-19 13:49:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-06-19 13:49:25 --> Cart Class Initialized
+DEBUG - 2025-06-19 13:49:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-06-19 13:49:30 --> Cart Class Initialized
+DEBUG - 2025-06-19 13:49:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-06-19 13:49:30 --> Cart Class Initialized
+DEBUG - 2025-06-19 13:49:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 13:49:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 13:49:38 --> ID del juego: 10
+DEBUG - 2025-06-19 13:49:38 --> Datos del juego: Array
+(
+    [id_videojuego] => 10
+    [titulo_videojuego] => Call of Duty: Black Ops 6 (Lote Multigeneracional)
+    [descripcion_videojuego] => Se sitúa a principios de los años 90, durante un período de transición y cambios en la política mundial, justo después del fin de la Guerra Fría. El juego presenta una narrativa de suspense y espionaje, con una campaña que incluye escenas cinematográficas, momentos llenos de acción, atracos arriesgados y actividades de espionaje clandestinas. Además, cuenta con un sistema de juego dinámico y una gran variedad de escenarios. 
+    [desarrollador_videojuego] => Treyarch
+    [distribuidor_videojuego] => Activision
+    [precio_videojuego] => 82000
+    [imagen_videojuego] => 1750165660_1f887ffb597654aebdea.jpg
+    [id_categoria] => 1
+    [estado_videojuego] => 1
+    [videojuego_stock] => 87
+)
+
+DEBUG - 2025-06-19 13:49:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-19 13:49:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

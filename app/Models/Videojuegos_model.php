@@ -4,7 +4,7 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class Videojuegos_Model extends Model
+class Videojuegos_model extends Model
 {
     protected $table      = 'videojuegos';
     protected $primaryKey = 'id_videojuego';

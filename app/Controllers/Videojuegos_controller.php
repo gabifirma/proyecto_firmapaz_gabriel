@@ -126,9 +126,12 @@ class Videojuegos_controller extends BaseController{
 
 
     public function actualizar_videojuego($id) {
-        // DEPURACIÓN TEMPORAL
         log_message('debug', 'Entró a actualizar_videojuego con ID: '.$id);
-        echo '<div style="background:#222;color:#fff;padding:10px;">[DEPURACIÓN] Entró a actualizar_videojuego con ID: '.$id.'</div>';
+        
+        // Verificar que la solicitud sea POST
+        if ($this->request->getMethod() !== 'post') {
+            return redirect()->back()->with('error', 'Método no permitido');
+        }
 
         helper(['form', 'url']);
         $juegoModel = new Videojuegos_model();
@@ -213,11 +216,7 @@ class Videojuegos_controller extends BaseController{
             ]
         ]);
 
-        // Verificar si se envió el formulario
-        if ($this->request->getMethod() === 'post') {
-            // DEPURACIÓN TEMPORAL
-            log_message('debug', 'POST recibido: ' . print_r($_POST, true));
-            echo '<div style="background:#222;color:#fff;padding:10px;">[DEPURACIÓN] POST recibido:<pre>'.print_r($_POST, true).'</pre></div>';
+        log_message('debug', 'Datos del formulario: ' . print_r($this->request->getPost(), true));
 
             if ($validation->withRequest($this->request)->run()) {
                 // Mantener la imagen actual por defecto
@@ -252,20 +251,32 @@ class Videojuegos_controller extends BaseController{
                 echo '<div style="background:#222;color:#fff;padding:10px;">[DEPURACIÓN] Datos para update:<pre>'.print_r($datosActualizados, true).'</pre></div>';
                 
                 // Actualizar el videojuego
-                $resultadoUpdate = $juegoModel->update($id, $datosActualizados);
-                log_message('debug', 'Resultado update: ' . var_export($resultadoUpdate, true));
-                echo '<div style="background:#222;color:#fff;padding:10px;">[DEPURACIÓN] Resultado update: '.var_export($resultadoUpdate, true).'</div>';
-
-                return redirect()->to('gestionar_juegos')->with('mensaje', 'Videojuego actualizado correctamente');
+                try {
+                    $resultadoUpdate = $juegoModel->update($id, $datosActualizados);
+                    log_message('debug', 'Resultado update: ' . var_export($resultadoUpdate, true));
+                    
+                    if ($resultadoUpdate === false) {
+                        log_message('error', 'Error al actualizar el videojuego: ' . print_r($juegoModel->errors(), true));
+                        return redirect()->back()
+                            ->with('error', 'Error al actualizar el videojuego')
+                            ->withInput();
+                    }
+                    
+                    return redirect()->to('gestionar_juegos')
+                        ->with('mensaje', 'Videojuego actualizado correctamente');
+                        
+                } catch (\Exception $e) {
+                    log_message('error', 'Excepción al actualizar videojuego: ' . $e->getMessage());
+                    return redirect()->back()
+                        ->with('error', 'Error al actualizar el videojuego: ' . $e->getMessage())
+                        ->withInput();
+                }
+            } else {
+                // Si hay errores de validación, redirigir de vuelta con los errores
+                return redirect()->back()
+                    ->with('validation', $validation->getErrors())
+                    ->withInput();
             }
-        }
-
-        // Si hay errores de validación, redirigir de vuelta con los errores
-        if ($this->request->getMethod() === 'post') {
-            return redirect()->back()
-                ->with('validation', $validation)
-                ->withInput();
-        }
 
         // Si es la primera carga del formulario
         $categoriaModel = new Categorias_model();
