@@ -19,7 +19,6 @@ $routes->post('consulta', 'Usuarios_controller::añadir_consulta');
 $routes->get('comercializacion_cliente', 'Clientes_controller::comercializacion_cliente');
 $routes->get('quienes_somos_cliente', 'Clientes_controller::quienes_somos_cliente');
 $routes->get('terminos_cliente', 'Clientes_controller::terminos_cliente');
-$routes->get('galeria', 'Home::galeria');
 $routes->get('contacto_cliente', 'Clientes_controller::contacto_cliente');
 
 
