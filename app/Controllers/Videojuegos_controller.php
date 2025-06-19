@@ -85,16 +85,26 @@ class Videojuegos_controller extends BaseController{
 
     public function form_editar_videojuego($id){
         $model = new Videojuegos_model();
-        $categoria = new Categorias_model();
-
         $data['videojuego'] = $model->find($id);
-        $data['categoria'] = $categoria->findAll();
-
-        if (!$data['videojuego']) {
-            return redirect()->to('admin_gestion')->with('mensaje', 'Videojuego no encontrado');
+        
+        if (empty($data['videojuego'])) {
+            return redirect()->to('gestionar_juegos')->with('error', 'Videojuego no encontrado');
         }
-
-        return view('practico/header_view').view('contenido/nav_admin').view('Backend/editar_juego', $data).view('practico/footer_view');
+        
+        $model_cat = new Categorias_model();
+        $data['categorias'] = $model_cat->findAll();
+        $data['titulo'] = 'Editar Videojuego';
+        
+        // Cargar validación de la sesión si existe
+        $validation = session()->getFlashdata('validation');
+        if ($validation) {
+            $data['validation'] = $validation;
+        }
+        
+        return view('practico/header_view')
+             . view('contenido/nav_admin')
+             . view('Backend/editar_juego', $data)
+             . view('practico/footer_view');
     }
 
     public function cambiar_estado_videojuego($id){
@@ -102,7 +112,7 @@ class Videojuegos_controller extends BaseController{
         $videojuego = $model->find($id);
 
         if (!$videojuego) {
-            return redirect()->route('gestionar_juego')->with('mensaje', 'Videojuego no encontrado');
+            return redirect()->to('gestionar_juegos')->with('error', 'Videojuego no encontrado');
         }
 
         // Alternar estado (1 -> 0, 0 -> 1)
@@ -110,15 +120,28 @@ class Videojuegos_controller extends BaseController{
 
         $model->update($id, ['estado_videojuego' => $nuevo_estado]);
 
-        return redirect()->route('gestionar_juego')->with('mensaje', 'Estado del videojuego actualizado correctamente');
+        return redirect()->to('gestionar_juegos')->with('mensaje', 'Estado del videojuego actualizado correctamente');
     }
 
 
 
-    public function actualizar_videojuego($id){
-        $validation = \Config\Services::validation();
-        $request = \Config\Services::request();
+    public function actualizar_videojuego($id) {
+        // DEPURACIÓN TEMPORAL
+        log_message('debug', 'Entró a actualizar_videojuego con ID: '.$id);
+        echo '<div style="background:#222;color:#fff;padding:10px;">[DEPURACIÓN] Entró a actualizar_videojuego con ID: '.$id.'</div>';
 
+        helper(['form', 'url']);
+        $juegoModel = new Videojuegos_model();
+        $validation = \Config\Services::validation();
+        $request = service('request');
+
+        // Obtener el videojuego actual
+        $videojuegoActual = $juegoModel->find($id);
+        if (!$videojuegoActual) {
+            return redirect()->to('gestionar_juegos')->with('error', 'Videojuego no encontrado');
+        }
+
+        // Reglas de validación
         $validation->setRules([
             'titulo' => [
                 'label' => 'Título',
@@ -162,7 +185,7 @@ class Videojuegos_controller extends BaseController{
                     'less_than_equal_to' => 'El precio no puede ser mayor a 999,999.99',
                 ]
             ],
-            'stock' => [
+            'videojuego_stock' => [
                 'label' => 'Stock',
                 'rules' => 'required|integer|greater_than_equal_to[0]|less_than_equal_to[999999]',
                 'errors' => [
@@ -187,60 +210,72 @@ class Videojuegos_controller extends BaseController{
                     'mime_in' => 'El archivo debe ser una imagen (JPG, JPEG, PNG o GIF)',
                     'max_size' => 'La imagen no puede pesar más de 2MB',
                 ]
-            ],
             ]
-        );
+        ]);
 
-        if ($validation->withRequest($request)->run()) {
-            $juego = new Videojuegos_model();
-            $videojuegoActual = $juego->find($id);
-            
-            // Mantener la imagen actual por defecto
-            $nombreImagen = $videojuegoActual['imagen_videojuego'];
-            
-            // Procesar la imagen solo si se subió una nueva
-            $imagen = $this->request->getFile('imagen');
-            
-            if ($imagen && $imagen->isValid() && !$imagen->hasMoved()) {
-                // Eliminar la imagen anterior si existe
-                if ($nombreImagen && file_exists(ROOTPATH . 'public/assets/img/' . $nombreImagen)) {
-                    unlink(ROOTPATH . 'public/assets/img/' . $nombreImagen);
+        // Verificar si se envió el formulario
+        if ($this->request->getMethod() === 'post') {
+            // DEPURACIÓN TEMPORAL
+            log_message('debug', 'POST recibido: ' . print_r($_POST, true));
+            echo '<div style="background:#222;color:#fff;padding:10px;">[DEPURACIÓN] POST recibido:<pre>'.print_r($_POST, true).'</pre></div>';
+
+            if ($validation->withRequest($this->request)->run()) {
+                // Mantener la imagen actual por defecto
+                $nombreImagen = $videojuegoActual['imagen_videojuego'];
+                
+                // Procesar la nueva imagen si se subió una
+                $imagen = $this->request->getFile('imagen');
+                if ($imagen && $imagen->isValid() && !$imagen->hasMoved()) {
+                    // Eliminar la imagen anterior si existe
+                    if ($nombreImagen && file_exists(ROOTPATH . 'assets/img/' . $nombreImagen)) {
+                        unlink(ROOTPATH . 'assets/img/' . $nombreImagen);
+                    }
+                    // Generar un nombre único para la nueva imagen
+                    $nombreImagen = $imagen->getRandomName();
+                    $imagen->move(ROOTPATH . 'assets/img', $nombreImagen);
                 }
                 
-                // Subir la nueva imagen
-                $nuevoNombre = $imagen->getRandomName();
-                $imagen->move(ROOTPATH . 'public/assets/img', $nuevoNombre);
-                $nombreImagen = $nuevoNombre;
+                // Preparar los datos para actualizar
+                $datosActualizados = [
+                    'titulo_videojuego' => $this->request->getPost('titulo'),
+                    'descripcion_videojuego' => $this->request->getPost('descripcion'),
+                    'desarrollador_videojuego' => $this->request->getPost('desarrollador'),
+                    'distribuidor_videojuego' => $this->request->getPost('distribuidor'),
+                    'precio_videojuego' => $this->request->getPost('precio'),
+                    'videojuego_stock' => $this->request->getPost('videojuego_stock'),
+                    'id_categoria' => $this->request->getPost('categoria'),
+                    'imagen_videojuego' => $nombreImagen,
+                    'estado_videojuego' => $this->request->getPost('activo') ?? 0 // Si no se envía, se establece en 0 (inactivo)
+                ];
+                // DEPURACIÓN TEMPORAL
+                log_message('debug', 'Datos para update: ' . print_r($datosActualizados, true));
+                echo '<div style="background:#222;color:#fff;padding:10px;">[DEPURACIÓN] Datos para update:<pre>'.print_r($datosActualizados, true).'</pre></div>';
+                
+                // Actualizar el videojuego
+                $resultadoUpdate = $juegoModel->update($id, $datosActualizados);
+                log_message('debug', 'Resultado update: ' . var_export($resultadoUpdate, true));
+                echo '<div style="background:#222;color:#fff;padding:10px;">[DEPURACIÓN] Resultado update: '.var_export($resultadoUpdate, true).'</div>';
+
+                return redirect()->to('gestionar_juegos')->with('mensaje', 'Videojuego actualizado correctamente');
             }
-            
-            // Preparar los datos para actualizar
-            $data = [
-                'titulo_videojuego' => $request->getPost('titulo'),
-                'descripcion_videojuego' => $request->getPost('descripcion'),
-                'desarrollador_videojuego' => $request->getPost('desarrollador'),
-                'distribuidor_videojuego' => $request->getPost('distribuidor'),
-                'precio_videojuego' => $request->getPost('precio'),
-                'videojuego_stock' => $request->getPost('stock'),
-                'id_categoria' => $request->getPost('categoria'),
-                'imagen_videojuego' => $nombreImagen,
-                'estado_videojuego' => 1
-            ];
-            
-            // Actualizar el videojuego
-            $juego->update($id, $data);
-            
-            return redirect()->route('gestionar_juego')->with('mensaje', '¡Juego actualizado exitosamente!');
-        }else{
-            $categoria = new Categorias_model();
-            $juego = new Videojuegos_model();
-
-            $data['videojuego'] = $juego->find($id);
-            $data['categoria'] = $categoria->findAll();
-            $data['validation'] = $validation->getErrors();
-            $data['titulo'] = "Editar juego";
-
-            return view('practico/header_view').view('contenido/nav_admin').view('Backend/editar_juego', $data).view('practico/footer_view');
         }
+
+        // Si hay errores de validación, redirigir de vuelta con los errores
+        if ($this->request->getMethod() === 'post') {
+            return redirect()->back()
+                ->with('validation', $validation)
+                ->withInput();
+        }
+
+        // Si es la primera carga del formulario
+        $categoriaModel = new Categorias_model();
+        $data['categorias'] = $categoriaModel->findAll();
+        $data['videojuego'] = $videojuegoActual;
+        
+        return view('practico/header_view')
+             . view('contenido/nav_admin')
+             . view('Backend/editar_juego', $data)
+             . view('practico/footer_view');
     }
 
     public function catalogo_cliente(){
@@ -255,6 +290,10 @@ class Videojuegos_controller extends BaseController{
         $juegoModel = new Videojuegos_model();
         $session = session();
         $juego = $juegoModel->find($id);
+        
+        // Depuración temporal
+        log_message('debug', 'ID del juego: ' . $id);
+        log_message('debug', 'Datos del juego: ' . print_r($juego, true));
 
         if($session->get('login')){
             return view('practico/header_view')
