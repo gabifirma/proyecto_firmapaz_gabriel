@@ -1,0 +1,212 @@
+ERROR - 2026-05-05 23:27:48 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'ci4user'@'172.18.0.4' (using password: YES) in /var/www/html/app/system/Database/MySQLi/Connection.php:201
+Stack trace:
+#0 /var/www/html/app/system/Database/MySQLi/Connection.php(201): mysqli->real_connect('db', 'ci4user', Object(SensitiveParameterValue), 'bd_firmapaz-con...', 3306, '', 0)
+#1 /var/www/html/app/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 /var/www/html/app/system/Database/BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#3 /var/www/html/app/system/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `videoju...', Array, false)
+#4 /var/www/html/app/system/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 /var/www/html/app/system/BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#6 /var/www/html/app/app/Models/Detalle_Venta_model.php(28): CodeIgniter\BaseModel->findAll()
+#7 /var/www/html/app/app/Controllers/Home.php(15): App\Models\Detalle_Venta_Model->obtenerVideojuegosMasPopulares()
+#8 /var/www/html/app/system/CodeIgniter.php(933): App\Controllers\Home->index()
+#9 /var/www/html/app/system/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#10 /var/www/html/app/system/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 /var/www/html/app/system/Boot.php(334): CodeIgniter\CodeIgniter->run()
+#12 /var/www/html/app/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 /var/www/html/app/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'172.18.0.4' (using password: YES) in /var/www/html/app/system/Database/MySQLi/Connection.php:246
+Stack trace:
+#0 /var/www/html/app/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /var/www/html/app/system/Database/BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#2 /var/www/html/app/system/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `videoju...', Array, false)
+#3 /var/www/html/app/system/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#4 /var/www/html/app/system/BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#5 /var/www/html/app/app/Models/Detalle_Venta_model.php(28): CodeIgniter\BaseModel->findAll()
+#6 /var/www/html/app/app/Controllers/Home.php(15): App\Models\Detalle_Venta_Model->obtenerVideojuegosMasPopulares()
+#7 /var/www/html/app/system/CodeIgniter.php(933): App\Controllers\Home->index()
+#8 /var/www/html/app/system/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#9 /var/www/html/app/system/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 /var/www/html/app/system/Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 /var/www/html/app/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 /var/www/html/app/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2026-05-05 23:27:48 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'172.18.0.4' (using password: YES)
+[Method: GET, Route: /]
+in SYSTEMPATH/Database/BaseConnection.php on line 467.
+ 1 SYSTEMPATH/Database/BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `videojuegos`.`id_videojuego`, `videojuegos`.`titulo_videojuego`, `videojuegos`.`precio_videojuego`, `videojuegos`.`imagen_videojuego`, COUNT(detalle_venta.id_videojuego) as cantidad_vendida
+FROM `detalle_venta`
+JOIN `videojuegos` ON `videojuegos`.`id_videojuego` = `detalle_venta`.`id_videojuego`
+GROUP BY `detalle_venta`.`id_videojuego`
+ORDER BY `cantidad_vendida` DESC
+ LIMIT 3', [], false)
+ 3 SYSTEMPATH/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH/BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH/Models/Detalle_Venta_model.php(28): CodeIgniter\BaseModel->findAll()
+ 6 APPPATH/Controllers/Home.php(15): App\Models\Detalle_Venta_Model->obtenerVideojuegosMasPopulares()
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Home->index()
+ 8 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2026-05-05 23:29:05 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'ci4user'@'172.18.0.4' (using password: YES) in /var/www/html/app/system/Database/MySQLi/Connection.php:201
+Stack trace:
+#0 /var/www/html/app/system/Database/MySQLi/Connection.php(201): mysqli->real_connect('db', 'ci4user', Object(SensitiveParameterValue), 'bd_firmapaz_con...', 3306, '', 0)
+#1 /var/www/html/app/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 /var/www/html/app/system/Database/BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#3 /var/www/html/app/system/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `videoju...', Array, false)
+#4 /var/www/html/app/system/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 /var/www/html/app/system/BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#6 /var/www/html/app/app/Models/Detalle_Venta_model.php(28): CodeIgniter\BaseModel->findAll()
+#7 /var/www/html/app/app/Controllers/Home.php(15): App\Models\Detalle_Venta_Model->obtenerVideojuegosMasPopulares()
+#8 /var/www/html/app/system/CodeIgniter.php(933): App\Controllers\Home->index()
+#9 /var/www/html/app/system/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#10 /var/www/html/app/system/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 /var/www/html/app/system/Boot.php(334): CodeIgniter\CodeIgniter->run()
+#12 /var/www/html/app/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 /var/www/html/app/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'172.18.0.4' (using password: YES) in /var/www/html/app/system/Database/MySQLi/Connection.php:246
+Stack trace:
+#0 /var/www/html/app/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /var/www/html/app/system/Database/BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#2 /var/www/html/app/system/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `videoju...', Array, false)
+#3 /var/www/html/app/system/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#4 /var/www/html/app/system/BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#5 /var/www/html/app/app/Models/Detalle_Venta_model.php(28): CodeIgniter\BaseModel->findAll()
+#6 /var/www/html/app/app/Controllers/Home.php(15): App\Models\Detalle_Venta_Model->obtenerVideojuegosMasPopulares()
+#7 /var/www/html/app/system/CodeIgniter.php(933): App\Controllers\Home->index()
+#8 /var/www/html/app/system/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#9 /var/www/html/app/system/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 /var/www/html/app/system/Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 /var/www/html/app/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 /var/www/html/app/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2026-05-05 23:29:05 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'172.18.0.4' (using password: YES)
+[Method: GET, Route: /]
+in SYSTEMPATH/Database/BaseConnection.php on line 467.
+ 1 SYSTEMPATH/Database/BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `videojuegos`.`id_videojuego`, `videojuegos`.`titulo_videojuego`, `videojuegos`.`precio_videojuego`, `videojuegos`.`imagen_videojuego`, COUNT(detalle_venta.id_videojuego) as cantidad_vendida
+FROM `detalle_venta`
+JOIN `videojuegos` ON `videojuegos`.`id_videojuego` = `detalle_venta`.`id_videojuego`
+GROUP BY `detalle_venta`.`id_videojuego`
+ORDER BY `cantidad_vendida` DESC
+ LIMIT 3', [], false)
+ 3 SYSTEMPATH/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH/BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH/Models/Detalle_Venta_model.php(28): CodeIgniter\BaseModel->findAll()
+ 6 APPPATH/Controllers/Home.php(15): App\Models\Detalle_Venta_Model->obtenerVideojuegosMasPopulares()
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Home->index()
+ 8 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2026-05-05 23:29:28 --> mysqli_sql_exception: Table 'bd_firmapaz_conti.detalle_venta' doesn't exist in /var/www/html/app/system/Database/MySQLi/Connection.php:327
+Stack trace:
+#0 /var/www/html/app/system/Database/MySQLi/Connection.php(327): mysqli->query('SELECT `videoju...', 0)
+#1 /var/www/html/app/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `videoju...')
+#2 /var/www/html/app/system/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `videoju...')
+#3 /var/www/html/app/system/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `videoju...', Array, false)
+#4 /var/www/html/app/system/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 /var/www/html/app/system/BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#6 /var/www/html/app/app/Models/Detalle_Venta_model.php(28): CodeIgniter\BaseModel->findAll()
+#7 /var/www/html/app/app/Controllers/Home.php(15): App\Models\Detalle_Venta_Model->obtenerVideojuegosMasPopulares()
+#8 /var/www/html/app/system/CodeIgniter.php(933): App\Controllers\Home->index()
+#9 /var/www/html/app/system/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#10 /var/www/html/app/system/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 /var/www/html/app/system/Boot.php(334): CodeIgniter\CodeIgniter->run()
+#12 /var/www/html/app/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 /var/www/html/app/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+CRITICAL - 2026-05-05 23:29:28 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'bd_firmapaz_conti.detalle_venta' doesn't exist
+[Method: GET, Route: /]
+in SYSTEMPATH/Database/BaseConnection.php on line 692.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `videojuegos`.`id_videojuego`, `videojuegos`.`titulo_videojuego`, `videojuegos`.`precio_videojuego`, `videojuegos`.`imagen_videojuego`, COUNT(detalle_venta.id_videojuego) as cantidad_vendida
+FROM `detalle_venta`
+JOIN `videojuegos` ON `videojuegos`.`id_videojuego` = `detalle_venta`.`id_videojuego`
+GROUP BY `detalle_venta`.`id_videojuego`
+ORDER BY `cantidad_vendida` DESC
+ LIMIT 3', [], false)
+ 2 SYSTEMPATH/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH/BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH/Models/Detalle_Venta_model.php(28): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH/Controllers/Home.php(15): App\Models\Detalle_Venta_Model->obtenerVideojuegosMasPopulares()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Home->index()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-05-05 23:29:28 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'bd_firmapaz_conti.detalle_venta' doesn't exist
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 332.
+ 1 SYSTEMPATH/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `videojuegos`.`id_videojuego`, `videojuegos`.`titulo_videojuego`, `videojuegos`.`precio_videojuego`, `videojuegos`.`imagen_videojuego`, COUNT(detalle_venta.id_videojuego) as cantidad_vendida
+FROM `detalle_venta`
+JOIN `videojuegos` ON `videojuegos`.`id_videojuego` = `detalle_venta`.`id_videojuego`
+GROUP BY `detalle_venta`.`id_videojuego`
+ORDER BY `cantidad_vendida` DESC
+ LIMIT 3')
+ 2 SYSTEMPATH/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `videojuegos`.`id_videojuego`, `videojuegos`.`titulo_videojuego`, `videojuegos`.`precio_videojuego`, `videojuegos`.`imagen_videojuego`, COUNT(detalle_venta.id_videojuego) as cantidad_vendida
+FROM `detalle_venta`
+JOIN `videojuegos` ON `videojuegos`.`id_videojuego` = `detalle_venta`.`id_videojuego`
+GROUP BY `detalle_venta`.`id_videojuego`
+ORDER BY `cantidad_vendida` DESC
+ LIMIT 3')
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `videojuegos`.`id_videojuego`, `videojuegos`.`titulo_videojuego`, `videojuegos`.`precio_videojuego`, `videojuegos`.`imagen_videojuego`, COUNT(detalle_venta.id_videojuego) as cantidad_vendida
+FROM `detalle_venta`
+JOIN `videojuegos` ON `videojuegos`.`id_videojuego` = `detalle_venta`.`id_videojuego`
+GROUP BY `detalle_venta`.`id_videojuego`
+ORDER BY `cantidad_vendida` DESC
+ LIMIT 3', [], false)
+ 4 SYSTEMPATH/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH/BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH/Models/Detalle_Venta_model.php(28): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH/Controllers/Home.php(15): App\Models\Detalle_Venta_Model->obtenerVideojuegosMasPopulares()
+ 8 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Home->index()
+ 9 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+10 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-05-05 23:29:28 --> [Caused by] mysqli_sql_exception: Table 'bd_firmapaz_conti.detalle_venta' doesn't exist
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 327.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(327): mysqli->query('SELECT `videojuegos`.`id_videojuego`, `videojuegos`.`titulo_videojuego`, `videojuegos`.`precio_videojuego`, `videojuegos`.`imagen_videojuego`, COUNT(detalle_venta.id_videojuego) as cantidad_vendida
+FROM `detalle_venta`
+JOIN `videojuegos` ON `videojuegos`.`id_videojuego` = `detalle_venta`.`id_videojuego`
+GROUP BY `detalle_venta`.`id_videojuego`
+ORDER BY `cantidad_vendida` DESC
+ LIMIT 3', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `videojuegos`.`id_videojuego`, `videojuegos`.`titulo_videojuego`, `videojuegos`.`precio_videojuego`, `videojuegos`.`imagen_videojuego`, COUNT(detalle_venta.id_videojuego) as cantidad_vendida
+FROM `detalle_venta`
+JOIN `videojuegos` ON `videojuegos`.`id_videojuego` = `detalle_venta`.`id_videojuego`
+GROUP BY `detalle_venta`.`id_videojuego`
+ORDER BY `cantidad_vendida` DESC
+ LIMIT 3')
+ 3 SYSTEMPATH/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `videojuegos`.`id_videojuego`, `videojuegos`.`titulo_videojuego`, `videojuegos`.`precio_videojuego`, `videojuegos`.`imagen_videojuego`, COUNT(detalle_venta.id_videojuego) as cantidad_vendida
+FROM `detalle_venta`
+JOIN `videojuegos` ON `videojuegos`.`id_videojuego` = `detalle_venta`.`id_videojuego`
+GROUP BY `detalle_venta`.`id_videojuego`
+ORDER BY `cantidad_vendida` DESC
+ LIMIT 3')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `videojuegos`.`id_videojuego`, `videojuegos`.`titulo_videojuego`, `videojuegos`.`precio_videojuego`, `videojuegos`.`imagen_videojuego`, COUNT(detalle_venta.id_videojuego) as cantidad_vendida
+FROM `detalle_venta`
+JOIN `videojuegos` ON `videojuegos`.`id_videojuego` = `detalle_venta`.`id_videojuego`
+GROUP BY `detalle_venta`.`id_videojuego`
+ORDER BY `cantidad_vendida` DESC
+ LIMIT 3', [], false)
+ 5 SYSTEMPATH/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH/BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH/Models/Detalle_Venta_model.php(28): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH/Controllers/Home.php(15): App\Models\Detalle_Venta_Model->obtenerVideojuegosMasPopulares()
+ 9 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Home->index()
+10 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+11 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))

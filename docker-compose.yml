@@ -1,0 +1,53 @@
+services:
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ci4_app
+    ports:
+      - "8080:80"
+    volumes:
+      - ./app:/var/www/html/app
+      - ./app/writable:/var/www/html/app/writable
+    depends_on:
+      - db
+    environment:
+      - CI_ENVIRONMENT=development
+    command: >
+      bash -c "
+        if [ ! -d /var/www/html/app/vendor ]; then
+          composer install --working-dir=/var/www/html/app;
+        fi;
+        apache2-foreground
+      "
+
+  db:
+    image: mysql:8.0
+    container_name: firmapaz_db
+    restart: always
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: bd_firmapaz_conti
+      MYSQL_USER: ci4user
+      MYSQL_PASSWORD: ci4user
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./docker-mysql/dump_fixed.sql:/docker-entrypoint-initdb.d/01-init.sql:ro
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: ci4_phpmyadmin
+    ports:
+      - "8081:80"
+    environment:
+      PMA_HOST: db
+      PMA_USER: root
+      PMA_PASSWORD: root
+    depends_on:
+      - db
+
+volumes:
+  db_data:
